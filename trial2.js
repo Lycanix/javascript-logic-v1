@@ -60,3 +60,29 @@ if (total > 500) {
 } else if (total < 100) {
 	console.log('angka kecil');
 }
+
+/*
+Buatlah algoritma dan implementasi di javascript untuk kasus berikut: Seorang pengajar sedang memeriksa ujian mahasiswa dan akan memberikan desc nilai dari A-E dengan ketentuan sebagai berikut:
+
+- Nilai 80 - 100: A
+- Nilai 65 - 79: B
+- Nilai 50 - 64: C
+- Nilai 35 - 49: D
+- Nilai 0 - 34: E
+
+Tampilkan desc nilai dan nama siswa saat pengajar tersebut memasukkan nilai dan nama yang dia inginkan.
+*/
+
+let nama = 'Amar';
+let score = 56;
+if (score <= 100 && score >= 80) {
+	console.log(`Nama : ${nama}. Score kamu A`);
+} else if (score <= 79 && score >= 65) {
+	console.log(`Nama : ${nama}. Score kamu B`);
+} else if (score <= 64 && score >= 50) {
+	console.log(`Nama : ${nama}. Score kamu C`);
+} else if (score <= 49 && score >= 35) {
+	console.log(`Nama : ${nama}. Score kamu D`);
+} else if (score <= 34 && score >= 0) {
+	console.log(`Nama : ${nama}. Score kamu E`);
+}
