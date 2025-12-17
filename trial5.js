@@ -314,7 +314,55 @@ var userInput = '<'
 
 // Input yang anda masukkan tidak lengkap!
 ```
+- 100 % - Perfect
+- 80 % - 99% - Great
+- 60 % - 79 % - Good
+- 0 - 59 % - Bad
+( 50 / 70 * 100 %)
 */
+
+// let exercise = '<>^v>>>';
+// let userInput = '<>^^>><';
+
+// let score = 0;
+// let maxScore = 0;
+
+// if (exercise.length !== userInput.length) {
+// 	console.log(`Input yang anda masukkan tidak lengkap!`);
+// } else {
+// 	maxScore = exercise.length * 10;
+
+// 	for (let x = 0; x < exercise.length; x++) {
+// 		const noteExercise = exercise[x];
+// 		for (let y = x; y <= x; y++) {
+// 			const noteUser = userInput[y];
+// 			if (noteExercise === noteUser) {
+// 				score += 10;
+// 			} else {
+// 				continue;
+// 			}
+// 		}
+// 	}
+// }
+
+// let calculate = Math.floor((score / maxScore) * 100);
+// if (calculate === 100) {
+// 	console.log(
+// 		`Anda mendapatkan score ${score} / ${maxScore}. Persentase: ${calculate}%, Kategori : Perfect`
+// 	);
+// } else if (calculate >= 80 && calculate <= 99) {
+// 	console.log(
+// 		`Anda mendapatkan score ${score} / ${maxScore}. Persentase: ${calculate}%, Kategori : Great`
+// 	);
+// } else if (calculate >= 60 && calculate <= 79) {
+// 	console.log(
+// 		`Anda mendapatkan score ${score} / ${maxScore}. Persentase: ${calculate}%, Kategori : Good`
+// 	);
+// } else if (calculate >= 0 && calculate <= 59) {
+// 	console.log(
+// 		`Anda mendapatkan score ${score} / ${maxScore}. Persentase: ${calculate}%, Kategori : Bad`
+// 	);
+// }
 
 // ==================================================
 
@@ -363,8 +411,28 @@ let coordinate = "11"
 
 ## RULES:
 - Tidak diperbolehkan menggunakan built-in function:
-  .map .filter .reduce .split .join .indexOf .findIndex .substring
+.map .filter .reduce .split .join .indexOf .findIndex .substring
 
 ## NOTES
 - Diasumsikan input koordinat selalu benar
 */
+// let row = 1;
+// let col = 5;
+// let coordinate = '11';
+// let first;
+// let second;
+// for (let n = 0; n < coordinate.length; n++) {
+// 	first = Number(coordinate[0]);
+// 	second = Number(coordinate[1]);
+// }
+// for (let z = 1; z <= row; z++) {
+// 	let box = '';
+// 	for (let x = 1; x <= col; x++) {
+// 		if (z === first && x === second) {
+// 			box += 'o';
+// 		} else {
+// 			box += '#';
+// 		}
+// 	}
+// 	console.log(box);
+// }
