@@ -122,8 +122,27 @@ let kata = false
 
 maka output adalah 'cannot proceed without agreement'
 ```
-
 */
+// let kata = 0;
+// if (
+// 	kata === undefined ||
+// 	kata === 0 ||
+// 	kata === '' ||
+// 	isNaN(kata) ||
+// 	kata === null
+// ) {
+// 	console.log('Invalid data');
+// } else if (typeof kata === 'string') {
+// 	console.log(`Username ${kata}`);
+// } else if (typeof kata === 'number') {
+// 	console.log(`Age ${kata}`);
+// } else if (typeof kata === 'boolean') {
+// 	if (kata === true) {
+// 		console.log(`Thank you for agreeing`);
+// 	} else if (kata === false) {
+// 		console.log(`Cannot proceed without agreement`);
+// 	}
+// }
 // ========================================================
 // 2
 // ========================================================
@@ -169,6 +188,8 @@ maka output yang dihasilkan adalah 0, karena walaupun length nya > 0, tapi tidak
 ```
 
 */
+// PR
+
 // ========================================================
 // 3
 // ========================================================
