@@ -188,7 +188,23 @@ maka output yang dihasilkan adalah 0, karena walaupun length nya > 0, tapi tidak
 ```
 
 */
-// PR
+// let kalimat = 'I believe I can code';
+// let kalimat = 'I have a dream';
+// let kalimat = 'I';
+// let kalimat = '   ';
+
+// let count = 0;
+// let trigger = false;
+// for (let z = 0; z < kalimat.length; z++) {
+// 	const karakter = kalimat[z];
+// 	if (karakter !== ' ' && !trigger) {
+// 		count++;
+// 		trigger = true;
+// 	} else if (karakter === ' ') {
+// 		trigger = false;
+// 	}
+// }
+// console.log(count);
 
 // ========================================================
 // 3
@@ -229,6 +245,24 @@ maka output yang dihasilkan adalah
 ```
 
 */
+// let kata = 'i love javascript';
+// let result = '';
+// for (let q = 0; q < kata.length; q++) {
+// 	const huruf = kata[q];
+// 	if (
+// 		huruf === 'a' ||
+// 		huruf === 'i' ||
+// 		huruf === 'u' ||
+// 		huruf === 'e' ||
+// 		huruf === 'o'
+// 	) {
+// 		result += '#';
+// 	} else {
+// 		result += huruf;
+// 	}
+// }
+// console.log(result);
+
 // ========================================================
 // 4
 // ========================================================
@@ -301,8 +335,26 @@ let angka = 4
 
 maka output yang dihasilkan adalah 5, karena angka 1 digit selalu dianggap palindrome
 ```
-
 */
+let angka = 175;
+let result = '';
+
+for (let z = angka + 1; ; z++) {
+	let transmute = z.toString();
+	result = '';
+
+	for (let c = transmute.length - 1; c >= 0; c--) {
+		result += transmute[c];
+	}
+
+	if (result === transmute) {
+		console.log(z + ' palindrome');
+		break;
+	} else {
+		console.log(z + ' bukan palindrome');
+	}
+}
+
 // ========================================================
 // 5
 // ========================================================
