@@ -271,5 +271,43 @@ console.log(fill(["Alpha", "Beta", "Charlie", "Delta", "Echo", "Foxtrot"], "Indi
 ```
 
 */
-//! yuhuu
+// function fill(data, value, start, end) {
+// 	if (!data || !value) {
+// 		return 'Invalid data';
+// 	}
+// 	let startIndex = start === undefined ? 0 : start;
+// 	let endIndex = end === undefined ? data.length : end;
+// 	let i = startIndex;
+// 	while (i < endIndex && i < data.length) {
+// 		data[i] = value;
+// 		i++;
+// 	}
+// 	return data;
+// }
+
+//Test Case
+// console.log(fill());
+// console.log(fill(['Alpha', 'Beta', 'Charlie', 'Delta', 'Echo']));
+// Invalid input
+
+// console.log(fill(['Alpha', 'Beta', 'Charlie', 'Delta'], 'Echo', 2, 4));
+// [ 'Alpha', 'Beta', 'Echo', 'Echo' ]
+
+// console.log(fill(['Alpha', 'Beta', 'Charlie', 'Delta'], 'Foxtrot', 1, 3));
+// [ 'Alpha', 'Foxtrot', 'Foxtrot', 'Delta' ]
+
+// console.log(fill(['Alpha', 'Beta', 'Charlie', 'Delta'], 'Juliett', 3, 20));
+// [ 'Alpha', 'Beta', 'Charlie', 'Juliett' ]
+
+// console.log(fill(['Alpha', 'Beta', 'Charlie', 'Delta'], 'Golf', 0, 1));
+// [ 'Golf', 'Beta', 'Charlie', 'Delta' ]
+
+// console.log(fill(['Alpha', 'Beta', 'Charlie', 'Delta', 'Echo'], 'Hotel', 1));
+// [ 'Alpha', 'Hotel', 'Hotel', 'Hotel', 'Hotel' ]
+
+// console.log(
+// 	fill(['Alpha', 'Beta', 'Charlie', 'Delta', 'Echo', 'Foxtrot'], 'India')
+// );
+// [ 'India', 'India', 'India', 'India', 'India', 'India' ]
+
 // =====================================================
