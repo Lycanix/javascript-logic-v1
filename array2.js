@@ -311,8 +311,21 @@ output:
 karena angka 4 berada di index ke 3, sehingga tidak dimasukkan ke dalam array baru
 Nb: diasumsikan input selalu benar
 */
-// asd
-// console.log(filterArr([1, 2, 3, 4, 5, 6], 3)) // [1, 2, 3, 5, 6];
+// function filterArr(arr, index) {
+// 	let hasil = [];
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const scan = arr[z];
+// 		if (z === index) {
+// 			continue;
+// 		} else {
+// 			hasil.push(scan);
+// 		}
+// 	}
+// 	return hasil;
+// }
+// console.log(filterArr([1, 4, 3, 4, 5], 1));
+
+// console.log(filterArr([1, 2, 3, 4, 5, 6], 3)); // [1, 2, 3, 5, 6];
 // console.log(filterArr([4, 5, 2, 11, 34, 121 ,21], 4)) // [4, 5, 2, 11, 121, 21]
 // console.log(filterArr([3, 2, 1], 0)) // [2, 1]
 // ========================================
@@ -336,7 +349,21 @@ Nb: diasumsikan input selalu benar
     // s so cool
     // [javascr, pt , s so cool]
 */
-// asd
+// function split(str, param) {
+// 	let hasil = [];
+// 	let temp = '';
+// 	for (let z = 0; z <= str.length; z++) {
+// 		const scan = str[z];
+// 		if (scan === param || scan === undefined) {
+// 			hasil.push(temp);
+// 			temp = '';
+//             continue
+// 		}
+// 		temp += scan;
+// 	}
+
+// 	return hasil;
+// }
 // console.log(split('i love javascript', ' ')); // ['i', 'love', 'javascript']
 // console.log(split('javascript is so cool', 'i')); // ['javascr', 'pt ', 's so cool']
 
@@ -371,41 +398,91 @@ ourput:
 */
 
 // function filterNumberByParam(angka, param) {
-//     // tulis kode disini
+// 	let hasil = [];
+// 	if (param !== 'genap' && param !== 'ganjil') {
+// 		return 'param harus genap atau ganjil';
+// 	}
+// 	for (let z = 0; z < angka.length; z++) {
+// 		const scan = angka[z];
+
+// 		if (scan % 2 === 0 && param === 'genap') {
+// 			hasil.push(scan);
+// 		} else if (scan % 2 === 1 && param === 'ganjil') {
+// 			scan % 2 === 0;
+// 			hasil.push(scan);
+// 		}
+// 	}
+// 	return hasil;
 // }
 
-// console.log(filterNumberByParam([1, 32, 123, 12, 543, 544], 'ganjil')) // [1, 123, 543]
-// console.log(filterNumberByParam([43, 43, 32, 43, 43, 21, 22], 'genap')) // [32, 22]
-// console.log(filterNumberByParam([1, 2, 3], 'ganjul')) // 'param harus genap atau ganjil'
+// console.log(filterNumberByParam([43, 43, 32, 43, 43, 21, 22], 'genap')); // [32, 22]
+// console.log(filterNumberByParam([1, 32, 123, 12, 543, 544], 'ganjil')); // [1, 123, 543]
+// console.log(filterNumberByParam([1, 2, 3], 'ganjul')); // 'param harus genap atau ganjil'
 
 // ========================================
 // 10
 // ========================================
-// /*
-// Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimensi), function akan mengembalikan sebuah number yang merupakan hasil penjumlahan semua angka yang terdapat di array
-// */
+// function filterByComparison(arr, operator, value) {
+// 	let hasil = [];
+// 	if (operator !== '>' && operator !== '<' && operator !== '=') {
+// 		return 'salah nih';
+// 	}
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const scan = arr[i];
+// 		if (scan > value && operator === '>') {
+// 			hasil.push(scan);
+// 		} else if (scan < value && operator === '<') {
+// 			hasil.push(scan);
+// 		} else if (scan === value && operator === '=') {
+// 			hasil.push(scan);
+// 		}
+// 	}
+// 	return hasil;
+// }
+
+// console.log(filterByComparison([1, 4, 6, 8], '>', 4)); // [6, 8]
+// console.log(filterByComparison([1, 4, 6, 8], '=', 4)); // [4]
+// console.log(filterByComparison([1, 4, 6], '!>', 3)); // 'operator tidak valid'
+
+// ========================================
+// extra
+// ========================================
+/*
+Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimensi), function akan mengembalikan sebuah number yang merupakan hasil penjumlahan semua angka yang terdapat di array
+*/
 
 // function deepSum(arr) {
-//   // tulis kode disini
+// 	let hasil = 0;
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const split1 = arr[z];
+// 		for (let x = 0; x < split1.length; x++) {
+// 			const split2 = split1[x];
+// 			for (let c = 0; c < split2.length; c++) {
+// 				const scan = split2[c];
+// 				hasil += scan;
+// 			}
+// 		}
+// 	}
+// 	return hasil;
 // }
 
 // let data = [
-//     [
-//       [4, 5, 6],
-//       [9, 1, 2, 10],
-//       [9, 4, 3]
-//     ],
-//     [
-//       [4, 14, 31],
-//       [9, 10, 18, 12, 20],
-//       [1, 4, 90]
-//     ],
-//     [
-//       [2, 5, 10],
-//       [3, 4, 5],
-//       [2, 4, 5, 10]
-//     ]
-// ]
+// 	[
+// 		[4, 5, 6],
+// 		[9, 1, 2, 10],
+// 		[9, 4, 3],
+// 	],
+// 	[
+// 		[4, 14, 31],
+// 		[9, 10, 18, 12, 20],
+// 		[1, 4, 90],
+// 	],
+// 	[
+// 		[2, 5, 10],
+// 		[3, 4, 5],
+// 		[2, 4, 5, 10],
+// 	],
+// ];
 
 // console.log(deepSum(data)); // 316
 
