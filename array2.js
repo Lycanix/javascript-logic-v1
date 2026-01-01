@@ -916,38 +916,113 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
  * - input null / undefined → "Invalid Data!"
  * - tidak ada user lolos filter → "No qualified user"
  */
-
+// 'Andi|Book,Pen|50000#Budi|Pencil|10000#Caca|Bag,Shoes|150000'
+// [
+//   ['Andi', ['Book', 'Pen'], 50000],
+//   ['Caca', ['Bag', 'Shoes'], 150000]
+// ]
 function parseUsers(rawData) {
 	// kerjakan di sini
+	// console.log(rawData);
+	let result1 = [];
+	let temp = [];
+	let item = [];
+	let word = '';
+	for (let q = 0; q <= rawData.length; q++) {
+		const char = rawData[q];
+		// console.log(char);
+		if (char === '#' || char === undefined) {
+			temp.push(word);
+			word = '';
+			result1.push(temp);
+			temp = [];
+		} else if (char !== '|' && char !== undefined) {
+			word += char;
+		} else {
+			temp.push(word);
+			word = '';
+		}
+	}
+
+	for (let z = 0; z < result1.length; z++) {
+		const split1 = result1[z];
+		// console.log(split1);
+		// console.log(result1[z][1]);
+
+		for (let x = 0; x <= split1[1].length; x++) {
+			const scan = split1[1][x];
+			// console.log(scan);
+			if (scan !== ',' && scan !== undefined) {
+				word += scan;
+			} else {
+				item.push(word);
+				word = '';
+				if (scan === undefined) {
+					split1[1] = item;
+					item = [];
+				}
+			}
+		}
+		// console.log(split1);
+		// console.log(split1[1]);
+	}
+	// console.log(result1);
+	// console.log(temp);
+	// console.log(item);
+	// console.log(word);
+
+	return result1;
 }
 
 function filterByAmount(users, minAmount) {
 	// kerjakan di sini
+	// console.log(users);
+	// console.log(minAmount);
+	let result2 = [];
+	for (let i = 0; i < users.length; i++) {
+		const split2 = users[i];
+		if (split2[2] >= minAmount) {
+			result2.push(split2);
+		}
+	}
+	if (result2.length < 1) {
+		return 'No qualified user';
+	} else {
+		return result2;
+	}
 }
 
 function analyzePurchase(data, minAmount) {
 	// kerjakan di sini
+	if (!data && !minAmount) {
+		return 'Invalid Data!';
+	}
+
+	let parse = parseUsers(data);
+	let finalResult = filterByAmount(parse, minAmount);
+
+	return finalResult;
 }
 
 // =====================
 // TEST CASE
 // =====================
 
-// console.log(analyzePurchase());
+console.log(analyzePurchase());
 // "Invalid Data!"
 
-// const data1 = 'Andi|Book,Pen|50000#Budi|Pencil|10000#Caca|Bag,Shoes|150000';
-// console.log(analyzePurchase(data1, 50000));
+const data1 = 'Andi|Book,Pen|50000#Budi|Pencil|10000#Caca|Bag,Shoes|150000';
+console.log(analyzePurchase(data1, 50000));
 // [
 //   ['Andi', ['Book', 'Pen'], 50000],
 //   ['Caca', ['Bag', 'Shoes'], 150000]
 // ]
 
-// console.log(analyzePurchase(data1, 200000));
+console.log(analyzePurchase(data1, 200000));
 // "No qualified user"
 
-// const data2 = 'Dina|Notebook|75000';
-// console.log(analyzePurchase(data2, 50000));
+const data2 = 'Dina|Notebook|75000';
+console.log(analyzePurchase(data2, 50000));
 // [['Dina', ['Notebook'], 75000]]
 
 // ========================================
