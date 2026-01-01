@@ -495,106 +495,300 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
 // */
 
 // function highestLowest(arr) {
-//   // tulis kode disini
+// 	let hasil = [];
+// 	let low = Infinity;
+// 	let high = -Infinity;
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const satu = arr[z];
+// 		for (let x = 0; x < satu.length; x++) {
+// 			const dua = satu[x];
+// 			for (let c = 0; c < dua.length; c++) {
+// 				const tiga = dua[c];
+// 				if (tiga < low) {
+// 					low = tiga;
+// 				}
+// 				if (tiga > high) {
+// 					high = tiga;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	hasil.push(low);
+// 	hasil.push(high);
+// 	return hasil;
 // }
 
 // let data = [
-//     [
-//       [4, 5, 6],
-//       [9, 1, 2, 10],
-//       [9, 4, 3]
-//     ],
-//     [
-//       [4, 14, 31],
-//       [9, 10, 18, 12, 20],
-//       [1, 4, 90]
-//     ],
-//     [
-//       [2, 5, 10],
-//       [3, 4, 5],
-//       [2, 4, 5, 10]
-//     ]
-// ]
+// 	[
+// 		[4, 5, 6],
+// 		[9, 1, 2, 10],
+// 		[9, 4, 3],
+// 	],
+// 	[
+// 		[4, 14, 31],
+// 		[9, 10, 18, 12, 20],
+// 		[1, 4, 90],
+// 	],
+// 	[
+// 		[2, 5, 10],
+// 		[3, 4, 5],
+// 		[2, 4, 5, 10],
+// 	],
+// ];
 
 // console.log(highestLowest(data)); // [1, 90] => 1 yang terkecil dan 90 yang terbesar
 
 // ========================================
 // 12
 // ========================================
-
 // function getAnimals(arr) {
-//   // Write your code here
+// 	let hasil = [];
+// 	let temp = '';
+// 	let k = [];
+// 	let h = [];
+// 	let o = [];
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const split = arr[z];
+
+// 		for (let x = 0; x < split.length; x++) {
+// 			const char = split[x];
+// 			// console.log(split[x + 1]);
+// 			if (char !== ':') {
+// 				temp += char;
+// 			} else {
+// 				if (split[x + 1] === 'K') {
+// 					k.push(temp);
+// 					temp = '';
+// 					x += 2;
+// 				} else if (split[x + 1] === 'H') {
+// 					h.push(temp);
+// 					temp = '';
+// 					x += 2;
+// 				} else if (split[x + 1] === 'O') {
+// 					o.push(temp);
+// 					temp = '';
+// 					x += 2;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	for (let q = 0; q < k.length; q++) {
+// 		if (k[q].length > temp.length) {
+// 			temp = k[q];
+// 		}
+// 		if (q === k.length - 1) {
+// 			hasil.push(temp);
+// 			temp = '';
+// 		}
+// 	}
+
+// 	for (let w = 0; w < h.length; w++) {
+// 		if (h[w].length > temp.length) {
+// 			temp = h[w];
+// 		}
+// 		if (w === h.length - 1) {
+// 			hasil.push(temp);
+// 			temp = '';
+// 		}
+// 	}
+
+// 	for (let e = 0; e < o.length; e++) {
+// 		if (o[e].length > temp.length) {
+// 			temp = o[e];
+// 		}
+// 		if (e === o.length - 1) {
+// 			hasil.push(temp);
+// 			temp = '';
+// 		}
+// 	}
+
+// 	return hasil;
 // }
 
 // //Test Case
 
-// console.log(getAnimals(['Singa:K', 'Kuda:H', 'Monyet:O']))
-// // [ 'Singa','Kuda','Monyet' ]
+// console.log(getAnimals(['Singa:K', 'Kuda:H', 'Monyet:O']));
+// [ 'Singa','Kuda','Monyet' ]
 
-// console.log(getAnimals(['Macan:K', 'Ayam:O', 'Gajah:H', 'Monyet:O', 'Kerbau:H', 'Musang:O', 'Burung:H', 'Hiu:K']))
-// // [ 'Macan', 'Kerbau', 'Monyet' ]
+// console.log(
+// 	getAnimals([
+// 		'Hiu:K',
+// 		'Macan:K',
+// 		'Ayam:O',
+// 		'Gajah:H',
+// 		'Monyet:O',
+// 		'Kerbau:H',
+// 		'Musang:O',
+// 		'Burung:H',
+// 	])
+// );
+// [ 'Macan', 'Kerbau', 'Monyet' ]
 
-// console.log(getAnimals(['Tikus:O', 'Merpati:H', 'Beruang:O', 'Elang:K', 'Perkutut:H', 'Harimau:K']))
-//   // [ 'Harimau', 'Perkutut', 'Beruang' ]
-
+// console.log(
+// 	getAnimals([
+// 		'Tikus:O',
+// 		'Merpati:H',
+// 		'Beruang:O',
+// 		'Elang:K',
+// 		'Perkutut:H',
+// 		'Harimau:K',
+// 	])
+// );
+// [ 'Harimau', 'Perkutut', 'Beruang' ]
 // ========================================
 // 13
 // ========================================
+// function parseData(str) {
+// 	let hasil = [];
+// 	let temp = [];
+// 	let char = '';
+// 	for (let z = 0; z <= str.length; z++) {
+// 		const scan = str[z];
+// 		if (scan !== ';' && scan !== undefined) {
+// 			if (scan !== ':') {
+// 				char += scan;
+// 				if (!isNaN(char)) {
+// 					char = Number(char);
+// 				}
+// 			} else {
+// 				temp.push(char);
+// 				char = '';
+// 			}
+// 		} else {
+// 			if (scan !== ':') {
+// 				temp.push(char);
+// 				char = '';
+// 				hasil.push(temp);
+// 				temp = [];
+// 			}
+// 		}
+// 	}
+
+// 	return hasil;
+// }
+
+// console.log(parseData('A:10;B:20;C:30'));
+// [
+// 	['A', 10],
+// 	['B', 20],
+// 	['C', 30],
+// ];
+
+// ========================================
+// EXTRA
+// ========================================
 // function filterMovie(genres) {
-//     let movies = [
-//         ["Drama", "Boyhood", "The Last of the Mohicans", "The Goldfinch"],
-//         ["Action", "Mad Max", "The Batman", "Josh Wick"],
-//         ["Fantasy", "The Fall", "The Forbidden Kingdom", "Ladyhawke", "Sea Beast"],
-//         ["Comedy", "Safety Last", "The Trip"]
-//     ];
-//     // write your code here
+// 	let movies = [
+// 		['Drama', 'Boyhood', 'The Last of the Mohicans', 'The Goldfinch'],
+// 		['Action', 'Mad Max', 'The Batman', 'Josh Wick'],
+// 		['Fantasy', 'The Fall', 'The Forbidden Kingdom', 'Ladyhawke', 'Sea Beast'],
+// 		['Comedy', 'Safety Last', 'The Trip'],
+// 	];
+
+// 	//data dari user can watch
+// 	// console.log(genres);
+
+// 	let resultFilterMovie = [];
+// 	for (let q = 0; q < genres.length; q++) {
+// 		const genre = genres[q];
+// 		for (let z = 0; z < movies.length; z++) {
+// 			const peel = movies[z];
+// 			let list = peel[0];
+
+// 			if (genre === list) {
+// 				resultFilterMovie.push(peel);
+// 			}
+// 		}
+// 	}
+// 	if (resultFilterMovie.length < 1) {
+// 		return 'Movie not found';
+// 	} else {
+// 		return resultFilterMovie;
+// 	}
 // }
 
 // function usersCanWatch(users) {
-//     // write your code here
+// 	// write your code here
+// 	if (!users) {
+// 		return 'Invalid Data!';
+// 	}
+// 	let menu = users.menu;
+// 	let genres = [];
+// 	let word = '';
+// 	for (let x = 0; x <= menu.length; x++) {
+// 		const scan = menu[x];
+// 		if (scan !== ';' && scan !== undefined) {
+// 			word += scan;
+// 		} else {
+// 			genres.push(word);
+// 			word = '';
+// 		}
+// 	}
+
+// 	let result = filterMovie(genres);
+// 	return result;
 // }
 
 // // TEST CASE
 // const user1 = {
-//     name: "Bari",
-//     cinema: "XIV",
-//     menu: "Action;Drama;Comedy"
+// 	name: 'Bari',
+// 	cinema: 'XIV',
+// 	menu: 'Action;Drama;Comedy',
 // };
 // console.log(usersCanWatch(user1));
-// /*
-// [
-//   ["Action", "Mad Max", "The Batman", "Josh Wick"],
-//   ["Drama", "Boyhood", "The Last of the Mohicans", "The Goldfinch"],
-//   ["Comedy", "Safety Last", "The Trip"]
-// ]
-// */
+/*
+[
+	["Action", "Mad Max", "The Batman", "Josh Wick"],
+	["Drama", "Boyhood", "The Last of the Mohicans", "The Goldfinch"],
+	["Comedy", "Safety Last", "The Trip"]
+]
+*/
 
 // const user2 = {
-//     name: "Tole",
-//     cinema: "XIIX",
-//     menu: "Fantasy;Adventure;Comedy"
+// 	name: 'Tole',
+// 	cinema: 'XIIX',
+// 	menu: 'Fantasy;Adventure;Comedy',
 // };
 // console.log(usersCanWatch(user2));
-// /*
-// [
-//   ["Fantasy", "The Fall", "The Forbidden Kingdom", "Ladyhawke", "Sea Beast"],
-//   ["Comedy", "Safety Last", "The Trip"]
-// ]
-// */
+/*
+[
+	["Fantasy", "The Fall", "The Forbidden Kingdom", "Ladyhawke", "Sea Beast"],
+	["Comedy", "Safety Last", "The Trip"]
+]
+*/
 
 // const user3 = {
-//     name: "Rizky",
-//     cinema: "Cinepolos",
-//     menu: "Scifi-Musical"
+// 	name: 'Rizky',
+// 	cinema: 'Cinepolos',
+// 	menu: 'Scifi-Musical',
 // };
 // console.log(usersCanWatch(user3));
-// // "Movie not found"
+// "Movie not found"
+
+// const user4 = {
+// 	name: 'Tobias',
+// 	cinema: 'Rumah',
+// 	menu: 'Comedy',
+// };
+// console.log(usersCanWatch(user4));
+/*
+	["Comedy", "Safety Last", "The Trip"]
+]
+*/
 
 // console.log(usersCanWatch());
-// // "Invalid Data!"
+// "Invalid Data!"
 
 // ========================================
 // 14
+// ========================================
+
+
+
+
+// ========================================
+// EXTRAA
 // ========================================
 // function getPoints(history) {
 //     let itemPoint = {
