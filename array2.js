@@ -784,51 +784,64 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
 // 14
 // ========================================
 
-// Parsing data untuk di olah
-function parsingData(data) {
-	// kerjakan di sini
-	let day = [];
-	let word = '';
-	for (let q = 0; q <= data.length; q++) {
-		const char = data[q];
-		if (char !== '|' && char !== undefined) {
-			word += char;
-		} else {
-			day.push(word);
-			word = '';
-		}
-	}
-	return day;
-}
+// // Parsing data untuk di olah
+// function parsingData(data) {
+// 	// kerjakan di sini
+// 	let day = [];
+// 	let word = '';
+// 	for (let q = 0; q <= data.length; q++) {
+// 		const char = data[q];
+// 		if (char !== '|' && char !== undefined) {
+// 			word += char;
+// 		} else {
+// 			day.push(word);
+// 			word = '';
+// 		}
+// 	}
+// 	return day;
+// }
 
-// Filter Class
-function filterClass(days) {
-	let classes = [
-		['Monday', 'Math', 'Physics'],
-		['Tuesday', 'Biology'],
-		['Wednesday', 'Chemistry', 'Math'],
-		['Thursday', 'History'],
-		['Friday', 'Sport', 'Art'],
-	];
+// // Filter Class
+// function filterClass(days) {
+// 	let classes = [
+// 		['Monday', 'Math', 'Physics'],
+// 		['Tuesday', 'Biology'],
+// 		['Wednesday', 'Chemistry', 'Math'],
+// 		['Thursday', 'History'],
+// 		['Friday', 'Sport', 'Art'],
+// 	];
 
-	// kerjakan di sini
+// 	// kerjakan di sini
 
-	
+// 	let resultFilterClass = [];
+// 	for (let z = 0; z < days.length; z++) {
+// 		const scan = days[z];
+// 		for (let x = 0; x < classes.length; x++) {
+// 			const schedule = classes[x];
+// 			if (schedule[0] === scan) {
+// 				resultFilterClass.push(schedule);
+// 			}
+// 		}
+// 	}
 
-	return;
-}
+// 	if (resultFilterClass.length < 1) {
+// 		return 'Class not found';
+// 	} else {
+// 		return resultFilterClass;
+// 	}
+// }
 
-// Function Utama
-function userSchedule(user) {
-	// kerjakan di sini
-	if (!user) {
-		return 'Invalid Data!';
-	}
-	let day = user.days;
-	let parsing = parsingData(day);
-	let result = filterClass(parsing);
-	return result;
-}
+// // Function Utama
+// function userSchedule(user) {
+// 	// kerjakan di sini
+// 	if (!user) {
+// 		return 'Invalid Data!';
+// 	}
+// 	let day = user.days;
+// 	let parsing = parsingData(day);
+// 	let result = filterClass(parsing);
+// 	return result;
+// }
 
 // console.log(userSchedule());
 // "Invalid Data!"
@@ -854,11 +867,11 @@ function userSchedule(user) {
 // console.log(userSchedule(user2));
 // [['Friday', 'Sport', 'Art']];
 
-const user1 = {
-	name: 'Raka',
-	days: 'Monday|Wednesday',
-};
-console.log(userSchedule(user1));
+// const user1 = {
+// 	name: 'Raka',
+// 	days: 'Monday|Wednesday',
+// };
+// console.log(userSchedule(user1));
 // [
 // 	['Monday', 'Math', 'Physics'],
 // 	['Wednesday', 'Chemistry', 'Math'],
@@ -866,6 +879,79 @@ console.log(userSchedule(user1));
 
 // ========================================
 // EXTRAA
+// ========================================
+
+/**
+ * =========================
+ * User Purchase Analyzer
+ * =========================
+ *
+ * Data transaksi disimpan dalam format STRING mentah.
+ * Setiap user dipisahkan oleh '#'
+ * Setiap field user dipisahkan oleh '|'
+ * Format:
+ * name|item1,item2,item3|amount
+ *
+ * Contoh:
+ * "Andi|Book,Pen|50000#Budi|Pencil|10000"
+ *
+ * TUGAS:
+ * 1. Parsing data mentah menjadi struktur array yang bisa diolah
+ * 2. Ambil hanya user yang total belanjanya >= minAmount
+ * 3. Kembalikan array hasil dengan format:
+ *    [
+ *      ['Andi', ['Book', 'Pen'], 50000],
+ *      ...
+ *    ]
+ *
+ * ATURAN:
+ * - Tidak boleh pakai split, map, filter, reduce
+ * - Parsing WAJIB manual (loop + akumulasi string)
+ * - Gunakan minimal:
+ *   - 1 helper parsing
+ *   - 1 helper filter
+ *   - 1 caller function
+ *
+ * EDGE CASE:
+ * - input null / undefined → "Invalid Data!"
+ * - tidak ada user lolos filter → "No qualified user"
+ */
+
+function parseUsers(rawData) {
+	// kerjakan di sini
+}
+
+function filterByAmount(users, minAmount) {
+	// kerjakan di sini
+}
+
+function analyzePurchase(data, minAmount) {
+	// kerjakan di sini
+}
+
+// =====================
+// TEST CASE
+// =====================
+
+// console.log(analyzePurchase());
+// "Invalid Data!"
+
+// const data1 = 'Andi|Book,Pen|50000#Budi|Pencil|10000#Caca|Bag,Shoes|150000';
+// console.log(analyzePurchase(data1, 50000));
+// [
+//   ['Andi', ['Book', 'Pen'], 50000],
+//   ['Caca', ['Bag', 'Shoes'], 150000]
+// ]
+
+// console.log(analyzePurchase(data1, 200000));
+// "No qualified user"
+
+// const data2 = 'Dina|Notebook|75000';
+// console.log(analyzePurchase(data2, 50000));
+// [['Dina', ['Notebook'], 75000]]
+
+// ========================================
+// MOREE EXTRAA
 // ========================================
 // function getPoints(history) {
 //     let itemPoint = {
