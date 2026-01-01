@@ -784,8 +784,85 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
 // 14
 // ========================================
 
+// Parsing data untuk di olah
+function parsingData(data) {
+	// kerjakan di sini
+	let day = [];
+	let word = '';
+	for (let q = 0; q <= data.length; q++) {
+		const char = data[q];
+		if (char !== '|' && char !== undefined) {
+			word += char;
+		} else {
+			day.push(word);
+			word = '';
+		}
+	}
+	return day;
+}
 
+// Filter Class
+function filterClass(days) {
+	let classes = [
+		['Monday', 'Math', 'Physics'],
+		['Tuesday', 'Biology'],
+		['Wednesday', 'Chemistry', 'Math'],
+		['Thursday', 'History'],
+		['Friday', 'Sport', 'Art'],
+	];
 
+	// kerjakan di sini
+
+	
+
+	return;
+}
+
+// Function Utama
+function userSchedule(user) {
+	// kerjakan di sini
+	if (!user) {
+		return 'Invalid Data!';
+	}
+	let day = user.days;
+	let parsing = parsingData(day);
+	let result = filterClass(parsing);
+	return result;
+}
+
+// console.log(userSchedule());
+// "Invalid Data!"
+
+// const user4 = {
+// 	name: 'Dina',
+// 	days: 'Tuesday',
+// };
+// console.log(userSchedule(user4));
+// [['Tuesday', 'Biology']];
+
+// const user3 = {
+// 	name: 'Bimo',
+// 	days: 'Saturday',
+// };
+// console.log(userSchedule(user3));
+// "Class not found"
+
+// const user2 = {
+// 	name: 'Sinta',
+// 	days: 'Friday|Sunday',
+// };
+// console.log(userSchedule(user2));
+// [['Friday', 'Sport', 'Art']];
+
+const user1 = {
+	name: 'Raka',
+	days: 'Monday|Wednesday',
+};
+console.log(userSchedule(user1));
+// [
+// 	['Monday', 'Math', 'Physics'],
+// 	['Wednesday', 'Chemistry', 'Math'],
+// ];
 
 // ========================================
 // EXTRAA
