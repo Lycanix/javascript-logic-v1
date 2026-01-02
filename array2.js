@@ -921,113 +921,242 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
 //   ['Andi', ['Book', 'Pen'], 50000],
 //   ['Caca', ['Bag', 'Shoes'], 150000]
 // ]
-function parseUsers(rawData) {
-	// kerjakan di sini
-	// console.log(rawData);
-	let result1 = [];
-	let temp = [];
-	let item = [];
-	let word = '';
-	for (let q = 0; q <= rawData.length; q++) {
-		const char = rawData[q];
-		// console.log(char);
-		if (char === '#' || char === undefined) {
-			temp.push(word);
-			word = '';
-			result1.push(temp);
-			temp = [];
-		} else if (char !== '|' && char !== undefined) {
-			word += char;
-		} else {
-			temp.push(word);
-			word = '';
-		}
-	}
+// function parseUsers(rawData) {
+// 	// kerjakan di sini
+// 	// console.log(rawData);
+// 	let result1 = [];
+// 	let temp = [];
+// 	let item = [];
+// 	let word = '';
+// 	for (let q = 0; q <= rawData.length; q++) {
+// 		const char = rawData[q];
+// 		// console.log(char);
+// 		if (char === '#' || char === undefined) {
+// 			temp.push(word);
+// 			word = '';
+// 			result1.push(temp);
+// 			temp = [];
+// 		} else if (char !== '|' && char !== undefined) {
+// 			word += char;
+// 		} else {
+// 			temp.push(word);
+// 			word = '';
+// 		}
+// 	}
 
-	for (let z = 0; z < result1.length; z++) {
-		const split1 = result1[z];
-		// console.log(split1);
-		// console.log(result1[z][1]);
+// 	for (let z = 0; z < result1.length; z++) {
+// 		const split1 = result1[z];
+// console.log(split1);
+// console.log(result1[z][1]);
 
-		for (let x = 0; x <= split1[1].length; x++) {
-			const scan = split1[1][x];
-			// console.log(scan);
-			if (scan !== ',' && scan !== undefined) {
-				word += scan;
-			} else {
-				item.push(word);
-				word = '';
-				if (scan === undefined) {
-					split1[1] = item;
-					item = [];
-				}
-			}
-		}
-		// console.log(split1);
-		// console.log(split1[1]);
-	}
-	// console.log(result1);
-	// console.log(temp);
-	// console.log(item);
-	// console.log(word);
+// 	for (let x = 0; x <= split1[1].length; x++) {
+// 		const scan = split1[1][x];
+// 		// console.log(scan);
+// 		if (scan !== ',' && scan !== undefined) {
+// 			word += scan;
+// 		} else {
+// 			item.push(word);
+// 			word = '';
+// 			if (scan === undefined) {
+// 				split1[1] = item;
+// 				item = [];
+// 			}
+// 		}
+// 	}
+// 	// console.log(split1);
+// 	// console.log(split1[1]);
+// }
+// console.log(result1);
+// console.log(temp);
+// console.log(item);
+// console.log(word);
 
-	return result1;
-}
+// 	return result1;
+// }
 
-function filterByAmount(users, minAmount) {
-	// kerjakan di sini
-	// console.log(users);
-	// console.log(minAmount);
-	let result2 = [];
-	for (let i = 0; i < users.length; i++) {
-		const split2 = users[i];
-		if (split2[2] >= minAmount) {
-			result2.push(split2);
-		}
-	}
-	if (result2.length < 1) {
-		return 'No qualified user';
-	} else {
-		return result2;
-	}
-}
+// function filterByAmount(users, minAmount) {
+// 	// kerjakan di sini
+// 	// console.log(users);
+// 	// console.log(minAmount);
+// 	let result2 = [];
+// 	for (let i = 0; i < users.length; i++) {
+// 		const split2 = users[i];
+// 		if (split2[2] >= minAmount) {
+// 			result2.push(split2);
+// 		}
+// 	}
+// 	if (result2.length < 1) {
+// 		return 'No qualified user';
+// 	} else {
+// 		return result2;
+// 	}
+// }
 
-function analyzePurchase(data, minAmount) {
-	// kerjakan di sini
-	if (!data && !minAmount) {
-		return 'Invalid Data!';
-	}
+// function analyzePurchase(data, minAmount) {
+// 	// kerjakan di sini
+// 	if (!data && !minAmount) {
+// 		return 'Invalid Data!';
+// 	}
 
-	let parse = parseUsers(data);
-	let finalResult = filterByAmount(parse, minAmount);
+// 	let parse = parseUsers(data);
+// 	let finalResult = filterByAmount(parse, minAmount);
 
-	return finalResult;
-}
+// 	return finalResult;
+// }
 
 // =====================
 // TEST CASE
 // =====================
 
-console.log(analyzePurchase());
+// console.log(analyzePurchase());
 // "Invalid Data!"
 
-const data1 = 'Andi|Book,Pen|50000#Budi|Pencil|10000#Caca|Bag,Shoes|150000';
-console.log(analyzePurchase(data1, 50000));
+// const data1 = 'Andi|Book,Pen|50000#Budi|Pencil|10000#Caca|Bag,Shoes|150000';
+// console.log(analyzePurchase(data1, 50000));
 // [
 //   ['Andi', ['Book', 'Pen'], 50000],
 //   ['Caca', ['Bag', 'Shoes'], 150000]
 // ]
 
-console.log(analyzePurchase(data1, 200000));
+// console.log(analyzePurchase(data1, 200000));
 // "No qualified user"
 
-const data2 = 'Dina|Notebook|75000';
-console.log(analyzePurchase(data2, 50000));
+// const data2 = 'Dina|Notebook|75000';
+// console.log(analyzePurchase(data2, 50000));
 // [['Dina', ['Notebook'], 75000]]
 
 // ========================================
 // MOREE EXTRAA
 // ========================================
+
+/**
+ * ============================
+ * User Event Attendance Parser
+ * ============================
+ *
+ * Data kehadiran event disimpan dalam bentuk STRING mentah.
+ *
+ * PEMISAH DATA:
+ * - Antar user        : '#'
+ * - Antar field user  : '|'
+ * - Antar event       : ','
+ *
+ * FORMAT:
+ * name|event1,event2,event3|status
+ *
+ * Keterangan:
+ * - status bernilai: "active" atau "inactive"
+ *
+ * CONTOH INPUT:
+ * "Andi|Seminar,Workshop|active#Budi|Meetup|inactive"
+ *
+ * ============================
+ * TUGAS
+ * ============================
+ *
+ * 1. Parsing string mentah menjadi struktur array
+ * 2. Ambil hanya user dengan status === "active"
+ * 3. Kembalikan hasil dalam format:
+ *
+ * [
+ *   ['Andi', ['Seminar', 'Workshop'], 'active'],
+ *   ...
+ * ]
+ *
+ * ============================
+ * ATURAN
+ * ============================
+ * - DILARANG menggunakan:
+ *   split, map, filter, reduce
+ * - Parsing WAJIB manual (loop + akumulasi string)
+ * - WAJIB menggunakan:
+ *   - 1 helper parsing
+ *   - 1 helper filter
+ *   - 1 caller function
+ *
+ * ============================
+ * EDGE CASE
+ * ============================
+ * - input null / undefined → "Invalid Data!"
+ * - tidak ada user active → "No active user"
+ *
+ * ============================
+ * OUTPUT TIDAK BOLEH DIUBAH
+ * ============================
+ */
+
+// ============================
+// FUNCTION DI SINI
+// ============================
+// 'Andi|Seminar,Workshop|active#Budi|Meetup|inactive#Caca|Conference|active';
+// [
+//   ['Andi', ['Seminar', 'Workshop'], 'active'],
+//   ['Caca', ['Conference'], 'active']
+// ]
+function parseAttendance(rawData) {
+	let result = [];
+	let temp = [];
+	let word = '';
+	for (let q = 0; q < rawData.length; q++) {
+		const char = rawData[q];
+		if (char === '|') {
+			temp.push(word);
+		} else {
+			word += char;
+		}
+	}
+
+	console.log(result);
+	console.log(temp);
+	console.log(word);
+
+	return;
+}
+
+function filterActiveUsers(users) {
+	// kerjakan di sini
+	return;
+}
+
+function analyzeAttendance(data) {
+	// kerjakan di sini
+	if (!data) {
+		return 'Invalid Data!';
+	}
+
+	let parsing = parseAttendance(data);
+	let result = filterActiveUsers(parsing);
+	return result;
+}
+
+// ============================
+// TEST CASE
+// ============================
+
+// console.log(analyzeAttendance());
+// "Invalid Data!"
+
+const data1 =
+	'Andi|Seminar,Workshop|active#Budi|Meetup|inactive#Caca|Conference|active';
+
+console.log(analyzeAttendance(data1));
+// [
+//   ['Andi', ['Seminar', 'Workshop'], 'active'],
+//   ['Caca', ['Conference'], 'active']
+// ]
+
+// const data2 = 'Dina|Training|inactive';
+// console.log(analyzeAttendance(data2));
+// "No active user"
+
+// const data3 = 'Raka|Webinar|active';
+// console.log(analyzeAttendance(data3));
+// [['Raka', ['Webinar'], 'active']]
+
+// ========================================
+// MOREE EXTRAA
+// ========================================
+
 // function getPoints(history) {
 //     let itemPoint = {
 //         'Moonlight': 120,
