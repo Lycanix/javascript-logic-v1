@@ -45,6 +45,8 @@ function calculatePoint(history) {
 		// console.log(ITEM_POINT[item]);
 		result1 += ITEM_POINT[item];
 	}
+
+	// console.log(result1);
 	return result1;
 }
 
@@ -64,16 +66,34 @@ function collectPrizes(totalPoint) {
 		prizes: [],
 		remainingPoint: 0,
 	};
-	console.log(totalPoint);
-
+	// console.log(totalPoint);
+	let isDepedency = '';
 	for (let z = 0; z < PRIZE_LIST.length; z++) {
 		const list = PRIZE_LIST[z];
+		let minPoint = list[0];
+		let rewardName = list[1];
+		let dependency = list[2];
 		// console.log(list);
-        
-	}
+		// console.log(dependency);
 
-	console.log(result2);
-	return;
+		if (totalPoint >= minPoint) {
+			if (dependency === null || dependency === isDepedency) {
+				isDepedency = rewardName;
+				result2.prizes.push(rewardName);
+			}
+		} else {
+			if (totalPoint < PRIZE_LIST[0][0]) {
+				break;
+			} else {
+				result2.remainingPoint = totalPoint -= PRIZE_LIST[z - 1][0];
+				break;
+			}
+		}
+	}
+	isDepedency = '';
+
+	// console.log(result2);
+	return result2;
 }
 
 /* ======================
@@ -82,13 +102,28 @@ Main handler
 ====================== */
 function rewardStation(customer) {
 	// write your code here
+
 	let name = customer.name;
 	let bill = customer.history;
 
+	if (!name) {
+		return 'User tidak ditemukan';
+	} else if (typeof bill !== 'object' || bill === null || !('length' in bill)) {
+		return 'History tidak valid';
+	} else if (bill.length === 0) {
+		return 'Tidak ada transaksi';
+	}
 	let calculate = calculatePoint(bill);
 	let reward = collectPrizes(calculate);
 
-	return;
+	let result = {
+		name: name,
+		totalPoint: calculate,
+		prizes: reward.prizes,
+		remainingPoint: reward.remainingPoint,
+	};
+
+	return result;
 }
 
 /* ======================
@@ -113,36 +148,36 @@ console.log(
 EDGE CASE 1
 History kosong
 ====================== */
-// console.log(
-// 	rewardStation({
-// 		name: 'Budi',
-// 		history: [],
-// 	})
-// );
+console.log(
+	rewardStation({
+		name: 'Budi',
+		history: [],
+	})
+);
 // 'Tidak ada transaksi'
 
 /* ======================
 EDGE CASE 2
 History bukan array
 ====================== */
-// console.log(
-// 	rewardStation({
-// 		name: 'Ani',
-// 		history: 'Soda',
-// 	})
-// );
+console.log(
+	rewardStation({
+		name: 'Ani',
+		history: 'Soda',
+	})
+);
 // 'History tidak valid'
 
 /* ======================
 EDGE CASE 3
 Dependency gagal
 ====================== */
-// console.log(
-// 	rewardStation({
-// 		name: 'Dewi',
-// 		history: ['Coffee', 'Coffee'],
-// 	})
-// );
+console.log(
+	rewardStation({
+		name: 'Dewi',
+		history: ['Coffee', 'Coffee'],
+	})
+);
 /*
 {
   name: 'Dewi',
@@ -156,12 +191,12 @@ Dependency gagal
 EDGE CASE 4
 Point hangus
 ====================== */
-// console.log(
-// 	rewardStation({
-// 		name: 'Tono',
-// 		history: ['Snack', 'Snack', 'Snack'],
-// 	})
-// );
+console.log(
+	rewardStation({
+		name: 'Tono',
+		history: ['Snack', 'Snack', 'Snack'],
+	})
+);
 /*
 {
   name: 'Tono',
