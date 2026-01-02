@@ -38,6 +38,14 @@ Hitung total point
 ====================== */
 function calculatePoint(history) {
 	// write your code here
+	let result1 = 0;
+	for (let q = 0; q < history.length; q++) {
+		const item = history[q];
+		// console.log(item);
+		// console.log(ITEM_POINT[item]);
+		result1 += ITEM_POINT[item];
+	}
+	return result1;
 }
 
 /* ======================
@@ -52,6 +60,20 @@ function collectPrizes(totalPoint) {
   }
   */
 	// write your code here
+	let result2 = {
+		prizes: [],
+		remainingPoint: 0,
+	};
+	console.log(totalPoint);
+
+	for (let z = 0; z < PRIZE_LIST.length; z++) {
+		const list = PRIZE_LIST[z];
+		// console.log(list);
+        
+	}
+
+	console.log(result2);
+	return;
 }
 
 /* ======================
@@ -60,6 +82,13 @@ Main handler
 ====================== */
 function rewardStation(customer) {
 	// write your code here
+	let name = customer.name;
+	let bill = customer.history;
+
+	let calculate = calculatePoint(bill);
+	let reward = collectPrizes(calculate);
+
+	return;
 }
 
 /* ======================
@@ -84,36 +113,36 @@ console.log(
 EDGE CASE 1
 History kosong
 ====================== */
-console.log(
-	rewardStation({
-		name: 'Budi',
-		history: [],
-	})
-);
+// console.log(
+// 	rewardStation({
+// 		name: 'Budi',
+// 		history: [],
+// 	})
+// );
 // 'Tidak ada transaksi'
 
 /* ======================
 EDGE CASE 2
 History bukan array
 ====================== */
-console.log(
-	rewardStation({
-		name: 'Ani',
-		history: 'Soda',
-	})
-);
+// console.log(
+// 	rewardStation({
+// 		name: 'Ani',
+// 		history: 'Soda',
+// 	})
+// );
 // 'History tidak valid'
 
 /* ======================
 EDGE CASE 3
 Dependency gagal
 ====================== */
-console.log(
-	rewardStation({
-		name: 'Dewi',
-		history: ['Coffee', 'Coffee'],
-	})
-);
+// console.log(
+// 	rewardStation({
+// 		name: 'Dewi',
+// 		history: ['Coffee', 'Coffee'],
+// 	})
+// );
 /*
 {
   name: 'Dewi',
@@ -127,12 +156,12 @@ console.log(
 EDGE CASE 4
 Point hangus
 ====================== */
-console.log(
-	rewardStation({
-		name: 'Tono',
-		history: ['Snack', 'Snack', 'Snack'],
-	})
-);
+// console.log(
+// 	rewardStation({
+// 		name: 'Tono',
+// 		history: ['Snack', 'Snack', 'Snack'],
+// 	})
+// );
 /*
 {
   name: 'Tono',
