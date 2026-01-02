@@ -1111,24 +1111,24 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
 
 // 	for (let w = 0; w < result.length; w++) {
 // 		const outer = result[w];
-		// console.log(outer[1]);
-		// let event = outer[1];
-		// console.log(event);
+// console.log(outer[1]);
+// let event = outer[1];
+// console.log(event);
 
-		// for (let e = 0; e <= outer[1].length; e++) {
-		// 	const char1 = outer[1][e];
-		// 	if (char1 === ',') {
-		// 		tempEvent.push(word);
-		// 		word = '';
-		// 	} else if (char1 === undefined) {
-		// 		tempEvent.push(word);
-		// 		outer[1] = tempEvent;
-		// 		word = '';
-		// 		tempEvent = [];
-		// 	} else {
-		// 		word += char1;
-		// 	}
-		// }
+// for (let e = 0; e <= outer[1].length; e++) {
+// 	const char1 = outer[1][e];
+// 	if (char1 === ',') {
+// 		tempEvent.push(word);
+// 		word = '';
+// 	} else if (char1 === undefined) {
+// 		tempEvent.push(word);
+// 		outer[1] = tempEvent;
+// 		word = '';
+// 		tempEvent = [];
+// 	} else {
+// 		word += char1;
+// 	}
+// }
 // 	}
 
 // 	return result
@@ -1189,57 +1189,135 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
 // ========================================
 
 // function getPoints(history) {
-//     let itemPoint = {
-//         'Moonlight': 120,
-//         'Goldqueen': 550,
-//         'Beras Parist': 1200,
-//         'Minyak Fatma': 2500
-//     }
-//     // write your code here
+// 	let itemPoint = {
+// 		Moonlight: 120,
+// 		Goldqueen: 550,
+// 		'Beras Parist': 1200,
+// 		'Minyak Fatma': 2500,
+// 	};
+// 	// write your code here
+// 	let result1 = {
+// 		totalPoint: 0,
+// 		belanjaanReport: {
+// 			Moonlight: 0,
+// 			Goldqueen: 0,
+// 			'Beras Parist': 0,
+// 			'Minyak Fatma': 0,
+// 		},
+// 	};
+// 	for (let q = 0; q < history.length; q++) {
+// 		const scan = history[q];
+// 		for (let item in itemPoint) {
+// 			if (scan === item) {
+// 				if (item === 'Moonlight') {
+// 					result1.totalPoint += itemPoint['Moonlight'];
+// 					result1.belanjaanReport.Moonlight++;
+// 				} else if (item === 'Goldqueen') {
+// 					result1.totalPoint += itemPoint['Goldqueen'];
+// 					result1.belanjaanReport.Goldqueen++;
+// 				} else if (item === 'Beras Parist') {
+// 					result1.totalPoint += itemPoint['Beras Parist'];
+// 					result1.belanjaanReport['Beras Parist']++;
+// 				} else if (item === 'Minyak Fatma') {
+// 					result1.totalPoint += itemPoint['Minyak Fatma'];
+// 					result1.belanjaanReport['Minyak Fatma']++;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	return result1;
 // }
-
+// /*
+// {
+// 	totalPoint: 20220,
+// 	belanjaanReport: { Moonlight: 6, Goldqueen: 4, 'Beras Parist': 4, 'Minyak Fatma': 5 }
+// }
+// */
 // function getPrizes(point) {
-//     // write your code here
+// 	let listPrize = [
+// 		[2000, 'Voucher 10k', 'Sticker', 'Penggaris'],
+// 		[5000, 'Voucher 25k', 'Kinderboy', 'Tissue', 'Piring'],
+// 		[10000, 'Payung', 'Panci'],
+// 	];
+// 	// write your code here
+// 	let result2 = [];
+// 	for (let z = 0; z < listPrize.length; z++) {
+// 		const reward = listPrize[z];
+// 		// console.log(reward);
+
+// 		for (let x = 1; x < reward.length; x++) {
+// 			const prize = reward[x];
+// 			// console.log(prize);
+
+// 			if (point > reward[0]) {
+// 				point -= reward[0];
+// 				result2.push(prize);
+// 			}
+// 		}
+// 	}
+
+// 	// console.log(point);
+// 	// console.log(result2);
+// 	return result2;
 // }
+// // [ 'Voucher 10k', 'Sticker', 'Penggaris', 'Voucher 25k', 'Kinderboy' ]
 
 // function betamart(pembeli) {
-//     // write your code here
+// 	// write your code here
+// 	if (!pembeli) {
+// 		return 'Tidak ada pembeli yang belanja';
+// 	}
+
+// 	let customer = pembeli.name;
+// 	let bill = pembeli.histories;
+
+// 	let resultGetPoints = getPoints(bill);
+// 	// console.log(resultGetPoints.totalPoint);
+// 	let resultgetPrizes = getPrizes(resultGetPoints.totalPoint);
+// 	// console.log(resultgetPrizes);
+
+// 	let result = {
+// 		name: customer,
+// 		belanjaanReport: resultGetPoints.belanjaanReport,
+// 		prizes: resultgetPrizes,
+// 	};
+// 	return result;
 // }
 
 // console.log(
-//     betamart({
-//         name: 'Ilham',
-//         histories: [
-//             'Moonlight',
-//             'Goldqueen',
-//             'Beras Parist',
-//             'Moonlight',
-//             'Goldqueen',
-//             'Beras Parist',
-//             'Minyak Fatma',
-//             'Minyak Fatma',
-//             'Minyak Fatma',
-//             'Moonlight',
-//             'Goldqueen',
-//             'Goldqueen',
-//             'Moonlight',
-//             'Beras Parist',
-//             'Beras Parist',
-//             'Minyak Fatma',
-//             'Minyak Fatma',
-//             'Moonlight',
-//             'Moonlight'
-//         ]
-//     })
-// )
+// 	betamart({
+// 		name: 'Ilham',
+// 		histories: [
+// 			'Moonlight',
+// 			'Goldqueen',
+// 			'Beras Parist',
+// 			'Moonlight',
+// 			'Goldqueen',
+// 			'Beras Parist',
+// 			'Minyak Fatma',
+// 			'Minyak Fatma',
+// 			'Minyak Fatma',
+// 			'Moonlight',
+// 			'Goldqueen',
+// 			'Goldqueen',
+// 			'Moonlight',
+// 			'Beras Parist',
+// 			'Beras Parist',
+// 			'Minyak Fatma',
+// 			'Minyak Fatma',
+// 			'Moonlight',
+// 			'Moonlight',
+// 		],
+// 	})
+// );
 
-// /*
-// {
-//   name: 'Ilham',
-//   belanjaanReport: { Moonlight: 6, Goldqueen: 4, 'Beras Parist': 4, 'Minyak Fatma': 5 },
-//   prizes: [ 'Voucher 10k', 'Sticker', 'Penggaris', 'Voucher 25k', 'Kinderboy' ]
-// }
-// */
+/*
+{
+  name: 'Ilham',
+  belanjaanReport: { Moonlight: 6, Goldqueen: 4, 'Beras Parist': 4, 'Minyak Fatma': 5 },
+  prizes: [ 'Voucher 10k', 'Sticker', 'Penggaris', 'Voucher 25k', 'Kinderboy' ]
+}
+*/
 
 // console.log(
 //     betamart({
