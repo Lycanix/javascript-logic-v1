@@ -1088,46 +1088,77 @@ Buatlah sebuah function deepSum yang menerima 1 parameter arr (array multidimens
 // ============================
 // FUNCTION DI SINI
 // ============================
-// 'Andi|Seminar,Workshop|active#Budi|Meetup|inactive#Caca|Conference|active';
-// [
-//   ['Andi', ['Seminar', 'Workshop'], 'active'],
-//   ['Caca', ['Conference'], 'active']
-// ]
-function parseAttendance(rawData) {
-	let result = [];
-	let temp = [];
-	let word = '';
-	for (let q = 0; q < rawData.length; q++) {
-		const char = rawData[q];
-		if (char === '|') {
-			temp.push(word);
-		} else {
-			word += char;
-		}
-	}
 
-	console.log(result);
-	console.log(temp);
-	console.log(word);
+// function parseAttendance(rawData) {
+// 	let result = [];
+// 	let temp = [];
+// 	let tempEvent = [];
+// 	let word = '';
+// 	for (let q = 0; q <= rawData.length; q++) {
+// 		const char = rawData[q];
+// 		if (char === '|') {
+// 			temp.push(word);
+// 			word = '';
+// 		} else if (char === '#' || char === undefined) {
+// 			temp.push(word);
+// 			result.push(temp);
+// 			word = '';
+// 			temp = [];
+// 		} else {
+// 			word += char;
+// 		}
+// 	}
 
-	return;
-}
+// 	for (let w = 0; w < result.length; w++) {
+// 		const outer = result[w];
+		// console.log(outer[1]);
+		// let event = outer[1];
+		// console.log(event);
 
-function filterActiveUsers(users) {
-	// kerjakan di sini
-	return;
-}
+		// for (let e = 0; e <= outer[1].length; e++) {
+		// 	const char1 = outer[1][e];
+		// 	if (char1 === ',') {
+		// 		tempEvent.push(word);
+		// 		word = '';
+		// 	} else if (char1 === undefined) {
+		// 		tempEvent.push(word);
+		// 		outer[1] = tempEvent;
+		// 		word = '';
+		// 		tempEvent = [];
+		// 	} else {
+		// 		word += char1;
+		// 	}
+		// }
+// 	}
 
-function analyzeAttendance(data) {
-	// kerjakan di sini
-	if (!data) {
-		return 'Invalid Data!';
-	}
+// 	return result
+// }
 
-	let parsing = parseAttendance(data);
-	let result = filterActiveUsers(parsing);
-	return result;
-}
+// function filterActiveUsers(users) {
+// 	let result = [];
+// 	for (let r = 0; r < users.length; r++) {
+// 		const scan = users[r];
+// 		if (scan[2] === 'active') {
+// 			result.push(scan);
+// 		}
+// 	}
+// 	if (result.length === 0) {
+// 		return 'No active user';
+// 	} else {
+// 		return result;
+// 	}
+// }
+
+// function analyzeAttendance(data) {
+// 	if (!data) {
+// 		return 'Invalid Data!';
+// 	}
+
+// 	let parsing = parseAttendance(data);
+// 	// console.log(parsing);
+// 	let result = filterActiveUsers(parsing);
+// 	return result;
+// }
 
 // ============================
 // TEST CASE
@@ -1136,10 +1167,10 @@ function analyzeAttendance(data) {
 // console.log(analyzeAttendance());
 // "Invalid Data!"
 
-const data1 =
-	'Andi|Seminar,Workshop|active#Budi|Meetup|inactive#Caca|Conference|active';
+// const data1 =
+// 	'Andi|Seminar,Workshop|active#Budi|Meetup|inactive#Caca|Conference|active';
 
-console.log(analyzeAttendance(data1));
+// console.log(analyzeAttendance(data1));
 // [
 //   ['Andi', ['Seminar', 'Workshop'], 'active'],
 //   ['Caca', ['Conference'], 'active']
