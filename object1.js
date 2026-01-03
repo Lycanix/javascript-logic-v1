@@ -1,3 +1,8 @@
+// ==============================================
+// --------------- L I N E 0 -------------------
+// ==============================================
+
+/*
 // /*
 // ====================================
 // REWARD STATION X
@@ -420,26 +425,402 @@
 // }
 // */
 
+/*
 // ==============================================
 // --------------- L I N E 2 -------------------
 // ==============================================
+
+// function targetTerdekat(arr) {
+
+// 	return
+// }
+
+// console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3
+// console.log(targetTerdekat(['o', ' ', ' ', ' ', 'x', 'x', 'x'])); // 4
+// console.log(targetTerdekat(['x', ' ', ' ', ' ', 'x', 'x', 'o', ' '])); // 1
+// console.log(targetTerdekat([' ', ' ', 'o', ' '])); // 0
+// console.log(targetTerdekat([' ', 'o', ' ', 'x', 'x', ' ', ' ', 'x'])); // 2
+*/
 
 // ==============================================
 // --------------- L I N E 3 -------------------
 // ==============================================
 
+// function startUpCompetition(startUpList) {
+// 	return;
+// }
+
+// console.log(startUpCompetition());
+// // 'Invalid Data'
+
+// console.log(startUpCompetition([]));
+// // Invalid Data
+
+// let indonesia = [
+// 	'Tikipidia-17-E',
+// 	'Bikilipik-08-E',
+// 	'Bhinniki-07-E',
+// 	'BleBle.cim-15-E',
+// 	'Triviliki-16-T',
+// 	'Tikit.cim-12-T',
+// 	'Hilidic-15-H',
+// 	'Siyirbix-17-A',
+// 	'TikingSiyir.ci-16-A',
+// ];
+
+// console.log(startUpCompetition(indonesia));
+// // [
+// //   [ 'Tikipidia', 17, 'Ecommerce' ],
+// //   [ 'BleBle.cim', 15, 'Ecommerce' ],
+// //   [ 'Triviliki', 16, 'Technology' ],
+// //   [ 'Hilidic', 15, 'Healthcare' ],
+// //   [ 'Siyirbix', 17, 'Agrotech' ],
+// //   [ 'TikingSiyir.ci', 16, 'Agrotech' ]
+// // ]
+
+// let singapore = [
+// 	'Shipee-18-E',
+// 	'Lizidi-19-E',
+// 	'HalalTrip-07-T',
+// 	'verylocaltrip.com-12-T',
+// 	'Doctor Anywhere-14-H',
+// 	'Healint-13-H',
+// 	'SINGROW-19-A',
+// 	'Simplyfresh-09-A',
+// 	'eFeedLink-18-A',
+// ];
+// console.log(startUpCompetition(singapore));
+// // [
+// //   [ 'Shipee', 18, 'Ecommerce' ],
+// //   [ 'Lizidi', 19, 'Ecommerce' ],
+// //   [ 'Doctor Anywhere', 14, 'Healthcare' ],
+// //   [ 'SINGROW', 19, 'Agrotech' ],
+// //   [ 'eFeedLink', 18, 'Agrotech' ],
+// // ]
+
+// let malaysia = ['Dropee-17-E', 'BookDoc-18-H', 'dahmakan-19-A'];
+// console.log(startUpCompetition(malaysia));
+// // [
+// //   [ 'Dropee', 17, 'Ecommerce' ],
+// //   [ 'BookDoc', 18, 'Healthcare' ],
+// //   [ 'dahmakan', 19, 'Agrotech' ],
+// // ]
+
 // ==============================================
 // --------------- L I N E 4 -------------------
 // ==============================================
+
+// function splitting(str) {
+//   return
+// }
+
+// function meleeRangedGrouping(str) {
+//     return
+// }
+
+// TEST CASE
+// let input1 = 'Razor-Ranged,Invoker-Ranged,Meepo-Melee,Axe-Melee,Sniper-Ranged'
+// let input2 = 'Drow Ranger-Ranged,Chen-Ranged,Dazzle-Ranged,Io-Ranged'
+// console.log(meleeRangedGrouping(input1)); // [ ['Razor', 'Invoker', 'Sniper'], ['Meepo', 'Axe'] ]
+// console.log(meleeRangedGrouping(input2)); // [ ['Drow Ranger', 'Chen', 'Dazzle', 'Io'], [] ]
+// console.log(meleeRangedGrouping('')); // []
 
 // ==============================================
 // --------------- L I N E 5 -------------------
 // ==============================================
 
+// function tukarBesarKecil(kalimat) {
+
+//   return
+// }
+
+// // TEST CASES
+// console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
+// console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
+// console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
+// console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
+// console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
+
 // ==============================================
 // --------------- L I N E 6 -------------------
 // ==============================================
 
+// function urutkanAbjad(str) {
+
+//   return
+// }
+
+// // TEST CASES
+// console.log(urutkanAbjad('hello')); // 'ehllo'
+// console.log(urutkanAbjad('truncate')); // 'acenrttu'
+// console.log(urutkanAbjad('developer')); // 'deeeloprv'
+// console.log(urutkanAbjad('software')); // 'aeforstw'
+// console.log(urutkanAbjad('aegis')); // 'aegis'
+
 // ==============================================
 // --------------- L I N E 7 -------------------
+// ==============================================
+
+// function sorting(array) {
+
+//   return
+// }
+
+// function sortingByType(array) {
+
+//   return
+// }
+
+// function sortAllClean(array) {
+
+//   return
+// }
+
+// //do not change the code below
+// let inputArrSorting = [2, 4, 6, 8, 2, 3];
+// let inputArrSortingType = [1, 3, "array", -45, true, false, "big"];
+// let inputArrSortingClean = [undefined, null, 456, "def", NaN, [], true, 123, "bcd", false];
+// console.log(sorting(inputArrSorting)); //[ 2, 2, 3, 4, 6, 8 ]
+// console.log(sortingByType(inputArrSortingType)); // [ [ -45, 1, 3 ], [ 'array', 'big' ], [ false, true ] ]
+// console.log(sortAllClean(inputArrSortingClean)); //[ [ 123, 456 ], [ 'bcd', 'def' ], [ false, true ] ]
+// console.log(sortAllClean([NaN, undefined])); // []
+
+// ==============================================
+// --------------- L I N E 8 -------------------
+// ==============================================
+
+// function changeMe(arr) {
+
+// }
+// // ==========================================
+// changeMe([
+//   ["Christ", "Evans", "Male", 1982],
+//   ["Robert", "Downey", "Male"],
+// ]);
+// // 1. Christ Evans:
+// // { firstName: 'Christ',
+// //   lastName: 'Evans',
+// //   gender: 'Male',
+// //   age: 37 }
+// // 2. Robert Downey:
+// // { firstName: 'Robert',
+// //   lastName: 'Downey',
+// //   gender: 'Male',
+// //   age: 'Invalid Birth Year' }
+// // ==========================================
+// changeMe([]); // ""
+
+// ==============================================
+// --------------- L I N E 9 -------------------
+// ==============================================
+
+// function countMe(arr) {
+
+// 	return
+// }
+
+// console.log(countMe(['Sofyan', 'Ricky', 'Sofyan', 'Semmi', 'Semmi', 'Wika']));
+// // { Sofyan: 2, Ricky: 1, Semmi: 2, Wika: 1 }
+
+// console.log(countMe([1, 15, 9, 10, 8, 1, 12, 15, 10, 3]));
+// // { '1': 2, '3': 1, '8': 1, '9': 1, '10': 2, '12': 1, '15': 2 }
+
+// ==============================================
+// --------------- L I N E 10 -------------------
+// ==============================================
+
+// function getAnimals(arr) {
+//   // Write your code here
+// }
+
+// //Test Case
+
+// console.log(getAnimals(['Singa:K','Kuda:H','Monyet:O']))
+// // [ 'Singa','Kuda','Monyet' ]
+
+// console.log(getAnimals(['Macan:K', 'Ayam:O', 'Gajah:H', 'Monyet:O', 'Kerbau:H', 'Musang:O', 'Burung:H', 'Hiu:K']))
+// // [ 'Macan', 'Kerbau', 'Monyet' ]
+
+// console.log(getAnimals(['Tikus:O', 'Merpati:H', 'Beruang:O', 'Elang:K', 'Perkutut:H', 'Harimau:K']))
+// // [ 'Harimau', 'Perkutut', 'Beruang' ]
+
+// ==============================================
+// --------------- L I N E 11 -------------------
+// ==============================================
+
+// let arrayMulti = [
+//     ["apuse", "Papua"],
+//     ["Anging Mamiri", "Sulawesi Selatan"],
+//     ["Ampar-Ampar Pisang", "Kalimantan Selatan"],
+//     ["Bungong Jeumpa", "Nanggroe Aceh Darussalam"],
+//     ["Manuk Dadali", "Jawa Barat"]
+// ]
+
+// // merubah array multidimensi menjadi array of objek
+// function changeData(data) {
+
+//     return
+// }
+
+// console.log(changeData(arrayMulti));
+
+/*
+[
+    {
+        lagu: "apuse",
+        daerah: "Papua"
+    },
+    {
+        lagu: "Anging Mamiri", 
+        daerah: "Sulawesi Selatan"
+    },
+    {
+        lagu: "Ampar-Ampar Pisang",
+        daerah: "Kalimantan Selatan"
+    },
+    {
+        lagu: "Bungong Jeumpa",
+        daerah: "Nanggroe Aceh Darussalam"
+    },
+    {
+        lagu: "Manuk Dadali",
+        daerah: "Jawa Barat" 
+    }
+]
+*/
+
+// ==============================================
+// --------------- L I N E 12 -------------------
+// ==============================================
+
+// let arrOfObj = [
+// 	{ name: 'Andika', score: [85, 90, 67, 75], class: 'A' },
+// 	{ name: 'Budika', score: [77, 80, 95, 100], class: 'B' },
+// 	{ name: 'Cendikia', score: [60, 90, 85, 89], class: 'B' },
+// 	{ name: 'Dodika', score: [88, 79, 83, 95], class: 'A' },
+// 	{ name: 'Endika', score: [85, 92, 65, 70], class: 'C' },
+// ];
+
+// function grouppingClass(data) {
+// 	return;
+// }
+
+// console.log(grouppingClass(arrOfObj));
+
+/*
+  {
+    A: {
+      list: [ 'Andika', 'Dodika' ]
+    },
+    B: {
+      list: [ 'Budika', 'Cendikia' ]
+    },
+    C: {
+      list: [ 'Endika' ]
+    }
+  }
+*/
+
+// ==============================================
+// --------------- L I N E 13 -------------------
+// ==============================================
+// function getMinMax(data) {
+
+
+//     return
+// }
+// let arrOfObj = [
+//     {
+//         name: "andi",
+//         score: 70
+//     },
+//     {
+//         name: "Budi",
+//         score: 85
+//     },
+//     {
+//         name: "Candi",
+//         score: 60
+//     },
+//     {
+//         name: "Dandi",
+//         score: 65
+//     },
+//     {
+//         name: "Endra",
+//         score: 99
+//     },
+//     {
+//         name: "Fina",
+//         score: 95
+//     }
+// ]
+// console.log(getMinMax(arrOfObj));
+
+/*
+    [
+        { name: 'Candi', score: 60 },  // min
+        { name: 'Endra', score: 99 }  // max
+    ]
+*/
+// ==============================================
+// --------------- L I N E 14 -------------------
+// ==============================================
+
+
+// ==============================================
+// --------------- L I N E 15 -------------------
+// ==============================================
+
+
+// ==============================================
+// --------------- L I N E 16 -------------------
+// ==============================================
+
+
+
+// ==============================================
+// --------------- L I N E 17 -------------------
+// ==============================================
+
+
+
+// ==============================================
+// --------------- L I N E 18 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 19 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 21 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 22 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 23 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 24 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 25 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 26 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 27 -------------------
+// ==============================================
+
+// ==============================================
+// --------------- L I N E 28 -------------------
 // ==============================================
