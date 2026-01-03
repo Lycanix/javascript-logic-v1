@@ -32,9 +32,29 @@
 
 // function vocalSeeker(board) {
 // 	let HurufVokal = [`a`, `A`, `i`, `I`, `u`, `U`, `e`, `E`, `o`, `O`];
-// 	// console.log(board); // [ [ '*', '*', '*', 10 ] ]
+// 	let count = 0;
+// 	let kumpulanVokal = '';
 
-// 	return
+// 	for (let i = 0; i < board.length; i++) {
+// 		for (let j = 0; j < board[i].length; j++) {
+// 			let current = board[i][j];
+
+// 			// pastikan bertipe string dan panjang 1 (hindari angka & simbol lain)
+// 			if (typeof current === 'string' && current.length === 1) {
+// 				for (let k = 0; k < HurufVokal.length; k++) {
+// 					if (current === HurufVokal[k]) {
+// 						count++;
+// 						kumpulanVokal += current;
+// 						break; // hentikan pengecekan vokal
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	return (
+// 		'vokal ditemukan ' + count + ' dan kumpulan vokal adalah ' + kumpulanVokal
+// 	);
 // }
 
 // //DRIVER CODE
@@ -52,15 +72,51 @@
 // ==============================
 
 // function sittingArrangement(person, column) {
+// 	if (!person || !column) {
+// 		return 'Invalid number';
+// 	}
 
-// 	return
+// 	let result = [];
+// 	let line = [];
+// 	let extra = 'Kursi Kosong';
+// 	// let col = Math.ceil(person.length / column);
+
+// 	for (let z = 0; z <= person.length; z++) {
+// 		const list = person[z];
+// 		if (list === undefined) {
+// 			for (let x = line.length; x <= column; x++) {
+// 				if (line.length === column) {
+// 					result.push(line);
+// 					line = [];
+// 				} else if (line.length > 0) {
+// 					line.push(extra);
+// 				}
+// 			}
+// 		} else {
+// 			line.push(list);
+// 			if (line.length === column) {
+// 				result.push(line);
+// 				line = [];
+// 			}
+// 		}
+// 	}
+
+// 	// console.log(result);
+// 	// console.log(line);
+// 	return result;
 // }
 
 // //DRIVER CODE
 
-// console.log(sittingArrangement(['A', 'B', 'C'], 0)); //Invalid number
-// console.log(sittingArrangement(['Juli', 'Nisa', 'Desi', 'Ulfa', 'Puji'], 2)); //[ [ 'Juli', 'Nisa' ], [ 'Desi', 'Ulfa' ], [ 'Puji', 'Kursi Kosong' ] ]
-// console.log(sittingArrangement(['Yosia', 'Asrawi', 'Andru'], 3)); //[ [ 'Yosia', 'Asrawi', 'Andru' ] ]
+// console.log(sittingArrangement(['A', 'B', 'C'], 0));
+// //Invalid number
+
+// console.log(sittingArrangement(['Juli', 'Nisa', 'Desi', 'Ulfa', 'Puji'], 2));
+// //[ [ 'Juli', 'Nisa' ], [ 'Desi', 'Ulfa' ], [ 'Puji', 'Kursi Kosong' ] ]
+
+// console.log(sittingArrangement(['Yosia', 'Asrawi', 'Andru'], 3));
+// //[ [ 'Yosia', 'Asrawi', 'Andru' ] ]
+
 // console.log(
 // 	sittingArrangement(['Lukman', 'Adam', 'Dimas', 'Hansin', 'Orion'], 4)
 // );
