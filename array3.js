@@ -1,20 +1,30 @@
 // function ladder(word) {
+// 	let result = [];
+// 	for (let z = word.length; z > 0; z--) {
+// 		let temp = [];
+// 		for (let x = 0; x < z; x++) {
+// 			const char = word[x];
+// 			temp.push(char);
+// 		}
+// 		result.push(temp);
+// 	}
 
+// 	// console.log(result);
 // 	return result;
 // }
 
 // // DRIVER CODE
 // console.log(ladder('hacktiv8'));
-// // [
-// //   [ 'h', 'a', 'c', 'k', 't', 'i', 'v', '8' ],
-// //   [ 'h', 'a', 'c', 'k', 't', 'i', 'v' ],
-// //   [ 'h', 'a', 'c', 'k', 't', 'i' ],
-// //   [ 'h', 'a', 'c', 'k', 't' ],
-// //   [ 'h', 'a', 'c', 'k' ],
-// //   [ 'h', 'a', 'c' ],
-// //   [ 'h', 'a' ],
-// //   [ 'h' ]
-// // ]
+// [
+//   [ 'h', 'a', 'c', 'k', 't', 'i', 'v', '8' ],
+//   [ 'h', 'a', 'c', 'k', 't', 'i', 'v' ],
+//   [ 'h', 'a', 'c', 'k', 't', 'i' ],
+//   [ 'h', 'a', 'c', 'k', 't' ],
+//   [ 'h', 'a', 'c', 'k' ],
+//   [ 'h', 'a', 'c' ],
+//   [ 'h', 'a' ],
+//   [ 'h' ]
+// ]
 
 // ==============================
 //      1
