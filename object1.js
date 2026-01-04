@@ -425,14 +425,43 @@
 // }
 // */
 
-/*
 // ==============================================
 // --------------- L I N E 2 -------------------
 // ==============================================
 
 // function targetTerdekat(arr) {
+// 	let result = 0;
+// 	let countStart = 0;
+// 	let countFinish = 0;
 
-// 	return
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const scanO = arr[z];
+// 		if (scanO === 'o') {
+// 			countStart = z;
+// 			countFinish = z;
+// 		}
+// 	}
+
+// 	for (let x = countStart; x < arr.length; x++) {
+// 		const scanX = arr[x];
+
+// 		if (scanX !== 'x' && x + 1 === arr.length) {
+// 			for (let c = countStart; c >= 0; c--) {
+// 				const reverse = arr[c];
+// 				if (reverse === 'x') {
+// 					countFinish = x;
+// 					break;
+// 				}
+// 			}
+// 		} else if (scanX === 'x') {
+// 			countFinish = x;
+// 			break;
+// 		}
+// 	}
+
+// 	result = countFinish - countStart;
+  
+// 	return result;
 // }
 
 // console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3
@@ -440,43 +469,43 @@
 // console.log(targetTerdekat(['x', ' ', ' ', ' ', 'x', 'x', 'o', ' '])); // 1
 // console.log(targetTerdekat([' ', ' ', 'o', ' '])); // 0
 // console.log(targetTerdekat([' ', 'o', ' ', 'x', 'x', ' ', ' ', 'x'])); // 2
-*/
 
 // ==============================================
 // --------------- L I N E 3 -------------------
 // ==============================================
 
-// function startUpCompetition(startUpList) {
-// 	return;
-// }
+function startUpCompetition(startUpList) {
+  
+	return;
+}
 
-// console.log(startUpCompetition());
-// // 'Invalid Data'
+console.log(startUpCompetition());
+// 'Invalid Data'
 
-// console.log(startUpCompetition([]));
-// // Invalid Data
+console.log(startUpCompetition([]));
+// Invalid Data
 
-// let indonesia = [
-// 	'Tikipidia-17-E',
-// 	'Bikilipik-08-E',
-// 	'Bhinniki-07-E',
-// 	'BleBle.cim-15-E',
-// 	'Triviliki-16-T',
-// 	'Tikit.cim-12-T',
-// 	'Hilidic-15-H',
-// 	'Siyirbix-17-A',
-// 	'TikingSiyir.ci-16-A',
-// ];
+let indonesia = [
+	'Tikipidia-17-E',
+	'Bikilipik-08-E',
+	'Bhinniki-07-E',
+	'BleBle.cim-15-E',
+	'Triviliki-16-T',
+	'Tikit.cim-12-T',
+	'Hilidic-15-H',
+	'Siyirbix-17-A',
+	'TikingSiyir.ci-16-A',
+];
 
-// console.log(startUpCompetition(indonesia));
-// // [
-// //   [ 'Tikipidia', 17, 'Ecommerce' ],
-// //   [ 'BleBle.cim', 15, 'Ecommerce' ],
-// //   [ 'Triviliki', 16, 'Technology' ],
-// //   [ 'Hilidic', 15, 'Healthcare' ],
-// //   [ 'Siyirbix', 17, 'Agrotech' ],
-// //   [ 'TikingSiyir.ci', 16, 'Agrotech' ]
-// // ]
+console.log(startUpCompetition(indonesia));
+// [
+//   [ 'Tikipidia', 17, 'Ecommerce' ],
+//   [ 'BleBle.cim', 15, 'Ecommerce' ],
+//   [ 'Triviliki', 16, 'Technology' ],
+//   [ 'Hilidic', 15, 'Healthcare' ],
+//   [ 'Siyirbix', 17, 'Agrotech' ],
+//   [ 'TikingSiyir.ci', 16, 'Agrotech' ]
+// ]
 
 // let singapore = [
 // 	'Shipee-18-E',
@@ -490,21 +519,21 @@
 // 	'eFeedLink-18-A',
 // ];
 // console.log(startUpCompetition(singapore));
-// // [
-// //   [ 'Shipee', 18, 'Ecommerce' ],
-// //   [ 'Lizidi', 19, 'Ecommerce' ],
-// //   [ 'Doctor Anywhere', 14, 'Healthcare' ],
-// //   [ 'SINGROW', 19, 'Agrotech' ],
-// //   [ 'eFeedLink', 18, 'Agrotech' ],
-// // ]
+// [
+//   [ 'Shipee', 18, 'Ecommerce' ],
+//   [ 'Lizidi', 19, 'Ecommerce' ],
+//   [ 'Doctor Anywhere', 14, 'Healthcare' ],
+//   [ 'SINGROW', 19, 'Agrotech' ],
+//   [ 'eFeedLink', 18, 'Agrotech' ],
+// ]
 
 // let malaysia = ['Dropee-17-E', 'BookDoc-18-H', 'dahmakan-19-A'];
 // console.log(startUpCompetition(malaysia));
-// // [
-// //   [ 'Dropee', 17, 'Ecommerce' ],
-// //   [ 'BookDoc', 18, 'Healthcare' ],
-// //   [ 'dahmakan', 19, 'Agrotech' ],
-// // ]
+// [
+//   [ 'Dropee', 17, 'Ecommerce' ],
+//   [ 'BookDoc', 18, 'Healthcare' ],
+//   [ 'dahmakan', 19, 'Agrotech' ],
+// ]
 
 // ==============================================
 // --------------- L I N E 4 -------------------
@@ -726,7 +755,6 @@
 // ==============================================
 // function getMinMax(data) {
 
-
 //     return
 // }
 // let arrOfObj = [
@@ -767,23 +795,17 @@
 // --------------- L I N E 14 -------------------
 // ==============================================
 
-
 // ==============================================
 // --------------- L I N E 15 -------------------
 // ==============================================
-
 
 // ==============================================
 // --------------- L I N E 16 -------------------
 // ==============================================
 
-
-
 // ==============================================
 // --------------- L I N E 17 -------------------
 // ==============================================
-
-
 
 // ==============================================
 // --------------- L I N E 18 -------------------
