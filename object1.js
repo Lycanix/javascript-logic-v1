@@ -642,17 +642,25 @@
 // --------------- L I N E 5 -------------------
 // ==============================================
 
-function tukarBesarKecil(kalimat) {
+// function tukarBesarKecil(kalimat) {
+// 	let result = '';
+// 	for (let z = 0; z < kalimat.length; z++) {
+// 		const element = kalimat[z];
+// 		if (element === element.toUpperCase()) {
+// 			result += element.toLowerCase();
+// 		} else {
+// 			result += element.toUpperCase();
+// 		}
+// 	}
+// 	return result;
+// }
 
-  return
-}
-
-// TEST CASES
-console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
-console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
-console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
-console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
-console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
+// // TEST CASES
+// console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
+// console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
+// console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
+// console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
+// console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
 
 // ==============================================
 // --------------- L I N E 6 -------------------
