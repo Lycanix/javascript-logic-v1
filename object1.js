@@ -460,7 +460,7 @@
 // 	}
 
 // 	result = countFinish - countStart;
-  
+
 // 	return result;
 // }
 
@@ -474,38 +474,84 @@
 // --------------- L I N E 3 -------------------
 // ==============================================
 
-function startUpCompetition(startUpList) {
-  
-	return;
-}
+// function startUpCompetition(startUpList) {
+// 	if (!startUpList || startUpList.length === 0) {
+// 		return 'Invalid Data';
+// 	}
 
-console.log(startUpCompetition());
-// 'Invalid Data'
+// 	let result = [];
+// 	let temp = [];
+// 	let word = '';
+// 	for (let z = 0; z < startUpList.length; z++) {
+// 		const scan = startUpList[z];
+// 		for (let x = 0; x <= scan.length; x++) {
+// 			const char = scan[x];
+// 			if (char === '-') {
+// 				temp.push(word);
+// 				word = '';
+// 			} else if (char === undefined) {
+// 				temp.push(word);
+// 				word = '';
+// 				result.push(temp);
+// 				temp = [];
+// 				temp = [];
+// 			} else {
+// 				word += char;
+// 			}
+// 		}
+// 	}
 
-console.log(startUpCompetition([]));
-// Invalid Data
+// 	let final = [];
+// 	for (let c = 0; c < result.length; c++) {
+// 		const convert = result[c];
+// 		let age = convert[1];
+// 		let sorten = convert[2];
 
-let indonesia = [
-	'Tikipidia-17-E',
-	'Bikilipik-08-E',
-	'Bhinniki-07-E',
-	'BleBle.cim-15-E',
-	'Triviliki-16-T',
-	'Tikit.cim-12-T',
-	'Hilidic-15-H',
-	'Siyirbix-17-A',
-	'TikingSiyir.ci-16-A',
-];
+// 		if (sorten === 'E') {
+// 			convert[convert.length - 1] = 'Ecommerce';
+// 		} else if (sorten === 'T') {
+// 			convert[convert.length - 1] = 'Technology';
+// 		} else if (sorten === 'H') {
+// 			convert[convert.length - 1] = 'Healthcare';
+// 		} else if (sorten === 'A') {
+// 			convert[convert.length - 1] = 'Agrotech';
+// 		}
 
-console.log(startUpCompetition(indonesia));
-// [
-//   [ 'Tikipidia', 17, 'Ecommerce' ],
-//   [ 'BleBle.cim', 15, 'Ecommerce' ],
-//   [ 'Triviliki', 16, 'Technology' ],
-//   [ 'Hilidic', 15, 'Healthcare' ],
-//   [ 'Siyirbix', 17, 'Agrotech' ],
-//   [ 'TikingSiyir.ci', 16, 'Agrotech' ]
-// ]
+// 		if (age >= 14) {
+// 			final.push(convert);
+// 		}
+// 	}
+
+// 	return final;
+// }
+
+// console.log(startUpCompetition());
+// // 'Invalid Data'
+
+// console.log(startUpCompetition([]));
+// // Invalid Data
+
+// let indonesia = [
+// 	'Tikipidia-17-E',
+// 	'Bikilipik-08-E',
+// 	'Bhinniki-07-E',
+// 	'BleBle.cim-15-E',
+// 	'Triviliki-16-T',
+// 	'Tikit.cim-12-T',
+// 	'Hilidic-15-H',
+// 	'Siyirbix-17-A',
+// 	'TikingSiyir.ci-16-A',
+// ];
+
+// console.log(startUpCompetition(indonesia));
+// // [
+// //   [ 'Tikipidia', 17, 'Ecommerce' ],
+// //   [ 'BleBle.cim', 15, 'Ecommerce' ],
+// //   [ 'Triviliki', 16, 'Technology' ],
+// //   [ 'Hilidic', 15, 'Healthcare' ],
+// //   [ 'Siyirbix', 17, 'Agrotech' ],
+// //   [ 'TikingSiyir.ci', 16, 'Agrotech' ]
+// // ]
 
 // let singapore = [
 // 	'Shipee-18-E',
@@ -519,56 +565,94 @@ console.log(startUpCompetition(indonesia));
 // 	'eFeedLink-18-A',
 // ];
 // console.log(startUpCompetition(singapore));
-// [
-//   [ 'Shipee', 18, 'Ecommerce' ],
-//   [ 'Lizidi', 19, 'Ecommerce' ],
-//   [ 'Doctor Anywhere', 14, 'Healthcare' ],
-//   [ 'SINGROW', 19, 'Agrotech' ],
-//   [ 'eFeedLink', 18, 'Agrotech' ],
-// ]
+// // [
+// //   [ 'Shipee', 18, 'Ecommerce' ],
+// //   [ 'Lizidi', 19, 'Ecommerce' ],
+// //   [ 'Doctor Anywhere', 14, 'Healthcare' ],
+// //   [ 'SINGROW', 19, 'Agrotech' ],
+// //   [ 'eFeedLink', 18, 'Agrotech' ],
+// // ]
 
 // let malaysia = ['Dropee-17-E', 'BookDoc-18-H', 'dahmakan-19-A'];
 // console.log(startUpCompetition(malaysia));
-// [
-//   [ 'Dropee', 17, 'Ecommerce' ],
-//   [ 'BookDoc', 18, 'Healthcare' ],
-//   [ 'dahmakan', 19, 'Agrotech' ],
-// ]
+// // [
+// //   [ 'Dropee', 17, 'Ecommerce' ],
+// //   [ 'BookDoc', 18, 'Healthcare' ],
+// //   [ 'dahmakan', 19, 'Agrotech' ],
+// // ]
 
 // ==============================================
 // --------------- L I N E 4 -------------------
 // ==============================================
 
 // function splitting(str) {
-//   return
+// 	let result = [];
+// 	let group = [];
+// 	let word = '';
+
+// 	for (let i = 0; i <= str.length; i++) {
+// 		const char = str[i];
+// 		if (char === '-') {
+// 			group.push(word);
+// 			word = '';
+// 		} else if (char === ',' || char === undefined) {
+// 			group.push(word);
+// 			word = '';
+// 			result.push(group);
+// 			group = [];
+// 		} else {
+// 			word += char;
+// 		}
+// 	}
+
+// 	let finish = [];
+// 	let range = [];
+// 	let melee = [];
+// 	for (let x = 0; x < result.length; x++) {
+// 		const split = result[x];
+// 		if (split[1] === 'Ranged') {
+// 			range.push(split[0]);
+// 		} else if (split[1] === 'Melee') {
+// 			melee.push(split[0]);
+// 		}
+// 	}
+// 	finish.push(range, melee);
+
+// 	// console.log(finish);
+// 	return finish;
 // }
 
 // function meleeRangedGrouping(str) {
-//     return
+// 	if (!str) {
+// 		return 'Invalid data';
+// 	}
+
+// 	let result = splitting(str);
+// 	return result;
 // }
 
-// TEST CASE
-// let input1 = 'Razor-Ranged,Invoker-Ranged,Meepo-Melee,Axe-Melee,Sniper-Ranged'
-// let input2 = 'Drow Ranger-Ranged,Chen-Ranged,Dazzle-Ranged,Io-Ranged'
+// // TEST CASE
+// let input1 = 'Razor-Ranged,Invoker-Ranged,Meepo-Melee,Axe-Melee,Sniper-Ranged';
+// let input2 = 'Drow Ranger-Ranged,Chen-Ranged,Dazzle-Ranged,Io-Ranged';
 // console.log(meleeRangedGrouping(input1)); // [ ['Razor', 'Invoker', 'Sniper'], ['Meepo', 'Axe'] ]
 // console.log(meleeRangedGrouping(input2)); // [ ['Drow Ranger', 'Chen', 'Dazzle', 'Io'], [] ]
-// console.log(meleeRangedGrouping('')); // []
+// console.log(meleeRangedGrouping('')); // 'Invalid data'
 
 // ==============================================
 // --------------- L I N E 5 -------------------
 // ==============================================
 
-// function tukarBesarKecil(kalimat) {
+function tukarBesarKecil(kalimat) {
 
-//   return
-// }
+  return
+}
 
-// // TEST CASES
-// console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
-// console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
-// console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
-// console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
-// console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
+// TEST CASES
+console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
+console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
+console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
+console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
+console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
 
 // ==============================================
 // --------------- L I N E 6 -------------------
