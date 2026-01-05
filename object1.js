@@ -704,77 +704,141 @@
 // --------------- L I N E 7 -------------------
 // ==============================================
 
-function sorting(array) {
-	let arr = [];
-	for (let i = 0; i < array.length; i++) {
-		arr.push(array[i]);
-	}
+// function sorting(array) {
+// 	let arr = [];
+// 	for (let i = 0; i < array.length; i++) {
+// 		arr.push(array[i]);
+// 	}
 
-	for (let i = 0; i < arr.length - 1; i++) {
-		for (let j = i + 1; j < arr.length; j++) {
-			if (arr[i] > arr[j]) {
-				let tmp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = tmp;
+// 	for (let i = 0; i < arr.length - 1; i++) {
+// 		for (let j = i + 1; j < arr.length; j++) {
+// 			if (arr[i] > arr[j]) {
+// 				let tmp = arr[i];
+// 				arr[i] = arr[j];
+// 				arr[j] = tmp;
+// 			}
+// 		}
+// 	}
+// 	return arr;
+// }
+
+// function sortingByType(array) {
+// 	let nums = [];
+// 	let strs = [];
+// 	let bools = [];
+
+// 	for (let i = 0; i < array.length; i++) {
+// 		if (typeof array[i] === 'number') nums.push(array[i]);
+// 		else if (typeof array[i] === 'string') strs.push(array[i]);
+// 		else if (typeof array[i] === 'boolean') bools.push(array[i]);
+// 	}
+
+// 	return [sorting(nums), sorting(strs), sorting(bools)];
+// }
+
+// function sortAllClean(array) {
+// 	let nums = [];
+// 	let strs = [];
+// 	let bools = [];
+
+// 	for (let i = 0; i < array.length; i++) {
+// 		const val = array[i];
+// 		if (typeof val === 'number' && !isNaN(val)) nums.push(val);
+// 		else if (typeof val === 'string') strs.push(val);
+// 		else if (typeof val === 'boolean') bools.push(val);
+// 	}
+
+// 	if (nums.length === 0 && strs.length === 0 && bools.length === 0) return [];
+
+// 	return [sorting(nums), sorting(strs), sorting(bools)];
+// }
+
+// //do not change the code below
+// let inputArrSorting = [2, 4, 6, 8, 2, 3];
+// let inputArrSortingType = [1, 3, 'array', -45, true, false, 'big'];
+// let inputArrSortingClean = [
+// 	undefined,
+// 	null,
+// 	456,
+// 	'def',
+// 	NaN,
+// 	[],
+// 	true,
+// 	123,
+// 	'bcd',
+// 	false,
+// ];
+// console.log(sorting(inputArrSorting)); //[ 2, 2, 3, 4, 6, 8 ]
+// console.log(sortingByType(inputArrSortingType)); // [ [ -45, 1, 3 ], [ 'array', 'big' ], [ false, true ] ]
+// console.log(sortAllClean(inputArrSortingClean)); //[ [ 123, 456 ], [ 'bcd', 'def' ], [ false, true ] ]
+// console.log(sortAllClean([NaN, undefined])); // []
+
+// ==============================================
+// --------------- L I N E 8 -------------------
+// ==============================================
+
+/**
+ * =========================
+ * Custom Sorting Exercises
+ * =========================
+ * Aturan:
+ * - Tidak boleh pakai built-in sort()
+ * - Gunakan loop manual dan swap
+ * - Boleh pakai push, typeof, length
+ */
+
+/**
+ * 1. sortingDescending(array)
+ * Mengurutkan angka dari besar ke kecil
+ */
+function sortingDescending(array) {
+	// YOUR CODE HERE
+	let arr = [];
+
+	for (let z = 0; z < array.length; z++) arr.push(array[z]);
+
+	for (let x = 0; x < arr.length - 1; x++) {
+		for (let c = x + 1; c < array.length; c++) {
+			if (arr[x] < arr[c]) {
+				let temp = arr[x];
+				arr[x] = arr[c];
+				arr[c] = temp;
 			}
 		}
 	}
 	return arr;
 }
 
-function sortingByType(array) {
-	let nums = [];
-	let strs = [];
-	let bools = [];
-
-	for (let i = 0; i < array.length; i++) {
-		if (typeof array[i] === 'number') nums.push(array[i]);
-		else if (typeof array[i] === 'string') strs.push(array[i]);
-		else if (typeof array[i] === 'boolean') bools.push(array[i]);
-	}
-
-	return [sorting(nums), sorting(strs), sorting(bools)];
+/**
+ * 2. sortingByParity(array)
+ * Memisahkan angka genap dan ganjil lalu mengurutkan masing-masing ASC
+ * Output: [ genapAsc, ganjilAsc ]
+ */
+function sortingByParity(array) {
+	// YOUR CODE HERE
 }
 
-function sortAllClean(array) {
-	let nums = [];
-	let strs = [];
-	let bools = [];
-
-	for (let i = 0; i < array.length; i++) {
-		const val = array[i];
-		if (typeof val === 'number' && !isNaN(val)) nums.push(val);
-		else if (typeof val === 'string') strs.push(val);
-		else if (typeof val === 'boolean') bools.push(val);
-	}
-
-	if (nums.length === 0 && strs.length === 0 && bools.length === 0) return [];
-
-	return [sorting(nums), sorting(strs), sorting(bools)];
+/**
+ * 3. sortNumberClean(array)
+ * Ambil hanya number valid (bukan NaN)
+ * Urutkan ASC
+ * Jika tidak ada number, return []
+ */
+function sortNumberClean(array) {
+	// YOUR CODE HERE
 }
 
-//do not change the code below
-let inputArrSorting = [2, 4, 6, 8, 2, 3];
-let inputArrSortingType = [1, 3, 'array', -45, true, false, 'big'];
-let inputArrSortingClean = [
-	undefined,
-	null,
-	456,
-	'def',
-	NaN,
-	[],
-	true,
-	123,
-	'bcd',
-	false,
-];
-console.log(sorting(inputArrSorting)); //[ 2, 2, 3, 4, 6, 8 ]
-console.log(sortingByType(inputArrSortingType)); // [ [ -45, 1, 3 ], [ 'array', 'big' ], [ false, true ] ]
-console.log(sortAllClean(inputArrSortingClean)); //[ [ 123, 456 ], [ 'bcd', 'def' ], [ false, true ] ]
-console.log(sortAllClean([NaN, undefined])); // []
+// ===== TEST CASES (DO NOT EDIT) =====
+let input1 = [3, 1, 4, 1, 5, 9];
+let input2 = [10, 3, 5, 8, 7, 2];
+let input3 = [NaN, undefined, '3', true];
+
+console.log(sortingDescending(input1)); // [ 9, 5, 4, 3, 1, 1 ]
+// console.log(sortingByParity(input2)); // [ [ 2, 8, 10 ], [ 3, 5, 7 ] ]
+// console.log(sortNumberClean(input3)); // []
 
 // ==============================================
-// --------------- L I N E 8 -------------------
+// --------------- L I N E ? -------------------
 // ==============================================
 
 // function changeMe(arr) {
