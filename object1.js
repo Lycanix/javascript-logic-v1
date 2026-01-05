@@ -816,6 +816,34 @@ function sortingDescending(array) {
  */
 function sortingByParity(array) {
 	// YOUR CODE HERE
+	let arr = [];
+
+	for (let z = 0; z < array.length; z++) arr.push(array[z]);
+
+	for (let x = 0; x < arr.length - 1; x++) {
+		for (let c = x + 1; c < arr.length; c++) {
+			if (arr[x] > arr[c]) {
+				let temp = arr[x];
+				arr[x] = arr[c];
+				arr[c] = temp;
+			}
+		}
+	}
+
+	let final = [];
+	let genap = [];
+	let ganjil = [];
+
+	for (let q = 0; q < arr.length; q++) {
+		const element = arr[q];
+		if (element % 2 === 0) {
+			genap.push(element);
+		} else {
+			ganjil.push(element);
+		}
+	}
+	final.push(genap, ganjil);
+	return final;
 }
 
 /**
@@ -824,16 +852,39 @@ function sortingByParity(array) {
  * Urutkan ASC
  * Jika tidak ada number, return []
  */
-function sortNumberClean(array) {
-	// YOUR CODE HERE
-}
+// function sortNumberClean(array) {
+// 	// YOUR CODE HERE
+// 	let nums = [];
 
-// ===== TEST CASES (DO NOT EDIT) =====
-let input1 = [3, 1, 4, 1, 5, 9];
-let input2 = [10, 3, 5, 8, 7, 2];
-let input3 = [NaN, undefined, '3', true];
+// 	for (let i = 0; i < array.length; i++) {
+// 		const el = array[i];
+// 		if (typeof el === 'number' && !isNaN(el)) {
+// 			nums.push(el);
+// 		}
+// 	}
 
-console.log(sortingDescending(input1)); // [ 9, 5, 4, 3, 1, 1 ]
+// 	if (nums.length === 0) return [];
+
+// 	// sorting ASC manual
+// 	for (let i = 0; i < nums.length - 1; i++) {
+// 		for (let j = i + 1; j < nums.length; j++) {
+// 			if (nums[i] > nums[j]) {
+// 				let tmp = nums[i];
+// 				nums[i] = nums[j];
+// 				nums[j] = tmp;
+// 			}
+// 		}
+// 	}
+
+// 	return nums;
+// }
+
+// // ===== TEST CASES (DO NOT EDIT) =====
+// let input1 = [3, 1, 4, 1, 5, 9];
+// let input2 = [10, 3, 5, 8, 7, 2];
+// let input3 = [NaN, undefined, '3', true];
+
+// console.log(sortingDescending(input1)); // [ 9, 5, 4, 3, 1, 1 ]
 // console.log(sortingByParity(input2)); // [ [ 2, 8, 10 ], [ 3, 5, 7 ] ]
 // console.log(sortNumberClean(input3)); // []
 
