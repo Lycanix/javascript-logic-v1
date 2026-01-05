@@ -667,11 +667,33 @@
 // ==============================================
 
 // function urutkanAbjad(str) {
+// 	let chars = [];
+// 	for (let i = 0; i < str.length; i++) {
+// 		chars.push(str[i]);
+// 	}
 
-//   return
+// 	for (let i = 0; i < chars.length - 1; i++) {
+// 		let minIndex = i;
+// 		for (let j = i + 1; j < chars.length; j++) {
+// 			if (chars[j] < chars[minIndex]) {
+// 				minIndex = j;
+// 			}
+// 		}
+// 		if (minIndex !== i) {
+// 			let temp = chars[i];
+// 			chars[i] = chars[minIndex];
+// 			chars[minIndex] = temp;
+// 		}
+// 	}
+
+// 	let result = '';
+// 	for (let i = 0; i < chars.length; i++) {
+// 		result += chars[i];
+// 	}
+// 	return result;
 // }
 
-// // TEST CASES
+// TEST CASES
 // console.log(urutkanAbjad('hello')); // 'ehllo'
 // console.log(urutkanAbjad('truncate')); // 'acenrttu'
 // console.log(urutkanAbjad('developer')); // 'deeeloprv'
@@ -682,29 +704,74 @@
 // --------------- L I N E 7 -------------------
 // ==============================================
 
-// function sorting(array) {
+function sorting(array) {
+	let arr = [];
+	for (let i = 0; i < array.length; i++) {
+		arr.push(array[i]);
+	}
 
-//   return
-// }
+	for (let i = 0; i < arr.length - 1; i++) {
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[i] > arr[j]) {
+				let tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
+			}
+		}
+	}
+	return arr;
+}
 
-// function sortingByType(array) {
+function sortingByType(array) {
+	let nums = [];
+	let strs = [];
+	let bools = [];
 
-//   return
-// }
+	for (let i = 0; i < array.length; i++) {
+		if (typeof array[i] === 'number') nums.push(array[i]);
+		else if (typeof array[i] === 'string') strs.push(array[i]);
+		else if (typeof array[i] === 'boolean') bools.push(array[i]);
+	}
 
-// function sortAllClean(array) {
+	return [sorting(nums), sorting(strs), sorting(bools)];
+}
 
-//   return
-// }
+function sortAllClean(array) {
+	let nums = [];
+	let strs = [];
+	let bools = [];
 
-// //do not change the code below
-// let inputArrSorting = [2, 4, 6, 8, 2, 3];
-// let inputArrSortingType = [1, 3, "array", -45, true, false, "big"];
-// let inputArrSortingClean = [undefined, null, 456, "def", NaN, [], true, 123, "bcd", false];
-// console.log(sorting(inputArrSorting)); //[ 2, 2, 3, 4, 6, 8 ]
-// console.log(sortingByType(inputArrSortingType)); // [ [ -45, 1, 3 ], [ 'array', 'big' ], [ false, true ] ]
-// console.log(sortAllClean(inputArrSortingClean)); //[ [ 123, 456 ], [ 'bcd', 'def' ], [ false, true ] ]
-// console.log(sortAllClean([NaN, undefined])); // []
+	for (let i = 0; i < array.length; i++) {
+		const val = array[i];
+		if (typeof val === 'number' && !isNaN(val)) nums.push(val);
+		else if (typeof val === 'string') strs.push(val);
+		else if (typeof val === 'boolean') bools.push(val);
+	}
+
+	if (nums.length === 0 && strs.length === 0 && bools.length === 0) return [];
+
+	return [sorting(nums), sorting(strs), sorting(bools)];
+}
+
+//do not change the code below
+let inputArrSorting = [2, 4, 6, 8, 2, 3];
+let inputArrSortingType = [1, 3, 'array', -45, true, false, 'big'];
+let inputArrSortingClean = [
+	undefined,
+	null,
+	456,
+	'def',
+	NaN,
+	[],
+	true,
+	123,
+	'bcd',
+	false,
+];
+console.log(sorting(inputArrSorting)); //[ 2, 2, 3, 4, 6, 8 ]
+console.log(sortingByType(inputArrSortingType)); // [ [ -45, 1, 3 ], [ 'array', 'big' ], [ false, true ] ]
+console.log(sortAllClean(inputArrSortingClean)); //[ [ 123, 456 ], [ 'bcd', 'def' ], [ false, true ] ]
+console.log(sortAllClean([NaN, undefined])); // []
 
 // ==============================================
 // --------------- L I N E 8 -------------------
