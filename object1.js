@@ -893,18 +893,43 @@ function sortingByParity(array) {
 // ==============================================
 
 // function changeMe(arr) {
-
+// 	if (arr.length === 0) {
+// 		console.log('Invalid data');
+// 	}
+// 	let name = '';
+// 	let data = {
+// 		firstName: '',
+// 		lastName: '',
+// 		gender: '',
+// 		age: 0,
+// 	};
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const element = arr[z];
+// 		let validAge = 2026 - element[3];
+// 		if (!element[3]) {
+// 			validAge = 'Invalid Birth Year';
+// 		}
+// 		name = `${z + 1}. ${element[0]} ${element[1]}:`;
+// 		data = {
+// 			firstName: element[0],
+// 			lastName: element[1],
+// 			gender: element[2],
+// 			age: validAge,
+// 		};
+// 		console.log(name);
+// 		console.log(data);
+// 	}
 // }
-// // ==========================================
+// // // ==========================================
 // changeMe([
-//   ["Christ", "Evans", "Male", 1982],
-//   ["Robert", "Downey", "Male"],
+// 	['Christ', 'Evans', 'Male', 1982],
+// 	['Robert', 'Downey', 'Male'],
 // ]);
 // // 1. Christ Evans:
 // // { firstName: 'Christ',
 // //   lastName: 'Evans',
 // //   gender: 'Male',
-// //   age: 37 }
+// //   age: 44 }
 // // 2. Robert Downey:
 // // { firstName: 'Robert',
 // //   lastName: 'Downey',
@@ -917,16 +942,16 @@ function sortingByParity(array) {
 // --------------- L I N E 9 -------------------
 // ==============================================
 
-// function countMe(arr) {
+function countMe(arr) {
 
-// 	return
-// }
+	return
+}
 
-// console.log(countMe(['Sofyan', 'Ricky', 'Sofyan', 'Semmi', 'Semmi', 'Wika']));
-// // { Sofyan: 2, Ricky: 1, Semmi: 2, Wika: 1 }
+console.log(countMe(['Sofyan', 'Ricky', 'Sofyan', 'Semmi', 'Semmi', 'Wika']));
+// { Sofyan: 2, Ricky: 1, Semmi: 2, Wika: 1 }
 
-// console.log(countMe([1, 15, 9, 10, 8, 1, 12, 15, 10, 3]));
-// // { '1': 2, '3': 1, '8': 1, '9': 1, '10': 2, '12': 1, '15': 2 }
+console.log(countMe([1, 15, 9, 10, 8, 1, 12, 15, 10, 3]));
+// { '1': 2, '3': 1, '8': 1, '9': 1, '10': 2, '12': 1, '15': 2 }
 
 // ==============================================
 // --------------- L I N E 10 -------------------
