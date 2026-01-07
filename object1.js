@@ -943,8 +943,16 @@ function sortingByParity(array) {
 // ==============================================
 
 function countMe(arr) {
+	let result = {};
+	for (let z = 0; z < arr.length; z++) {
+		const element = arr[z];
+		if (result.keys === undefined) {
+			result.keys = element;
+		}
+	}
+	console.log(result.keys);
 
-	return
+	return;
 }
 
 console.log(countMe(['Sofyan', 'Ricky', 'Sofyan', 'Semmi', 'Semmi', 'Wika']));
