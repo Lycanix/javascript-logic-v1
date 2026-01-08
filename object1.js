@@ -1,7 +1,6 @@
 // ==============================================
 // --------------- L I N E 0 -------------------
 // ==============================================
-
 /*
 // /*
 // ====================================
@@ -1050,17 +1049,33 @@
 // ==============================================
 
 // let arrayMulti = [
-//     ["apuse", "Papua"],
-//     ["Anging Mamiri", "Sulawesi Selatan"],
-//     ["Ampar-Ampar Pisang", "Kalimantan Selatan"],
-//     ["Bungong Jeumpa", "Nanggroe Aceh Darussalam"],
-//     ["Manuk Dadali", "Jawa Barat"]
-// ]
+// 	['apuse', 'Papua'],
+// 	['Anging Mamiri', 'Sulawesi Selatan'],
+// 	['Ampar-Ampar Pisang', 'Kalimantan Selatan'],
+// 	['Bungong Jeumpa', 'Nanggroe Aceh Darussalam'],
+// 	['Manuk Dadali', 'Jawa Barat'],
+// ];
 
 // // merubah array multidimensi menjadi array of objek
 // function changeData(data) {
+// 	let result = [];
 
-//     return
+// 	for (let z = 0; z < data.length; z++) {
+// 		const element = data[z];
+// 		let obj = { lagu: '', daerah: '' };
+
+// 		for (let x = 0; x <= element.length; x++) {
+// 			const word = element[x];
+// 			if (obj.lagu === '') {
+// 				obj.lagu = word;
+// 			} else if (obj.daerah === '') {
+// 				obj.daerah = word;
+// 			}
+// 		}
+
+// 		result.push(obj);
+// 	}
+// 	return result;
 // }
 
 // console.log(changeData(arrayMulti));
@@ -1093,6 +1108,7 @@
 // ==============================================
 // --------------- L I N E 12 -------------------
 // ==============================================
+
 
 // let arrOfObj = [
 // 	{ name: 'Andika', score: [85, 90, 67, 75], class: 'A' },
