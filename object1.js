@@ -1267,21 +1267,30 @@
 // ==============================================
 // --------------- L I N E 15 -------------------
 // ==============================================
-function countLength(data) {
-	console.log(data);
+// function countLength(data) {
+// 	let result = {};
+// 	for (let z = 0; z < data.length; z++) {
+// 		const word = data[z];
+// 		let wordLength = word.length;
+// 		if (result[wordLength] === undefined) {
+// 			result[wordLength] = 1;
+// 		} else {
+// 			result[wordLength] = result[wordLength] + 1;
+// 		}
+// 	}
 
-	return;
-}
-console.log(countLength(['a', 'bb', 'ccc', 'bb', 'a']));
-// expected:
-// {
-//   1: 2,
-//   2: 2,
-//   3: 1
+// 	return result;
 // }
+// console.log(countLength(['a', 'bb', 'ccc', 'bb', 'a']));
+// // expected:
+// // {
+// //   1: 2,
+// //   2: 2,
+// //   3: 1
+// // }
 
 // console.log(countLength([]));
-// expected: {}
+// // expected: {}
 
 // console.log(countLength(['js', 'js', 'code']));
 // expected:
