@@ -791,60 +791,60 @@
  * 1. sortingDescending(array)
  * Mengurutkan angka dari besar ke kecil
  */
-function sortingDescending(array) {
-	// YOUR CODE HERE
-	let arr = [];
+// function sortingDescending(array) {
+// 	// YOUR CODE HERE
+// 	let arr = [];
 
-	for (let z = 0; z < array.length; z++) arr.push(array[z]);
+// 	for (let z = 0; z < array.length; z++) arr.push(array[z]);
 
-	for (let x = 0; x < arr.length - 1; x++) {
-		for (let c = x + 1; c < array.length; c++) {
-			if (arr[x] < arr[c]) {
-				let temp = arr[x];
-				arr[x] = arr[c];
-				arr[c] = temp;
-			}
-		}
-	}
-	return arr;
-}
+// 	for (let x = 0; x < arr.length - 1; x++) {
+// 		for (let c = x + 1; c < array.length; c++) {
+// 			if (arr[x] < arr[c]) {
+// 				let temp = arr[x];
+// 				arr[x] = arr[c];
+// 				arr[c] = temp;
+// 			}
+// 		}
+// 	}
+// 	return arr;
+// }
 
-/**
- * 2. sortingByParity(array)
- * Memisahkan angka genap dan ganjil lalu mengurutkan masing-masing ASC
- * Output: [ genapAsc, ganjilAsc ]
- */
-function sortingByParity(array) {
-	// YOUR CODE HERE
-	let arr = [];
+// /**
+//  * 2. sortingByParity(array)
+//  * Memisahkan angka genap dan ganjil lalu mengurutkan masing-masing ASC
+//  * Output: [ genapAsc, ganjilAsc ]
+//  */
+// function sortingByParity(array) {
+// 	// YOUR CODE HERE
+// 	let arr = [];
 
-	for (let z = 0; z < array.length; z++) arr.push(array[z]);
+// 	for (let z = 0; z < array.length; z++) arr.push(array[z]);
 
-	for (let x = 0; x < arr.length - 1; x++) {
-		for (let c = x + 1; c < arr.length; c++) {
-			if (arr[x] > arr[c]) {
-				let temp = arr[x];
-				arr[x] = arr[c];
-				arr[c] = temp;
-			}
-		}
-	}
+// 	for (let x = 0; x < arr.length - 1; x++) {
+// 		for (let c = x + 1; c < arr.length; c++) {
+// 			if (arr[x] > arr[c]) {
+// 				let temp = arr[x];
+// 				arr[x] = arr[c];
+// 				arr[c] = temp;
+// 			}
+// 		}
+// 	}
 
-	let final = [];
-	let genap = [];
-	let ganjil = [];
+// 	let final = [];
+// 	let genap = [];
+// 	let ganjil = [];
 
-	for (let q = 0; q < arr.length; q++) {
-		const element = arr[q];
-		if (element % 2 === 0) {
-			genap.push(element);
-		} else {
-			ganjil.push(element);
-		}
-	}
-	final.push(genap, ganjil);
-	return final;
-}
+// 	for (let q = 0; q < arr.length; q++) {
+// 		const element = arr[q];
+// 		if (element % 2 === 0) {
+// 			genap.push(element);
+// 		} else {
+// 			ganjil.push(element);
+// 		}
+// 	}
+// 	final.push(genap, ganjil);
+// 	return final;
+// }
 
 /**
  * 3. sortNumberClean(array)
@@ -942,23 +942,25 @@ function sortingByParity(array) {
 // --------------- L I N E 9 -------------------
 // ==============================================
 
-function countMe(arr) {
-	let result = {};
-	for (let z = 0; z < arr.length; z++) {
-		const element = arr[z];
-		if (result.keys === undefined) {
-			result.keys = element;
-		}
-	}
-	console.log(result.keys);
+// function countMe(arr) {
+// 	let result = {};
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const element = arr[z];
+// 		if (result[element] === undefined) {
+// 			result[element] = 1;
+// 		} else {
+// 			result[element] = result[element] + 1;
+// 		}
+// 	}
+// 	console.log(result);
 
-	return;
-}
+// 	return;
+// }
 
-console.log(countMe(['Sofyan', 'Ricky', 'Sofyan', 'Semmi', 'Semmi', 'Wika']));
-// { Sofyan: 2, Ricky: 1, Semmi: 2, Wika: 1 }
+// console.log(countMe(['Sofyan', 'Ricky', 'Sofyan', 'Semmi', 'Semmi', 'Wika']));
+// // { Sofyan: 2, Ricky: 1, Semmi: 2, Wika: 1 }
 
-console.log(countMe([1, 15, 9, 10, 8, 1, 12, 15, 10, 3]));
+// console.log(countMe([1, 15, 9, 10, 8, 1, 12, 15, 10, 3]));
 // { '1': 2, '3': 1, '8': 1, '9': 1, '10': 2, '12': 1, '15': 2 }
 
 // ==============================================
@@ -966,19 +968,82 @@ console.log(countMe([1, 15, 9, 10, 8, 1, 12, 15, 10, 3]));
 // ==============================================
 
 // function getAnimals(arr) {
-//   // Write your code here
+// 	let result = [];
+// 	let k = '';
+// 	let h = '';
+// 	let o = '';
+// 	let temp = '';
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const element = arr[z];
+// 		for (let x = 0; x <= element.length - 2; x++) {
+// 			const char = element[x];
+// 			if (char === ':' || char === undefined) {
+// 				if (element[x + 1] === 'K') {
+// 					if (k.length < temp.length) {
+// 						k = temp;
+// 						temp = '';
+// 						continue;
+// 					} else {
+// 						temp = '';
+// 						continue;
+// 					}
+// 				} else if (element[x + 1] === 'H') {
+// 					if (h.length < temp.length) {
+// 						h = temp;
+// 						temp = '';
+// 						continue;
+// 					} else {
+// 						temp = '';
+// 						continue;
+// 					}
+// 				} else if (element[x + 1] === 'O') {
+// 					if (o.length < temp.length) {
+// 						o = temp;
+// 						temp = '';
+// 						continue;
+// 					} else {
+// 						temp = '';
+// 						continue;
+// 					}
+// 				}
+// 			}
+// 			temp += char;
+// 		}
+// 	}
+// 	result.push(k, h, o);
+// 	return result;
 // }
 
 // //Test Case
 
-// console.log(getAnimals(['Singa:K','Kuda:H','Monyet:O']))
+// console.log(getAnimals(['Singa:K', 'Kuda:H', 'Monyet:O']));
 // // [ 'Singa','Kuda','Monyet' ]
 
-// console.log(getAnimals(['Macan:K', 'Ayam:O', 'Gajah:H', 'Monyet:O', 'Kerbau:H', 'Musang:O', 'Burung:H', 'Hiu:K']))
+// console.log(
+// 	getAnimals([
+// 		'Macan:K',
+// 		'Ayam:O',
+// 		'Gajah:H',
+// 		'Monyet:O',
+// 		'Kerbau:H',
+// 		'Musang:O',
+// 		'Burung:H',
+// 		'Hiu:K',
+// 	])
+// );
 // // [ 'Macan', 'Kerbau', 'Monyet' ]
 
-// console.log(getAnimals(['Tikus:O', 'Merpati:H', 'Beruang:O', 'Elang:K', 'Perkutut:H', 'Harimau:K']))
-// // [ 'Harimau', 'Perkutut', 'Beruang' ]
+// console.log(
+// 	getAnimals([
+// 		'Tikus:O',
+// 		'Merpati:H',
+// 		'Beruang:O',
+// 		'Elang:K',
+// 		'Perkutut:H',
+// 		'Harimau:K',
+// 	])
+// );
+// [ 'Harimau', 'Perkutut', 'Beruang' ]
 
 // ==============================================
 // --------------- L I N E 11 -------------------
