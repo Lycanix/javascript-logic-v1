@@ -1109,7 +1109,6 @@
 // --------------- L I N E 12 -------------------
 // ==============================================
 
-
 // let arrOfObj = [
 // 	{ name: 'Andika', score: [85, 90, 67, 75], class: 'A' },
 // 	{ name: 'Budika', score: [77, 80, 95, 100], class: 'B' },
@@ -1183,9 +1182,113 @@
 // --------------- L I N E 14 -------------------
 // ==============================================
 
+// function groupByFirstLetter(arr) {
+// 	// edge case III
+// 	if (!Array.isArray(arr)) {
+// 		return {};
+// 	}
+
+// 	// edge case I
+// 	if (arr.length === 0) {
+// 		return {};
+// 	}
+
+// 	let obj = {};
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const element = arr[z];
+
+// 		// edge case II
+// 		if (element === '') {
+// 			continue;
+// 		}
+// 		let key = element[0].toLowerCase();
+// 		if (obj[key] === undefined) {
+// 			obj[key] = [element];
+// 		} else {
+// 			// edge case IV
+// 			obj[key].push(element);
+// 		}
+// 	}
+
+// 	return obj;
+// }
+
+// /* =========================
+// 	TEST CASE UTAMA
+//    ========================= */
+
+// console.log(
+// 	groupByFirstLetter([
+// 		'apel',
+// 		'jeruk',
+// 		'pisang',
+// 		'anggur',
+// 		'jambu',
+// 		'pepaya',
+// 		'pear',
+// 	])
+// );
+// // expected:
+// // {
+// //   a: [ 'apel', 'anggur' ],
+// //   j: [ 'jeruk', 'jambu' ],
+// //   p: [ 'pisang', 'pepaya', 'pear' ]
+// // }
+
+// console.log(groupByFirstLetter(['Sofyan', 'Semmi', 'Ricky', 'Rina']));
+// // expected:
+// // {
+// //   s: ['Sofyan', 'Semmi'],
+// //   r: ['Ricky', 'Rina']
+// // }
+
+// /* =========================
+//    EDGE CASE
+//    ========================= */
+
+// console.log(groupByFirstLetter([]));
+// // expected: {}
+
+// console.log(groupByFirstLetter(['', 'apel', '', 'anggur']));
+// // expected:
+// // {
+// //   a: ['apel', 'anggur']
+// // }
+
+// console.log(groupByFirstLetter('bukan array'));
+// // expected: {}
+
+// console.log(groupByFirstLetter(['Ayu', 'adi', 'Anton']));
+// // expected:
+// // {
+// //   a: ['Ayu', 'adi', 'Anton']
+// // }
+
 // ==============================================
 // --------------- L I N E 15 -------------------
 // ==============================================
+function countLength(data) {
+	console.log(data);
+
+	return;
+}
+console.log(countLength(['a', 'bb', 'ccc', 'bb', 'a']));
+// expected:
+// {
+//   1: 2,
+//   2: 2,
+//   3: 1
+// }
+
+// console.log(countLength([]));
+// expected: {}
+
+// console.log(countLength(['js', 'js', 'code']));
+// expected:
+// {
+//   2: 2,
+//   4: 1
+// }
 
 // ==============================================
 // --------------- L I N E 16 -------------------
