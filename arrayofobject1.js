@@ -57,20 +57,30 @@
 // --------------- L I N E 2 -------------------
 // ==============================================
 
-let arrOfObj = [
-  { name: 'Andika', score: [85, 90, 67, 75], class: 'A' },
-  { name: 'Budika', score: [77, 80, 95, 100], class: 'B' },
-  { name: 'Cendikia', score: [60, 90, 85, 89], class: 'B' },
-  { name: 'Dodika', score: [88, 79, 83, 95], class: 'A' },
-  { name: 'Endika', score: [85, 92, 65, 70], class: 'C' }
-]
+// let arrOfObj = [
+// 	{ name: 'Andika', score: [85, 90, 67, 75], class: 'A' },
+// 	{ name: 'Budika', score: [77, 80, 95, 100], class: 'B' },
+// 	{ name: 'Cendikia', score: [60, 90, 85, 89], class: 'B' },
+// 	{ name: 'Dodika', score: [88, 79, 83, 95], class: 'A' },
+// 	{ name: 'Endika', score: [85, 92, 65, 70], class: 'C' },
+// ];
 
-function grouppingClass(data) {
+// let result = {};
+// function grouppingClass(data) {
+// 	for (let z = 0; z < data.length; z++) {
+// 		const obj = data[z];
+// 		let names = obj.name;
+// 		if (result[obj.class] === undefined) {
+// 			result[obj.class] = { list: [names] };
+// 		} else {
+// 			result[obj.class].list.push(names);
+// 		}
+// 	}
 
-  return
-}
+// 	return result;
+// }
 
-console.log(grouppingClass(arrOfObj));
+// console.log(grouppingClass(arrOfObj));
 
 /*
   {
