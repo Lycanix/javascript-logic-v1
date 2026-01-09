@@ -1118,9 +1118,21 @@
 // ];
 
 // function grouppingClass(data) {
-// 	return;
-// }
+// 	let result = {};
+// 	for (let z = 0; z < data.length; z++) {
+// 		const obj = data[z];
 
+// 		let names = obj.name;
+
+// 		if (result[obj.class] === undefined) {
+// 			result[obj.class] = { list: [names] };
+// 		} else {
+// 			result[obj.class].list.push(names);
+// 		}
+// 	}
+
+// 	return result;
+// }
 // console.log(grouppingClass(arrOfObj));
 
 /*
