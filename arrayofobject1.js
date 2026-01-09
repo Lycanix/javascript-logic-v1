@@ -101,35 +101,55 @@
 // ==============================================
 
 // function getMinMax(data) {
+// 	let result = [];
+// 	let tempMin;
+// 	let tempMax;
+// 	let min = Infinity;
+// 	let max = -Infinity;
+// 	for (let z = 0; z < data.length; z++) {
+// 		const list = data[z];
 
-//     return
+// 		let point = list.score;
+
+// 		if (min > point) {
+// 			min = point;
+// 			tempMin = list;
+// 		}
+
+// 		if (max < point) {
+// 			max = point;
+// 			tempMax = list;
+// 		}
+// 	}
+// 	result.push(tempMin, tempMax);
+// 	return result;
 // }
 // let arrOfObj = [
-//     {
-//         name: "andi",
-//         score: 70
-//     },
-//     {
-//         name: "Budi",
-//         score: 85
-//     },
-//     {
-//         name: "Candi",
-//         score: 60
-//     },
-//     {
-//         name: "Dandi",
-//         score: 65
-//     },
-//     {
-//         name: "Endra",
-//         score: 99
-//     },
-//     {
-//         name: "Fina",
-//         score: 95
-//     }
-// ]
+// 	{
+// 		name: 'andi',
+// 		score: 70,
+// 	},
+// 	{
+// 		name: 'Budi',
+// 		score: 85,
+// 	},
+// 	{
+// 		name: 'Candi',
+// 		score: 60,
+// 	},
+// 	{
+// 		name: 'Dandi',
+// 		score: 65,
+// 	},
+// 	{
+// 		name: 'Endra',
+// 		score: 99,
+// 	},
+// 	{
+// 		name: 'Fina',
+// 		score: 95,
+// 	},
+// ];
 // console.log(getMinMax(arrOfObj));
 
 /*
@@ -143,17 +163,37 @@
 // --------------- L I N E 4 -------------------
 // ==============================================
 // function graduates(students) {
-//   return
+// 	if (students.length === 0) {
+// 		return {};
+// 	}
+
+// 	let result = {};
+
+// 	for (let z = 0; z < students.length; z++) {
+// 		const obj = students[z];
+
+// 		if (obj.score <= 75) continue;
+
+// 		if (result[obj.class] === undefined) {
+// 			result[obj.class] = [];
+// 		}
+
+// 		result[obj.class].push({
+// 			name: obj.name,
+// 			score: obj.score,
+// 		});
+// 	}
+// 	return result;
 // }
 
 // // TEST CASE 1
 // let input1 = [
-//   {name: 'Dimitri', score: 90, class: 'foxes'},
-//   {name: 'Alexei', score: 85, class: 'wolves'},
-//   {name: 'Sergei', score: 74, class: 'foxes'},
-//   {name: 'Anastasia', score: 78, class: 'wolves'}
-// ]
-// console.log(graduates(input1))
+// 	{ name: 'Dimitri', score: 90, class: 'foxes' },
+// 	{ name: 'Alexei', score: 85, class: 'wolves' },
+// 	{ name: 'Sergei', score: 74, class: 'foxes' },
+// 	{ name: 'Anastasia', score: 78, class: 'wolves' },
+// ];
+// console.log(graduates(input1));
 // /*
 // {
 //   foxes: [ { nama: 'Dimitri', nilai: 90 } ],
@@ -163,12 +203,12 @@
 
 // // TEST CASE 2
 // let input2 = [
-//   {name: 'Rin', score: 100, class: 'foxes'},
-//   {name: 'Saber', score: 80, class: 'wolves'},
-//   {name: 'Gilgamesh', score: 30, class: 'foxes'},
-//   {name: 'Ishtar', score: 50, class: 'wolves'}
-// ]
-// console.log(graduates(input2))
+// 	{ name: 'Rin', score: 100, class: 'foxes' },
+// 	{ name: 'Saber', score: 80, class: 'wolves' },
+// 	{ name: 'Gilgamesh', score: 30, class: 'foxes' },
+// 	{ name: 'Ishtar', score: 50, class: 'wolves' },
+// ];
+// console.log(graduates(input2));
 // /*
 // {
 //   foxes: [ { nama: 'Rin', nilai: 100 } ],
@@ -178,13 +218,13 @@
 
 // // TEST CASE 3
 // let input3 = [
-//   {name: 'Alexander', score: 100, class: 'foxes'},
-//   {name: 'Alisa', score: 76, class: 'wolves'},
-//   {name: 'Vladimir', score: 92, class: 'foxes'},
-//   {name: 'Albert', score: 71, class: 'wolves'},
-//   {name: 'Viktor', score: 80, class: 'tigers'}
-// ]
-// console.log(graduates(input3))
+// 	{ name: 'Alexander', score: 100, class: 'foxes' },
+// 	{ name: 'Alisa', score: 76, class: 'wolves' },
+// 	{ name: 'Vladimir', score: 92, class: 'foxes' },
+// 	{ name: 'Albert', score: 71, class: 'wolves' },
+// 	{ name: 'Viktor', score: 80, class: 'tigers' },
+// ];
+// console.log(graduates(input3));
 // /*
 // {
 //   foxes: [
@@ -201,35 +241,59 @@
 // */
 
 // // TEST CASE 4
-// console.log(graduates([]))
+// // console.log(graduates([]));
 // // {}
 // ==============================================
 // --------------- L I N E 5 -------------------
 // ==============================================
 // function cariMedian(arr) {
+// 	let numbers = [];
+// 	for (let z = 0; z < arr.length; z++) {
+// 		numbers.push(arr[z]);
+// 	}
 
+// 	for (let x = 0; x < numbers.length - 1; x++) {
+// 		for (let y = x + 1; y < numbers.length; y++) {
+// 			if (numbers[x] > numbers[y]) {
+// 				let temp = numbers[x];
+// 				numbers[x] = numbers[y];
+// 				numbers[y] = temp;
+// 			}
+// 		}
+// 	}
+
+
+
+// 	let mid = numbers.length / 2;
+// 	if (numbers.length % 2 === 1) {
+// 		let ganjil = numbers[Math.floor(mid)];
+// 		return ganjil;
+// 	} else if (numbers.length % 2 === 0) {
+// 		let genap = (numbers[mid] + numbers[mid - 1]) / 2;
+// 		return genap;
+// 	}
 // }
 
 // // TEST CASES
-// console.log(cariMedian([1, 2, 3, 4, 5])) // 3
-// console.log(cariMedian([1, 3, 4, 10, 12, 13])) // 7
-// console.log(cariMedian([3, 4, 7, 6, 10])) // 7
-// console.log(cariMedian([1, 3, 3])) // 3
-// console.log(cariMedian([7, 7, 8, 8])) // 7.5
+// console.log(cariMedian([1, 2, 3, 4, 5])); // 3
+// console.log(cariMedian([1, 3, 4, 10, 12, 13])); // 7
+// console.log(cariMedian([3, 4, 7, 6, 10])); // 7
+// console.log(cariMedian([1, 3, 3])); // 3
+// console.log(cariMedian([7, 7, 8, 8])); // 7.5
 // ==============================================
 // --------------- L I N E 6 -------------------
 // ==============================================
-// function angkaPrima(angka) {
+function angkaPrima(angka) {
 
-//   return
-// }
+  return
+}
 
-// // TEST CASES
-// console.log(angkaPrima(3)); // true
-// console.log(angkaPrima(7)); // true
-// console.log(angkaPrima(6)); // false
-// console.log(angkaPrima(23)); // true
-// console.log(angkaPrima(33)); // false
+// TEST CASES
+console.log(angkaPrima(3)); // true
+console.log(angkaPrima(7)); // true
+console.log(angkaPrima(6)); // false
+console.log(angkaPrima(23)); // true
+console.log(angkaPrima(33)); // false
 // ==============================================
 // --------------- L I N E 7 -------------------
 // ==============================================
