@@ -1152,36 +1152,56 @@
 // ==============================================
 // --------------- L I N E 13 -------------------
 // ==============================================
-// function getMinMax(data) {
 
-//     return
+// function getMinMax(data) {
+// 	let result = [];
+// 	let tempMin;
+// 	let tempMax;
+// 	let min = Infinity;
+// 	let max = -Infinity;
+// 	for (let z = 0; z < data.length; z++) {
+// 		const list = data[z];
+// 		let point = list.score;
+
+// 		if (min > point) {
+// 			min = point;
+// 			tempMin = list;
+// 		}
+
+// 		if (max < point) {
+// 			max = point;
+// 			tempMax = list;
+// 		}
+// 	}
+// 	result.push(tempMin, tempMax);
+// 	return result;
 // }
 // let arrOfObj = [
-//     {
-//         name: "andi",
-//         score: 70
-//     },
-//     {
-//         name: "Budi",
-//         score: 85
-//     },
-//     {
-//         name: "Candi",
-//         score: 60
-//     },
-//     {
-//         name: "Dandi",
-//         score: 65
-//     },
-//     {
-//         name: "Endra",
-//         score: 99
-//     },
-//     {
-//         name: "Fina",
-//         score: 95
-//     }
-// ]
+// 	{
+// 		name: 'andi',
+// 		score: 70,
+// 	},
+// 	{
+// 		name: 'Budi',
+// 		score: 85,
+// 	},
+// 	{
+// 		name: 'Candi',
+// 		score: 60,
+// 	},
+// 	{
+// 		name: 'Dandi',
+// 		score: 65,
+// 	},
+// 	{
+// 		name: 'Endra',
+// 		score: 99,
+// 	},
+// 	{
+// 		name: 'Fina',
+// 		score: 95,
+// 	},
+// ];
 // console.log(getMinMax(arrOfObj));
 
 /*
