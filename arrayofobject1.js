@@ -2,17 +2,28 @@
 // --------------- L I N E 1 -------------------
 // ==============================================
 // let arrayMulti = [
-//     ["apuse", "Papua"],
-//     ["Anging Mamiri", "Sulawesi Selatan"],
-//     ["Ampar-Ampar Pisang", "Kalimantan Selatan"],
-//     ["Bungong Jeumpa", "Nanggroe Aceh Darussalam"],
-//     ["Manuk Dadali", "Jawa Barat"]
-// ]
+// 	['apuse', 'Papua'],
+// 	['Anging Mamiri', 'Sulawesi Selatan'],
+// 	['Ampar-Ampar Pisang', 'Kalimantan Selatan'],
+// 	['Bungong Jeumpa', 'Nanggroe Aceh Darussalam'],
+// 	['Manuk Dadali', 'Jawa Barat'],
+// ];
 
 // // merubah array multidimensi menjadi array of objek
 // function changeData(data) {
-
-//     return
+// 	let finish = [];
+// 	for (let z = 0; z < data.length; z++) {
+// 		let result = {};
+// 		const arr = data[z];
+// 		if (result.lagu === undefined) {
+// 			result.lagu = arr[0];
+// 		}
+// 		if (result.daerah === undefined) {
+// 			result.daerah = arr[1];
+// 		}
+// 		finish.push(result);
+// 	}
+// 	return finish;
 // }
 
 // console.log(changeData(arrayMulti));
@@ -46,20 +57,20 @@
 // --------------- L I N E 2 -------------------
 // ==============================================
 
-// let arrOfObj = [
-//   { name: 'Andika', score: [85, 90, 67, 75], class: 'A' },
-//   { name: 'Budika', score: [77, 80, 95, 100], class: 'B' },
-//   { name: 'Cendikia', score: [60, 90, 85, 89], class: 'B' },
-//   { name: 'Dodika', score: [88, 79, 83, 95], class: 'A' },
-//   { name: 'Endika', score: [85, 92, 65, 70], class: 'C' }
-// ]
+let arrOfObj = [
+  { name: 'Andika', score: [85, 90, 67, 75], class: 'A' },
+  { name: 'Budika', score: [77, 80, 95, 100], class: 'B' },
+  { name: 'Cendikia', score: [60, 90, 85, 89], class: 'B' },
+  { name: 'Dodika', score: [88, 79, 83, 95], class: 'A' },
+  { name: 'Endika', score: [85, 92, 65, 70], class: 'C' }
+]
 
-// function grouppingClass(data) {
+function grouppingClass(data) {
 
-//   return
-// }
+  return
+}
 
-// console.log(grouppingClass(arrOfObj));
+console.log(grouppingClass(arrOfObj));
 
 /*
   {
@@ -198,8 +209,7 @@
 // ==============================================
 // --------------- L I N E 6 -------------------
 // ==============================================
-// function angkaPrima(angka) {  
-
+// function angkaPrima(angka) {
 
 //   return
 // }
@@ -214,7 +224,6 @@
 // --------------- L I N E 7 -------------------
 // ==============================================
 // function cariModus(arr) {
-
 
 // 	return
 // }
@@ -243,18 +252,17 @@
 // 		')': 0,
 // 	};
 
-
-// 	return 
+// 	return
 // }
 
 // function decrementOdd(arr) {
 
-// 	return 
+// 	return
 // }
 
 // function splitNumber(arr) {
 
-// 	return 
+// 	return
 // }
 
 // function convertNumber(arr) {
@@ -308,8 +316,6 @@
 // );
 // // code hacktiv
 
-
-
 // ==============================================
 // --------------- L I N E 9 -------------------
 // ==============================================
@@ -321,7 +327,6 @@
 // ==============================================
 // --------------- L I N E 11 -------------------
 // ==============================================
-
 
 // ==============================================
 // --------------- L I N E 16 -------------------
