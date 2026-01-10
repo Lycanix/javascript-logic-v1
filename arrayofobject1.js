@@ -262,8 +262,6 @@
 // 		}
 // 	}
 
-
-
 // 	let mid = numbers.length / 2;
 // 	if (numbers.length % 2 === 1) {
 // 		let ganjil = numbers[Math.floor(mid)];
@@ -283,31 +281,40 @@
 // ==============================================
 // --------------- L I N E 6 -------------------
 // ==============================================
-function angkaPrima(angka) {
+// function angkaPrima(angka) {
+// 	if (angka <= 1) {
+// 		return false;
+// 	}
+// 	for (let i = 2; i < angka; i++) {
+// 		if (angka % i === 0) {
+// 			return false;
+// 		}
+// 	}
 
-  return
-}
-
-// TEST CASES
-console.log(angkaPrima(3)); // true
-console.log(angkaPrima(7)); // true
-console.log(angkaPrima(6)); // false
-console.log(angkaPrima(23)); // true
-console.log(angkaPrima(33)); // false
-// ==============================================
-// --------------- L I N E 7 -------------------
-// ==============================================
-// function cariModus(arr) {
-
-// 	return
+// 	return true;
 // }
 
 // // TEST CASES
-// console.log(cariModus([10, 4, 5, 2, 4])); // 4
-// console.log(cariModus([5, 10, 10, 6, 5])); // 5
-// console.log(cariModus([10, 3, 1, 2, 5])); // -1
-// console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
-// console.log(cariModus([7, 7, 7, 7, 7])); // -1
+// console.log(angkaPrima(3)); // true
+// console.log(angkaPrima(7)); // true
+// console.log(angkaPrima(6)); // false
+// console.log(angkaPrima(23)); // true
+// console.log(angkaPrima(33)); // false
+// ==============================================
+// --------------- L I N E 7 -------------------
+// ==============================================
+function cariModus(arr) {
+console.log(arr);
+
+	return
+}
+
+// TEST CASES
+console.log(cariModus([10, 4, 5, 2, 4])); // 4
+console.log(cariModus([5, 10, 10, 6, 5])); // 5
+console.log(cariModus([10, 3, 1, 2, 5])); // -1
+console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
+console.log(cariModus([7, 7, 7, 7, 7])); // -1
 // ==============================================
 // --------------- L I N E 8 -------------------
 // ==============================================
