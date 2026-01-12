@@ -306,6 +306,9 @@
 function cariModus(arr) {
 console.log(arr);
 console.log(arr);
+console.log(arr);
+console.log(arr);
+
 	return
 }
 
