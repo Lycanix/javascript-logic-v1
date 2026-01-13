@@ -341,6 +341,7 @@
 // ==============================================
 // --------------- L I N E 8 -------------------
 // ==============================================
+
 function convertSymbol(arr) {
 	let resultConvertSimbol = [];
 	let simbolObject = {
@@ -359,28 +360,27 @@ function convertSymbol(arr) {
 	let temp = '';
 	for (let z = 0; z < arr.length; z++) {
 		const data = arr[z];
-		for (let x = 0; x < data.length; x++) {
+
+		for (let x = 0; x <= data.length; x++) {
 			const char = data[x];
-			for (let scan in simbolObject) {
-				if (scan === char) {
-					temp += String(simbolObject[scan]);
-					if (temp.length === 2) {
-						resultConvertSimbol.push(Number(temp));
-						temp = '';
+			if (char !== undefined) {
+				for (let scan in simbolObject) {
+					if (scan === char) {
+						temp += String(simbolObject[scan]);
 					}
 				}
+			} else {
+				resultConvertSimbol.push(Number(temp));
+				temp = '';
 			}
 		}
 	}
 
+	// console.log(temp);
+	// console.log(resultConvertSimbol);
+
 	return resultConvertSimbol;
 }
-/*
-[
-    19, 37, 12, 25, 22,
-    15, 73, 35, 25, 31
-]
-*/
 
 function decrementOdd(arr) {
 	let resultDecrementOdd = [];
@@ -392,80 +392,87 @@ function decrementOdd(arr) {
 			resultDecrementOdd.push(scan);
 		}
 	}
+	// console.log(resultDecrementOdd);
 
 	return resultDecrementOdd;
 }
-/*
-[
-    9, 27, 12, 15, 22,
-    5, 63, 25, 15, 21
-]
-*/
 
 function splitNumber(arr) {
 	let resultSplitNumber = [];
 	let tempArr = [];
-	for (let z = 0; z < arr.length; z++) {
+	for (let z = 0; z <= arr.length; z++) {
 		const scan = arr[z];
-		if (scan > 26) {
+		if (scan > 26 || scan === undefined) {
 			resultSplitNumber.push(tempArr);
 			tempArr = [];
 		} else {
 			tempArr.push(scan);
 		}
 	}
-	console.log(resultSplitNumber);
+	// console.log(resultSplitNumber);
 
-	return;
+	return resultSplitNumber;
 }
-/*
-output: [
-  [9], 
-  [12, 15, 22, 5],
-  [25, 15, 21]
-]
-*/
 
-// function convertNumber(arr) {
-// 	let resultConvertNumber = '';
-// 	let alphabet = {
-// 		1: 'a',
-// 		2: 'b',
-// 		3: 'c',
-// 		4: 'd',
-// 		5: 'e',
-// 		6: 'f',
-// 		7: 'g',
-// 		8: 'h',
-// 		9: 'i',
-// 		10: 'j',
-// 		11: 'k',
-// 		12: 'l',
-// 		13: 'm',
-// 		14: 'n',
-// 		15: 'o',
-// 		16: 'p',
-// 		17: 'q',
-// 		18: 'r',
-// 		19: 's',
-// 		20: 't',
-// 		21: 'u',
-// 		22: 'v',
-// 		23: 'w',
-// 		24: 'x',
-// 		25: 'y',
-// 		26: 'z',
-// 	};
+function convertNumber(arr) {
+	let resultConvertNumber = '';
+	let alphabet = {
+		1: 'a',
+		2: 'b',
+		3: 'c',
+		4: 'd',
+		5: 'e',
+		6: 'f',
+		7: 'g',
+		8: 'h',
+		9: 'i',
+		10: 'j',
+		11: 'k',
+		12: 'l',
+		13: 'm',
+		14: 'n',
+		15: 'o',
+		16: 'p',
+		17: 'q',
+		18: 'r',
+		19: 's',
+		20: 't',
+		21: 'u',
+		22: 'v',
+		23: 'w',
+		24: 'x',
+		25: 'y',
+		26: 'z',
+	};
 
-// 	return;
-// }
+	for (let z = 0; z < arr.length; z++) {
+		const outter = arr[z];
+		for (let x = 0; x <= outter.length; x++) {
+			const scan = outter[x];
+			for (let char in alphabet) {
+				if (scan === undefined) {
+					resultConvertNumber += ' ';
+					break;
+				} else if (String(scan) === char) {
+					resultConvertNumber += alphabet[char];
+					break;
+				}
+			}
+		}
+	}
+
+	// console.log(resultConvertNumber);
+
+	return resultConvertNumber;
+}
 
 function result(arr) {
 	let resConvertSymbol = convertSymbol(arr);
 	let resDecrementOdd = decrementOdd(resConvertSymbol);
 	let resSplitNumber = splitNumber(resDecrementOdd);
+	let result = convertNumber(resSplitNumber);
 
-	return;
+	return result;
 }
 
 // // =================================================================================================
@@ -487,12 +494,14 @@ console.log(
 );
 // // lets go guyz
 
-// // console.log(result(['!(', '#&', '!@', '@%', '@@', '!%', '&#', '#%', '@%', '#!']))
+console.log(
+	result(['!(', '#&', '!@', '@%', '@@', '!%', '&#', '#%', '@%', '#!'])
+);
 // // i love you
 
-// console.log(
-// 	result(['!%', '@&', '$', '!&', '$#', '*', '!#', '!%', '@#', '@)', '@!', '@@'])
-// );
+console.log(
+	result(['!%', '@&', '$', '!&', '$#', '*', '!#', '!%', '@#', '@)', '@!', '@@'])
+);
 // // code hacktiv
 
 // ==============================================
