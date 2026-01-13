@@ -304,12 +304,32 @@
 // --------------- L I N E 7 -------------------
 // ==============================================
 function cariModus(arr) {
-console.log(arr);
-console.log(arr);
-console.log(arr);
-console.log(arr);
+	let obj = {};
+	for (let z = 0; z < arr.length; z++) {
+		const a = arr[z];
+		if (obj[a] === undefined) {
+			obj[a] = 1;
+		} else {
+			obj[a] = obj[a] + 1;
+		}
+	}
 
-	return
+	let highest = 0;
+	let modus = -1;
+	let count = 0;
+	for (let c in obj) {
+		count++;
+		if (obj[c] > highest) {
+			highest = obj[c];
+			modus = Number(c);
+		}
+	}
+
+	if (count === 1 || highest === 1) {
+		return -1;
+	}
+
+	return modus;
 }
 
 // TEST CASES
