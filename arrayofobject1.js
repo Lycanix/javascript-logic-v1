@@ -303,71 +303,128 @@
 // ==============================================
 // --------------- L I N E 7 -------------------
 // ==============================================
-function cariModus(arr) {
-	let obj = {};
-	for (let z = 0; z < arr.length; z++) {
-		const a = arr[z];
-		if (obj[a] === undefined) {
-			obj[a] = 1;
-		} else {
-			obj[a] = obj[a] + 1;
-		}
-	}
+// function cariModus(arr) {
+// 	let obj = {};
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const a = arr[z];
+// 		if (obj[a] === undefined) {
+// 			obj[a] = 1;
+// 		} else {
+// 			obj[a] = obj[a] + 1;
+// 		}
+// 	}
 
-	let highest = 0;
-	let modus = -1;
-	let count = 0;
-	for (let c in obj) {
-		count++;
-		if (obj[c] > highest) {
-			highest = obj[c];
-			modus = Number(c);
-		}
-	}
+// 	let highest = 0;
+// 	let modus = -1;
+// 	let count = 0;
+// 	for (let c in obj) {
+// 		count++;
+// 		if (obj[c] > highest) {
+// 			highest = obj[c];
+// 			modus = Number(c);
+// 		}
+// 	}
 
-	if (count === 1 || highest === 1) {
-		return -1;
-	}
+// 	if (count === 1 || highest === 1) {
+// 		return -1;
+// 	}
 
-	return modus;
-}
+// 	return modus;
+// }
 
-// TEST CASES
-console.log(cariModus([10, 4, 5, 2, 4])); // 4
-console.log(cariModus([5, 10, 10, 6, 5])); // 5
-console.log(cariModus([10, 3, 1, 2, 5])); // -1
-console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
-console.log(cariModus([7, 7, 7, 7, 7])); // -1
+// // TEST CASES
+// console.log(cariModus([10, 4, 5, 2, 4])); // 4
+// console.log(cariModus([5, 10, 10, 6, 5])); // 5
+// console.log(cariModus([10, 3, 1, 2, 5])); // -1
+// console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
+// console.log(cariModus([7, 7, 7, 7, 7])); // -1
 // ==============================================
 // --------------- L I N E 8 -------------------
 // ==============================================
-// function convertSymbol(arr) {
-// 	let resultConvertSimbol = [];
-// 	let simbolObject = {
-// 		'!': 1,
-// 		'@': 2,
-// 		'#': 3,
-// 		$: 4,
-// 		'%': 5,
-// 		'^': 6,
-// 		'&': 7,
-// 		'*': 8,
-// 		'(': 9,
-// 		')': 0,
-// 	};
+function convertSymbol(arr) {
+	let resultConvertSimbol = [];
+	let simbolObject = {
+		'!': 1,
+		'@': 2,
+		'#': 3,
+		$: 4,
+		'%': 5,
+		'^': 6,
+		'&': 7,
+		'*': 8,
+		'(': 9,
+		')': 0,
+	};
 
-// 	return
-// }
+	let temp = '';
+	for (let z = 0; z < arr.length; z++) {
+		const data = arr[z];
+		for (let x = 0; x < data.length; x++) {
+			const char = data[x];
+			for (let scan in simbolObject) {
+				if (scan === char) {
+					temp += String(simbolObject[scan]);
+					if (temp.length === 2) {
+						resultConvertSimbol.push(Number(temp));
+						temp = '';
+					}
+				}
+			}
+		}
+	}
 
-// function decrementOdd(arr) {
+	return resultConvertSimbol;
+}
+/*
+[
+    19, 37, 12, 25, 22,
+    15, 73, 35, 25, 31
+]
+*/
 
-// 	return
-// }
+function decrementOdd(arr) {
+	let resultDecrementOdd = [];
+	for (let z = 0; z < arr.length; z++) {
+		const scan = arr[z];
+		if (scan % 2 === 1) {
+			resultDecrementOdd.push(scan - arr.length);
+		} else {
+			resultDecrementOdd.push(scan);
+		}
+	}
 
-// function splitNumber(arr) {
+	return resultDecrementOdd;
+}
+/*
+[
+    9, 27, 12, 15, 22,
+    5, 63, 25, 15, 21
+]
+*/
 
-// 	return
-// }
+function splitNumber(arr) {
+	let resultSplitNumber = [];
+	let tempArr = [];
+	for (let z = 0; z < arr.length; z++) {
+		const scan = arr[z];
+		if (scan > 26) {
+			resultSplitNumber.push(tempArr);
+			tempArr = [];
+		} else {
+			tempArr.push(scan);
+		}
+	}
+	console.log(resultSplitNumber);
+
+	return;
+}
+/*
+output: [
+  [9], 
+  [12, 15, 22, 5],
+  [25, 15, 21]
+]
+*/
 
 // function convertNumber(arr) {
 // 	let resultConvertNumber = '';
@@ -400,16 +457,34 @@ console.log(cariModus([7, 7, 7, 7, 7])); // -1
 // 		26: 'z',
 // 	};
 
-// 	return
+// 	return;
 // }
 
-// function result(arr) {
+function result(arr) {
+	let resConvertSymbol = convertSymbol(arr);
+	let resDecrementOdd = decrementOdd(resConvertSymbol);
+	let resSplitNumber = splitNumber(resDecrementOdd);
 
-// 	return
-// }
+	return;
+}
 
 // // =================================================================================================
-// // console.log(result(['!@', '!&', '@)', '#!', '&#', '!(', '@&', '%%', '!(', '##', '#&', '@^']))
+console.log(
+	result([
+		'!@',
+		'!&',
+		'@)',
+		'#!',
+		'&#',
+		'!(',
+		'@&',
+		'%%',
+		'!(',
+		'##',
+		'#&',
+		'@^',
+	])
+);
 // // lets go guyz
 
 // // console.log(result(['!(', '#&', '!@', '@%', '@@', '!%', '&#', '#%', '@%', '#!']))
