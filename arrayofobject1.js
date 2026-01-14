@@ -675,6 +675,217 @@
 // ==============================================
 // --------------- L I N E 10 -------------------
 // ==============================================
+// /**
+//  * ============================
+//  * Alien Code Translator
+//  * ============================
+//  *
+//  * RULES:
+//  * - Tidak boleh menggunakan built-in: map, filter, reduce, join, split
+//  * - Boleh menggunakan: Number, String, .length, push
+//  * - Fokus pada logika looping, conditional, buffer
+//  */
+
+// /**
+//  * 1. translateSymbols
+//  * Mengubah simbol alien menjadi angka
+//  * example:
+//  * input: ['@!', '#*', '$%']
+//  * expected output: [21, 38, 45]
+//  */
+// function translateSymbols(arr) {
+// 	let symbolMap = {
+// 		'!': 1,
+// 		'@': 2,
+// 		'#': 3,
+// 		$: 4,
+// 		'%': 5,
+// 		'^': 6,
+// 		'&': 7,
+// 		'*': 8,
+// 		'(': 9,
+// 		')': 0,
+// 	};
+
+// 	let result = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const data = arr[i];
+// 		let buffer = '';
+// 		for (let j = 0; j < data.length; j++) {
+// 			const symbol = data[j];
+// 			buffer += symbolMap[symbol];
+// 		}
+// 		result.push(Number(buffer));
+// 	}
+
+// 	// console.log(result);
+// 	return result;
+// }
+
+// /**
+//  * 2. adjustOdd
+//  * Kurangi angka ganjil dengan panjang array
+//  * genap tetap
+//  * example:
+//  * input: [21, 38, 45]
+//  * expected output: [18, 38, 42]
+//  */
+// function adjustOdd(arr) {
+// 	let result = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const element = arr[i];
+// 		if (element % 2 !== 0) {
+// 			result.push(element - arr.length);
+// 		} else {
+// 			result.push(element);
+// 		}
+// 	}
+
+// 	// console.log(result);
+// 	return result;
+// }
+
+// /**
+//  * 3. removeNegatives
+//  * Hapus angka negatif, tapi catat posisi untuk nanti
+//  * example:
+//  * input: [18, -5, 38, 42, -2]
+//  * expected output: [18, 38, 42]
+//  */
+// function removeNegatives(arr) {
+// 	let result = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const element = arr[i];
+// 		if (element < 1) {
+// 			continue;
+// 		} else {
+// 			result.push(element);
+// 		}
+// 	}
+
+// 	// console.log(result);
+// 	return result;
+// }
+
+// /**
+//  * 4. groupByThreshold
+//  * Pisahkan array menjadi group
+//  * angka > 40 sebagai pemisah (tidak termasuk)
+//  * example:
+//  * input: [18, 38, 42, 15, 8]
+//  * expected output: [[18, 38], [15, 8]]
+//  */
+// function groupByThreshold(arr) {
+// 	let result = [];
+// 	let buffer = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const data = arr[i];
+
+// 		if (data > 40) {
+// 			if (buffer.length > 0) {
+// 				result.push(buffer);
+// 				buffer = [];
+// 			}
+// 		} else {
+// 			buffer.push(data);
+// 		}
+// 	}
+
+// 	if (buffer.length > 0) {
+// 		result.push(buffer);
+// 	}
+
+// 	// console.log(result);
+// 	return result;
+// }
+
+// /**
+//  * 5. numberToAlienChar
+//  * selama n > 26 → n = n - 26
+//  * input:
+//  * [ 16, 38, 40 ]
+//  *
+//  * proses:
+//  * 16 → 16
+//  * 38 → 12
+//  * 40 → 14
+//  *
+//  * output:
+//  * ['π', 'μ', 'ξ']
+//  */
+
+// function numberToAlienChar(arr) {
+// 	let alienAlphabet = {
+// 		1: 'α',
+// 		2: 'β',
+// 		3: 'γ',
+// 		4: 'δ',
+// 		5: 'ε',
+// 		6: 'ζ',
+// 		7: 'η',
+// 		8: 'θ',
+// 		9: 'ι',
+// 		10: 'κ',
+// 		11: 'λ',
+// 		12: 'μ',
+// 		13: 'ν',
+// 		14: 'ξ',
+// 		15: 'ο',
+// 		16: 'π',
+// 		17: 'ρ',
+// 		18: 'σ',
+// 		19: 'τ',
+// 		20: 'υ',
+// 		21: 'φ',
+// 		22: 'χ',
+// 		23: 'ψ',
+// 		24: 'ω',
+// 		25: 'ϑ',
+// 		26: 'ϕ',
+// 	};
+
+// 	let result = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const data = arr[i];
+// 		for (let j = 0; j < data.length; j++) {
+// 			const element = data[j];
+// 			if (element > 26) {
+// 				result.push(alienAlphabet[element - 26]);
+// 			} else {
+// 				result.push(alienAlphabet[element]);
+// 			}
+// 		}
+// 	}
+
+// 	return result;
+// }
+
+// /**
+//  * 6. main function translate
+//  * Menggabungkan semua helper
+//  */
+// function translate(arr) {
+// 	let resultI = translateSymbols(arr);
+// 	let resultII = adjustOdd(resultI);
+// 	let resultIII = removeNegatives(resultII);
+// 	let resultIV = groupByThreshold(resultIII);
+// 	let resultV = numberToAlienChar(resultIV);
+
+// 	return resultV;
+// }
+
+// /**
+//  * ============================
+//  * TEST CASE (DO NOT MODIFY)
+//  * ============================
+//  */
+
+// console.log(translate(['@!', '#*', '$%', '^&', '(!']));
+// // expected final output: [ 'π', 'μ', 'ξ' ]
+// console.log(translate(['!', '(', '&', '%', '@#']));
+// // expected final output: [ 'δ', 'β', 'σ' ]
+// console.log(translate(['$', '*', '(', ')', '@!']));
+// // expected final output: [ 'δ', 'θ', 'δ', 'π' ]
 
 // ==============================================
 // --------------- L I N E 11 -------------------
