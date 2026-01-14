@@ -890,6 +890,211 @@
 // ==============================================
 // --------------- L I N E 11 -------------------
 // ==============================================
+/**
+ * ============================
+ * Student Score Processor
+ * ============================
+ *
+ * RULES:
+ * - DILARANG menggunakan: map, filter, reduce, Object.entries
+ * - BOLEH menggunakan: Object.keys, .length, push, Number, String
+ * - Fokus: object traversal, nested object, conditional logic
+ * - TOTAL 6 FUNCTION:
+ *   5 helper + 1 main (result)
+ */
+
+/**
+ * RAW DATA
+ */
+const students = {
+	alex: { math: 80, english: 70, science: 90 },
+	bella: { math: 60, english: 85, science: 75 },
+	carlo: { math: 90, english: 40, science: 65 },
+	dina: { math: 50, english: 55, science: 60 },
+};
+
+/**
+ * 1. getStudentNames
+ * Ambil semua nama student dalam bentuk array
+ *
+ * example:
+ * input: students
+ * expected output: ['alex', 'bella', 'carlo', 'dina']
+ */
+function getStudentNames(obj) {
+	let result = [];
+	for (let name in obj) {
+		result.push(name);
+	}
+
+	// console.log(result);
+	return result;
+}
+
+/**
+ * 2. calculateTotalScore
+ * Hitung total nilai tiap student
+ *
+ * example:
+ * input: students
+ * expected output:
+ * {
+ *   alex: 240,
+ *   bella: 220,
+ *   carlo: 195,
+ *   dina: 165
+ * }
+ */
+function calculateTotalScore(obj) {
+	let result = {};
+	for (let name in obj) {
+		let data = Object.values(obj[name]);
+		// console.log(data);
+		let point = 0;
+		for (let i = 0; i < data.length; i++) {
+			const major = data[i];
+			point += major;
+		}
+
+		if (result[name] === undefined) {
+			result[name] = point;
+		}
+	}
+
+	// console.log(result);
+	return result;
+}
+
+/**
+ * 3. filterPassedStudents
+ * Student LULUS jika total nilai >= 200
+ *
+ * example:
+ * input:
+ * {
+ *   alex: 240,
+ *   bella: 220,
+ *   carlo: 195,
+ *   dina: 165
+ * }
+ *
+ * expected output:
+ * {
+ *   alex: 240,
+ *   bella: 220
+ * }
+ */
+function filterPassedStudents(totalScoreObj) {
+	let result = {};
+	for (let student in totalScoreObj) {
+		if (totalScoreObj[student] >= 200) {
+			result[student] = totalScoreObj[student];
+		}
+	}
+
+	// console.log(result);
+	return result;
+}
+
+/**
+ * 4. convertToGrade
+ * Konversi total nilai ke grade:
+ * - >= 230 → 'A'
+ * - >= 200 → 'B'
+ * - >= 170 → 'C'
+ * - < 170  → 'D'
+ *
+ * example:
+ * input:
+ * {
+ *   alex: 240,
+ *   bella: 220
+ * }
+ *
+ * expected output:
+ * {
+ *   alex: 'A',
+ *   bella: 'B'
+ * }
+ */
+function convertToGrade(obj) {
+	let result = {};
+	for (let student in obj) {
+		let score = obj[student];
+		// console.log(score);
+
+		let grade = '';
+		if (score >= 230) {
+			grade = 'A';
+		} else if (score >= 200) {
+			grade = 'B';
+		} else if (score >= 170) {
+			grade = 'C';
+		} else if (score < 170) {
+			grade = 'D';
+		}
+
+		if (result[student] === undefined) {
+			result[student] = grade;
+		}
+	}
+
+	// console.log(result);
+	return result;
+}
+
+/**
+ * 5. formatResult
+ * Ubah object menjadi array string dengan format:
+ * "name: GRADE"
+ *
+ * example:
+ * input:
+ * {
+ *   alex: 'A',
+ *   bella: 'B'
+ * }
+ *
+ * expected output:
+ * ['alex: A', 'bella: B']
+ */
+function formatResult(obj) {
+	let result = [];
+	for (let students in obj) {
+		result.push(`${students}: ${obj[students]}`);
+	}
+
+	// console.log(result);
+	return result;
+}
+
+/**
+ * 6. MAIN FUNCTION
+ * Urutan WAJIB:
+ * - getStudentNames (hanya untuk validasi, tidak dipakai lagi)
+ * - calculateTotalScore
+ * - filterPassedStudents
+ * - convertToGrade
+ * - formatResult
+ */
+function result(data) {
+	let first = getStudentNames(data);
+	let second = calculateTotalScore(data);
+	let third = filterPassedStudents(second);
+	let forth = convertToGrade(third);
+	let fifth = formatResult(forth);
+	return fifth;
+}
+
+/**
+ * ============================
+ * TEST CASE (DO NOT MODIFY)
+ * ============================
+ */
+
+console.log(result(students));
+// expected output:
+// ['alex: A', 'bella: B']
 
 // ==============================================
 // --------------- L I N E 16 -------------------
