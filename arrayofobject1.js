@@ -342,171 +342,183 @@
 // --------------- L I N E 8 -------------------
 // ==============================================
 
-function convertSymbol(arr) {
-	let resultConvertSimbol = [];
-	let simbolObject = {
-		'!': 1,
-		'@': 2,
-		'#': 3,
-		$: 4,
-		'%': 5,
-		'^': 6,
-		'&': 7,
-		'*': 8,
-		'(': 9,
-		')': 0,
-	};
+// function convertSymbol(arr) {
+// 	let resultConvertSimbol = [];
+// 	let simbolObject = {
+// 		'!': 1,
+// 		'@': 2,
+// 		'#': 3,
+// 		$: 4,
+// 		'%': 5,
+// 		'^': 6,
+// 		'&': 7,
+// 		'*': 8,
+// 		'(': 9,
+// 		')': 0,
+// 	};
 
-	let temp = '';
-	for (let z = 0; z < arr.length; z++) {
-		const data = arr[z];
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const data = arr[z];
+// 		let temp = '';
 
-		for (let x = 0; x <= data.length; x++) {
-			const char = data[x];
-			if (char !== undefined) {
-				for (let scan in simbolObject) {
-					if (scan === char) {
-						temp += String(simbolObject[scan]);
-					}
-				}
-			} else {
-				resultConvertSimbol.push(Number(temp));
-				temp = '';
-			}
-		}
-	}
+// 		for (let x = 0; x < data.length; x++) {
+// 			const char = data[x];
+// 			temp += simbolObject[char];
+// 		}
+// 		resultConvertSimbol.push(Number(temp));
+// 	}
+// 	// console.log(resultConvertSimbol);
 
-	// console.log(temp);
-	// console.log(resultConvertSimbol);
+// 	return resultConvertSimbol;
+// }
 
-	return resultConvertSimbol;
-}
+// function decrementOdd(arr) {
+// 	let resultDecrementOdd = [];
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const scan = arr[z];
+// 		if (scan % 2 === 1) {
+// 			resultDecrementOdd.push(scan - arr.length);
+// 		} else {
+// 			resultDecrementOdd.push(scan);
+// 		}
+// 	}
+// 	// console.log(resultDecrementOdd);
 
-function decrementOdd(arr) {
-	let resultDecrementOdd = [];
-	for (let z = 0; z < arr.length; z++) {
-		const scan = arr[z];
-		if (scan % 2 === 1) {
-			resultDecrementOdd.push(scan - arr.length);
-		} else {
-			resultDecrementOdd.push(scan);
-		}
-	}
-	// console.log(resultDecrementOdd);
+// 	return resultDecrementOdd;
+// }
 
-	return resultDecrementOdd;
-}
+// function splitNumber(arr) {
+// 	let resultSplitNumber = [];
+// 	let tempArr = [];
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const scan = arr[z];
+// 		// console.log(scan);
 
-function splitNumber(arr) {
-	let resultSplitNumber = [];
-	let tempArr = [];
-	for (let z = 0; z <= arr.length; z++) {
-		const scan = arr[z];
-		if (scan > 26 || scan === undefined) {
-			resultSplitNumber.push(tempArr);
-			tempArr = [];
-		} else {
-			tempArr.push(scan);
-		}
-	}
-	// console.log(resultSplitNumber);
+// 		if (scan > 26) {
+// 			if (tempArr.length > 0) {
+// 				resultSplitNumber.push(tempArr);
+// 				tempArr = [];
+// 			}
+// 		} else {
+// 			tempArr.push(scan);
+// 		}
+// 	}
 
-	return resultSplitNumber;
-}
+// 	if (tempArr.length > 0) {
+// 		resultSplitNumber.push(tempArr);
+// 	}
+// 	// console.log(resultSplitNumber);
 
-function convertNumber(arr) {
-	let resultConvertNumber = '';
-	let alphabet = {
-		1: 'a',
-		2: 'b',
-		3: 'c',
-		4: 'd',
-		5: 'e',
-		6: 'f',
-		7: 'g',
-		8: 'h',
-		9: 'i',
-		10: 'j',
-		11: 'k',
-		12: 'l',
-		13: 'm',
-		14: 'n',
-		15: 'o',
-		16: 'p',
-		17: 'q',
-		18: 'r',
-		19: 's',
-		20: 't',
-		21: 'u',
-		22: 'v',
-		23: 'w',
-		24: 'x',
-		25: 'y',
-		26: 'z',
-	};
+// 	return resultSplitNumber;
+// }
 
-	for (let z = 0; z < arr.length; z++) {
-		const outter = arr[z];
-		for (let x = 0; x <= outter.length; x++) {
-			const scan = outter[x];
-			for (let char in alphabet) {
-				if (scan === undefined) {
-					resultConvertNumber += ' ';
-					break;
-				} else if (String(scan) === char) {
-					resultConvertNumber += alphabet[char];
-					break;
-				}
-			}
-		}
-	}
+// function convertNumber(arr) {
+// 	let resultConvertNumber = '';
+// 	let alphabet = {
+// 		1: 'a',
+// 		2: 'b',
+// 		3: 'c',
+// 		4: 'd',
+// 		5: 'e',
+// 		6: 'f',
+// 		7: 'g',
+// 		8: 'h',
+// 		9: 'i',
+// 		10: 'j',
+// 		11: 'k',
+// 		12: 'l',
+// 		13: 'm',
+// 		14: 'n',
+// 		15: 'o',
+// 		16: 'p',
+// 		17: 'q',
+// 		18: 'r',
+// 		19: 's',
+// 		20: 't',
+// 		21: 'u',
+// 		22: 'v',
+// 		23: 'w',
+// 		24: 'x',
+// 		25: 'y',
+// 		26: 'z',
+// 	};
 
-	// console.log(resultConvertNumber);
+// 	for (let z = 0; z < arr.length; z++) {
+// 		const outter = arr[z];
+// 		for (let x = 0; x < outter.length; x++) {
+// 			const scan = outter[x];
+// 			resultConvertNumber += alphabet[scan];
+// 		}
 
-	return resultConvertNumber;
-}
+// 		if (z < arr.length - 1) {
+// 			resultConvertNumber += ' ';
+// 		}
+// 	}
+// 	// console.log(resultConvertNumber);
 
-function result(arr) {
-	let resConvertSymbol = convertSymbol(arr);
-	let resDecrementOdd = decrementOdd(resConvertSymbol);
-	let resSplitNumber = splitNumber(resDecrementOdd);
-	let result = convertNumber(resSplitNumber);
+// 	return resultConvertNumber;
+// }
 
-	return result;
-}
+// function result(arr) {
+// 	let resConvertSymbol = convertSymbol(arr);
+// 	let resDecrementOdd = decrementOdd(resConvertSymbol);
+// 	let resSplitNumber = splitNumber(resDecrementOdd);
+// 	let result = convertNumber(resSplitNumber);
 
-// // =================================================================================================
-console.log(
-	result([
-		'!@',
-		'!&',
-		'@)',
-		'#!',
-		'&#',
-		'!(',
-		'@&',
-		'%%',
-		'!(',
-		'##',
-		'#&',
-		'@^',
-	])
-);
-// // lets go guyz
+// 	return result;
+// }
 
-console.log(
-	result(['!(', '#&', '!@', '@%', '@@', '!%', '&#', '#%', '@%', '#!'])
-);
-// // i love you
+// // // =================================================================================================
+// console.log(
+// 	result([
+// 		'!@',
+// 		'!&',
+// 		'@)',
+// 		'#!',
+// 		'&#',
+// 		'!(',
+// 		'@&',
+// 		'%%',
+// 		'!(',
+// 		'##',
+// 		'#&',
+// 		'@^',
+// 	])
+// );
+// // // lets go guyz
 
-console.log(
-	result(['!%', '@&', '$', '!&', '$#', '*', '!#', '!%', '@#', '@)', '@!', '@@'])
-);
-// // code hacktiv
+// // console.log(
+// // 	result(['!(', '#&', '!@', '@%', '@@', '!%', '&#', '#%', '@%', '#!'])
+// // );
+// // // i love you
+
+// console.log(
+// 	result(['!%', '@&', '$', '!&', '$#', '*', '!#', '!%', '@#', '@)', '@!', '@@'])
+// );
+// // // code hacktiv
 
 // ==============================================
 // --------------- L I N E 9 -------------------
 // ==============================================
+function toNumberArray(arr) {
+	// your code here
+}
+
+function subtractOdd(arr) {
+	// your code here
+}
+
+function groupByLimit(arr) {
+	// your code here
+}
+
+function numberToChar(arr) {
+	// your code here
+}
+
+function result(arr) {
+	// your code here
+}
 
 // ==============================================
 // --------------- L I N E 10 -------------------
