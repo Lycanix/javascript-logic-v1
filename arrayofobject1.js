@@ -344,18 +344,18 @@
 
 // function convertSymbol(arr) {
 // 	let resultConvertSimbol = [];
-// 	let simbolObject = {
-// 		'!': 1,
-// 		'@': 2,
-// 		'#': 3,
-// 		$: 4,
-// 		'%': 5,
-// 		'^': 6,
-// 		'&': 7,
-// 		'*': 8,
-// 		'(': 9,
-// 		')': 0,
-// 	};
+// let simbolObject = {
+// 	'!': 1,
+// 	'@': 2,
+// 	'#': 3,
+// 	$: 4,
+// 	'%': 5,
+// 	'^': 6,
+// 	'&': 7,
+// 	'*': 8,
+// 	'(': 9,
+// 	')': 0,
+// };
 
 // 	for (let z = 0; z < arr.length; z++) {
 // 		const data = arr[z];
@@ -414,34 +414,34 @@
 
 // function convertNumber(arr) {
 // 	let resultConvertNumber = '';
-// 	let alphabet = {
-// 		1: 'a',
-// 		2: 'b',
-// 		3: 'c',
-// 		4: 'd',
-// 		5: 'e',
-// 		6: 'f',
-// 		7: 'g',
-// 		8: 'h',
-// 		9: 'i',
-// 		10: 'j',
-// 		11: 'k',
-// 		12: 'l',
-// 		13: 'm',
-// 		14: 'n',
-// 		15: 'o',
-// 		16: 'p',
-// 		17: 'q',
-// 		18: 'r',
-// 		19: 's',
-// 		20: 't',
-// 		21: 'u',
-// 		22: 'v',
-// 		23: 'w',
-// 		24: 'x',
-// 		25: 'y',
-// 		26: 'z',
-// 	};
+// let alphabet = {
+// 	1: 'a',
+// 	2: 'b',
+// 	3: 'c',
+// 	4: 'd',
+// 	5: 'e',
+// 	6: 'f',
+// 	7: 'g',
+// 	8: 'h',
+// 	9: 'i',
+// 	10: 'j',
+// 	11: 'k',
+// 	12: 'l',
+// 	13: 'm',
+// 	14: 'n',
+// 	15: 'o',
+// 	16: 'p',
+// 	17: 'q',
+// 	18: 'r',
+// 	19: 's',
+// 	20: 't',
+// 	21: 'u',
+// 	22: 'v',
+// 	23: 'w',
+// 	24: 'x',
+// 	25: 'y',
+// 	26: 'z',
+// };
 
 // 	for (let z = 0; z < arr.length; z++) {
 // 		const outter = arr[z];
@@ -500,25 +500,177 @@
 // ==============================================
 // --------------- L I N E 9 -------------------
 // ==============================================
-function toNumberArray(arr) {
-	// your code here
-}
+// /**
+//  * ============================
+//  * Number Cipher Decode
+//  * ============================
+//  *
+//  * RULES:
+//  * - Tidak boleh menggunakan built-in: map, filter, reduce, join, split
+//  * - Boleh menggunakan: Number, String, .length, push
+//  * - Fokus pada logika looping, conditional, dan buffer
+//  */
 
-function subtractOdd(arr) {
-	// your code here
-}
+// /**
+//  * Mengubah array of string menjadi array of number
+//  *
+//  * example:
+//  * input  : ['12', '5', '30']
+//  * output : [12, 5, 30]
+//  */
+// function toNumberArray(arr) {
+// 	let resultI = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const element = arr[i];
+// 		resultI.push(Number(element));
+// 	}
 
-function groupByLimit(arr) {
-	// your code here
-}
+// 	// console.log(resultI);
+// 	return resultI;
+// }
 
-function numberToChar(arr) {
-	// your code here
-}
+// /**
+//  * Jika angka ganjil, kurangi dengan panjang array
+//  * Jika genap, biarkan
+//  *
+//  * example:
+//  * input  : [12, 5, 30]
+//  * output : [12, 2, 30]
+//  */
+// function subtractOdd(arr) {
+// 	let resultII = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const element = arr[i];
+// 		if (element % 2 !== 0) {
+// 			resultII.push(element - arr.length);
+// 		} else {
+// 			resultII.push(element);
+// 		}
+// 	}
 
-function result(arr) {
-	// your code here
-}
+// 	// console.log(resultII);
+// 	return resultII;
+// }
+
+// /**
+//  * Memisahkan angka menjadi beberapa group
+//  * - Angka > 20 adalah PEMISAH
+//  * - Angka pemisah tidak ikut group
+//  *
+//  * example:
+//  * input  : [12, -2, 30, 8, -6, 18, -4]
+//  * output :
+//  * [
+//  * [12, -2],
+//  * [8, -6, 18, -4]
+//  * ]
+//  */
+// function groupByLimit(arr) {
+// 	let resultIII = [];
+// 	let buffer = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const angka = arr[i];
+// 		if (angka > 20) {
+// 			if (buffer.length > 0) {
+// 				resultIII.push(buffer);
+// 				buffer = [];
+// 			}
+// 		} else {
+// 			buffer.push(angka);
+// 		}
+// 	}
+
+// 	if (buffer.length > 0) {
+// 		resultIII.push(buffer);
+// 		buffer = [];
+// 	}
+
+// 	// console.log(resultIII);
+// 	return resultIII;
+// }
+
+// /**
+//  * Mengubah array multi dimensi menjadi string
+//  * Antar group dipisahkan spasi
+//  *
+//  * Mapping angka ke huruf SUDAH DISEDIAKAN
+//  */
+// function numberToChar(arr) {
+// 	let alphabet = {
+// 		1: 'a',
+// 		2: 'b',
+// 		3: 'c',
+// 		4: 'd',
+// 		5: 'e',
+// 		6: 'f',
+// 		7: 'g',
+// 		8: 'h',
+// 		9: 'i',
+// 		10: 'j',
+// 		11: 'k',
+// 		12: 'l',
+// 		13: 'm',
+// 		14: 'n',
+// 		15: 'o',
+// 		16: 'p',
+// 		17: 'q',
+// 		18: 'r',
+// 		19: 's',
+// 		20: 't',
+// 		21: 'u',
+// 		22: 'v',
+// 		23: 'w',
+// 		24: 'x',
+// 		25: 'y',
+// 		26: 'z',
+// 	};
+
+// 	let resultIV = '';
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const data = arr[i];
+// 		for (let j = 0; j < data.length; j++) {
+// 			const element = data[j];
+// 			if (element < 0) {
+// 				// console.log(element);
+// 				continue;
+// 			} else {
+// 				resultIV += alphabet[element];
+// 			}
+// 		}
+// 		resultIV += ' ';
+// 	}
+
+// 	// console.log(resultIV);
+// 	return resultIV;
+// }
+
+// /**
+//  * MAIN FUNCTION
+//  * Menggabungkan seluruh proses
+//  */
+// function result(arr) {
+// 	let resultI = toNumberArray(arr);
+// 	let resultII = subtractOdd(resultI);
+// 	let resultIII = groupByLimit(resultII);
+// 	let resultIV = numberToChar(resultIII);
+
+// 	return resultIV;
+// }
+
+// /**
+//  * ============================
+//  * TEST CASE (DO NOT MODIFY)
+//  * ============================
+//  */
+
+// console.log(result(['12', '5', '30', '8', '1', '25', '3']));
+// // expected: "l hr"
+
+// console.log(result(['1', '3', '21', '2', '4']));
+// // expected: "pbd"
+
+// console.log(result(['30', '1', '2']));
+// // expected: "b"
 
 // ==============================================
 // --------------- L I N E 10 -------------------
