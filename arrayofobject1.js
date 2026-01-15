@@ -890,215 +890,413 @@
 // ==============================================
 // --------------- L I N E 11 -------------------
 // ==============================================
-/**
- * ============================
- * Student Score Processor
- * ============================
- *
- * RULES:
- * - DILARANG menggunakan: map, filter, reduce, Object.entries
- * - BOLEH menggunakan: Object.keys, .length, push, Number, String
- * - Fokus: object traversal, nested object, conditional logic
- * - TOTAL 6 FUNCTION:
- *   5 helper + 1 main (result)
- */
+// /**
+//  * ============================
+//  * Student Score Processor
+//  * ============================
+//  *
+//  * RULES:
+//  * - DILARANG menggunakan: map, filter, reduce, Object.entries
+//  * - BOLEH menggunakan: Object.keys, .length, push, Number, String
+//  * - Fokus: object traversal, nested object, conditional logic
+//  * - TOTAL 6 FUNCTION:
+//  *   5 helper + 1 main (result)
+//  */
 
-/**
- * RAW DATA
- */
-const students = {
-	alex: { math: 80, english: 70, science: 90 },
-	bella: { math: 60, english: 85, science: 75 },
-	carlo: { math: 90, english: 40, science: 65 },
-	dina: { math: 50, english: 55, science: 60 },
-};
+// /**
+//  * RAW DATA
+//  */
+// const students = {
+// 	alex: { math: 80, english: 70, science: 90 },
+// 	bella: { math: 60, english: 85, science: 75 },
+// 	carlo: { math: 90, english: 40, science: 65 },
+// 	dina: { math: 50, english: 55, science: 60 },
+// };
 
-/**
- * 1. getStudentNames
- * Ambil semua nama student dalam bentuk array
- *
- * example:
- * input: students
- * expected output: ['alex', 'bella', 'carlo', 'dina']
- */
-function getStudentNames(obj) {
-	let result = [];
-	for (let name in obj) {
-		result.push(name);
-	}
+// /**
+//  * 1. getStudentNames
+//  * Ambil semua nama student dalam bentuk array
+//  *
+//  * example:
+//  * input: students
+//  * expected output: ['alex', 'bella', 'carlo', 'dina']
+//  */
+// function getStudentNames(obj) {
+// 	let result = [];
+// 	for (let name in obj) {
+// 		result.push(name);
+// 	}
 
-	// console.log(result);
-	return result;
-}
+// 	// console.log(result);
+// 	return result;
+// }
 
-/**
- * 2. calculateTotalScore
- * Hitung total nilai tiap student
- *
- * example:
- * input: students
- * expected output:
- * {
- *   alex: 240,
- *   bella: 220,
- *   carlo: 195,
- *   dina: 165
- * }
- */
-function calculateTotalScore(obj) {
-	let result = {};
-	for (let name in obj) {
-		let data = Object.values(obj[name]);
-		// console.log(data);
-		let point = 0;
-		for (let i = 0; i < data.length; i++) {
-			const major = data[i];
-			point += major;
-		}
+// /**
+//  * 2. calculateTotalScore
+//  * Hitung total nilai tiap student
+//  *
+//  * example:
+//  * input: students
+//  * expected output:
+//  * {
+//  *   alex: 240,
+//  *   bella: 220,
+//  *   carlo: 195,
+//  *   dina: 165
+//  * }
+//  */
+// function calculateTotalScore(obj) {
+// 	let result = {};
+// 	for (let name in obj) {
+// 		let data = Object.values(obj[name]);
+// 		// console.log(data);
+// 		let point = 0;
+// 		for (let i = 0; i < data.length; i++) {
+// 			const major = data[i];
+// 			point += major;
+// 		}
 
-		if (result[name] === undefined) {
-			result[name] = point;
-		}
-	}
+// 		if (result[name] === undefined) {
+// 			result[name] = point;
+// 		}
+// 	}
 
-	// console.log(result);
-	return result;
-}
+// 	// console.log(result);
+// 	return result;
+// }
 
-/**
- * 3. filterPassedStudents
- * Student LULUS jika total nilai >= 200
- *
- * example:
- * input:
- * {
- *   alex: 240,
- *   bella: 220,
- *   carlo: 195,
- *   dina: 165
- * }
- *
- * expected output:
- * {
- *   alex: 240,
- *   bella: 220
- * }
- */
-function filterPassedStudents(totalScoreObj) {
-	let result = {};
-	for (let student in totalScoreObj) {
-		if (totalScoreObj[student] >= 200) {
-			result[student] = totalScoreObj[student];
-		}
-	}
+// /**
+//  * 3. filterPassedStudents
+//  * Student LULUS jika total nilai >= 200
+//  *
+//  * example:
+//  * input:
+//  * {
+//  *   alex: 240,
+//  *   bella: 220,
+//  *   carlo: 195,
+//  *   dina: 165
+//  * }
+//  *
+//  * expected output:
+//  * {
+//  *   alex: 240,
+//  *   bella: 220
+//  * }
+//  */
+// function filterPassedStudents(totalScoreObj) {
+// 	let result = {};
+// 	for (let student in totalScoreObj) {
+// 		if (totalScoreObj[student] >= 200) {
+// 			result[student] = totalScoreObj[student];
+// 		}
+// 	}
 
-	// console.log(result);
-	return result;
-}
+// 	// console.log(result);
+// 	return result;
+// }
 
-/**
- * 4. convertToGrade
- * Konversi total nilai ke grade:
- * - >= 230 → 'A'
- * - >= 200 → 'B'
- * - >= 170 → 'C'
- * - < 170  → 'D'
- *
- * example:
- * input:
- * {
- *   alex: 240,
- *   bella: 220
- * }
- *
- * expected output:
- * {
- *   alex: 'A',
- *   bella: 'B'
- * }
- */
-function convertToGrade(obj) {
-	let result = {};
-	for (let student in obj) {
-		let score = obj[student];
-		// console.log(score);
+// /**
+//  * 4. convertToGrade
+//  * Konversi total nilai ke grade:
+//  * - >= 230 → 'A'
+//  * - >= 200 → 'B'
+//  * - >= 170 → 'C'
+//  * - < 170  → 'D'
+//  *
+//  * example:
+//  * input:
+//  * {
+//  *   alex: 240,
+//  *   bella: 220
+//  * }
+//  *
+//  * expected output:
+//  * {
+//  *   alex: 'A',
+//  *   bella: 'B'
+//  * }
+//  */
+// function convertToGrade(obj) {
+// 	let result = {};
+// 	for (let student in obj) {
+// 		let score = obj[student];
+// 		// console.log(score);
 
-		let grade = '';
-		if (score >= 230) {
-			grade = 'A';
-		} else if (score >= 200) {
-			grade = 'B';
-		} else if (score >= 170) {
-			grade = 'C';
-		} else if (score < 170) {
-			grade = 'D';
-		}
+// 		let grade = '';
+// 		if (score >= 230) {
+// 			grade = 'A';
+// 		} else if (score >= 200) {
+// 			grade = 'B';
+// 		} else if (score >= 170) {
+// 			grade = 'C';
+// 		} else if (score < 170) {
+// 			grade = 'D';
+// 		}
 
-		if (result[student] === undefined) {
-			result[student] = grade;
-		}
-	}
+// 		if (result[student] === undefined) {
+// 			result[student] = grade;
+// 		}
+// 	}
 
-	// console.log(result);
-	return result;
-}
+// 	// console.log(result);
+// 	return result;
+// }
 
-/**
- * 5. formatResult
- * Ubah object menjadi array string dengan format:
- * "name: GRADE"
- *
- * example:
- * input:
- * {
- *   alex: 'A',
- *   bella: 'B'
- * }
- *
- * expected output:
- * ['alex: A', 'bella: B']
- */
-function formatResult(obj) {
-	let result = [];
-	for (let students in obj) {
-		result.push(`${students}: ${obj[students]}`);
-	}
+// /**
+//  * 5. formatResult
+//  * Ubah object menjadi array string dengan format:
+//  * "name: GRADE"
+//  *
+//  * example:
+//  * input:
+//  * {
+//  *   alex: 'A',
+//  *   bella: 'B'
+//  * }
+//  *
+//  * expected output:
+//  * ['alex: A', 'bella: B']
+//  */
+// function formatResult(obj) {
+// 	let result = [];
+// 	for (let students in obj) {
+// 		result.push(`${students}: ${obj[students]}`);
+// 	}
 
-	// console.log(result);
-	return result;
-}
+// 	// console.log(result);
+// 	return result;
+// }
 
-/**
- * 6. MAIN FUNCTION
- * Urutan WAJIB:
- * - getStudentNames (hanya untuk validasi, tidak dipakai lagi)
- * - calculateTotalScore
- * - filterPassedStudents
- * - convertToGrade
- * - formatResult
- */
-function result(data) {
-	let first = getStudentNames(data);
-	let second = calculateTotalScore(data);
-	let third = filterPassedStudents(second);
-	let forth = convertToGrade(third);
-	let fifth = formatResult(forth);
-	return fifth;
-}
+// /**
+//  * 6. MAIN FUNCTION
+//  * Urutan WAJIB:
+//  * - getStudentNames (hanya untuk validasi, tidak dipakai lagi)
+//  * - calculateTotalScore
+//  * - filterPassedStudents
+//  * - convertToGrade
+//  * - formatResult
+//  */
+// function result(data) {
+// 	let first = getStudentNames(data);
+// 	let second = calculateTotalScore(data);
+// 	let third = filterPassedStudents(second);
+// 	let forth = convertToGrade(third);
+// 	let fifth = formatResult(forth);
+// 	return fifth;
+// }
 
-/**
- * ============================
- * TEST CASE (DO NOT MODIFY)
- * ============================
- */
+// /**
+//  * ============================
+//  * TEST CASE (DO NOT MODIFY)
+//  * ============================
+//  */
 
-console.log(result(students));
-// expected output:
-// ['alex: A', 'bella: B']
+// console.log(result(students));
+// // expected output:
+// // ['alex: A', 'bella: B']
 
 // ==============================================
 // --------------- L I N E 16 -------------------
 // ==============================================
+const trainers = [
+	{
+		name: 'Tai',
+		digimons: [
+			{
+				name: 'Agumon',
+				level: 5,
+				type: 'Vaccine',
+				evolutions: [
+					{ name: 'Greymon', level: 10 },
+					{ name: 'MetalGreymon', level: 20 },
+				],
+			},
+			{
+				name: 'Koromon',
+				level: 2,
+				type: 'Data',
+				evolutions: [],
+			},
+		],
+	},
+	{
+		name: 'Matt',
+		digimons: [
+			{
+				name: 'Gabumon',
+				level: 6,
+				type: 'Data',
+				evolutions: [{ name: 'Garurumon', level: 12 }],
+			},
+			{
+				name: 'Tsukaimon',
+				level: '4', // ❌ INVALID: level string, bukan number
+				type: 'Virus',
+				evolutions: [],
+			},
+		],
+	},
+];
+function extractAllDigimons(trainers) {
+	let result = [];
+	for (let i = 0; i < trainers.length; i++) {
+		const trainer = trainers[i];
+		let digi = trainer.digimons;
+
+		for (let j = 0; j < digi.length; j++) {
+			const digimon = digi[j];
+			result.push({
+				name: digimon.name,
+				level: digimon.level,
+				type: digimon.type,
+				evolutions: digimon.evolutions,
+				owner: trainer.name,
+			});
+		}
+	}
+	// console.log(result);
+	return result;
+}
+
+function filterValidDigimons(digimons) {
+	let result = [];
+
+	for (let i = 0; i < digimons.length; i++) {
+		const digimon = digimons[i];
+		// console.log(digimon);
+
+		let name = digimon.name;
+		let level = digimon.level;
+		let type = digimon.type;
+		let evolutions = digimon.evolutions;
+		let owner = digimon.owner;
+
+		// name
+		if (typeof name !== 'string' || name.length === 0) continue;
+
+		// level
+		if (typeof level !== 'number' || level < 3) continue;
+
+		//  type
+		if (
+			typeof type !== 'string' ||
+			(type !== 'Vaccine' && type !== 'Data' && type !== 'Virus')
+		) {
+			continue;
+		}
+
+		// evolutions
+		if (!Array.isArray(evolutions)) continue;
+
+		// owner
+		if (typeof owner !== 'string') continue;
+
+		// console.log(digimon);
+		result.push(digimon);
+	}
+	// console.log(result);
+	return result;
+}
+/*
+[
+  {
+    name: 'Agumon',
+    level: 5,
+    type: 'Vaccine',
+    evolutions: [
+      { name: 'Greymon', level: 10 },
+      { name: 'MetalGreymon', level: 20 }
+    ],
+    owner: 'Tai'
+  },
+  {
+    name: 'Gabumon',
+    level: 6,
+    type: 'Data',
+    evolutions: [
+      { name: 'Garurumon', level: 12 }
+    ],
+    owner: 'Matt'
+  }
+]
+*/
+
+function countDigimonByType(validDigimons) {
+	let result = {
+		Vaccine: 0,
+		Data: 0,
+		Virus: 0,
+	};
+
+	for (let i = 0; i < validDigimons.length; i++) {
+		let type = validDigimons[i].type;
+
+		if (type === 'Vaccine') result.Vaccine++;
+		else if (type === 'Data') result.Data++;
+		else if (type === 'Virus') result.Virus++;
+	}
+
+	// console.log(result);
+	return result;
+}
+// {
+//   Vaccine: Number,
+//   Data: Number,
+//   Virus: Number
+// }
+
+function findStrongestDigimon(validDigimons) {
+	if (validDigimons.length === 0) return null;
+
+	let result = {};
+	let max = -Infinity;
+	for (let i = 0; i < validDigimons.length; i++) {
+		const digimon = validDigimons[i];
+		let name = digimon.name;
+		let level = digimon.level;
+		let owner = digimon.owner;
+
+		if (max < level) {
+			max = level;
+			result = { name: name, level: level, owner: owner };
+		}
+		// console.log(digimon);
+	}
+
+	// console.log(result);
+	return result;
+}
+// {
+//   name: String,
+//   level: Number,
+//   owner: String
+// }
+
+function buildTrainingReport(trainers) {
+	let result = {};
+
+	let allDigimons = extractAllDigimons(trainers);
+	let validDigimons = filterValidDigimons(allDigimons);
+	let counType = countDigimonByType(validDigimons);
+	let strongest = findStrongestDigimon(validDigimons);
+
+	result = {
+		totalTrainer: trainers.length,
+		totalValidDigimon: validDigimons.length,
+		digimonByType: counType,
+		strongestDigimon: strongest,
+	};
+	return result;
+}
+
+console.log(buildTrainingReport(trainers));
+// {
+//   totalTrainer: 2,
+//   totalValidDigimon: 2,
+//   digimonByType: { Vaccine: 1, Data: 1, Virus: 0 },
+//   strongestDigimon: { name: 'Gabumon', level: 6, owner: 'Matt' }
+// }
 
 // ==============================================
 // --------------- L I N E 17 -------------------
