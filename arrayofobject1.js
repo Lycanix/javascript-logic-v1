@@ -1099,245 +1099,201 @@
 // ==============================================
 // --------------- L I N E 16 -------------------
 // ==============================================
-const trainers = [
-	{
-		name: 'Tai',
-		digimons: [
-			{
-				name: 'Agumon',
-				level: 5,
-				type: 'Vaccine',
-				evolutions: [
-					{ name: 'Greymon', level: 10 },
-					{ name: 'MetalGreymon', level: 20 },
-				],
-			},
-			{
-				name: 'Koromon',
-				level: 2,
-				type: 'Data',
-				evolutions: [],
-			},
-		],
-	},
-	{
-		name: 'Matt',
-		digimons: [
-			{
-				name: 'Gabumon',
-				level: 6,
-				type: 'Data',
-				evolutions: [{ name: 'Garurumon', level: 12 }],
-			},
-			{
-				name: 'Tsukaimon',
-				level: '4', // ❌ INVALID: level string, bukan number
-				type: 'Virus',
-				evolutions: [],
-			},
-		],
-	},
-];
-function extractAllDigimons(trainers) {
-	let result = [];
-	for (let i = 0; i < trainers.length; i++) {
-		const trainer = trainers[i];
-		let digi = trainer.digimons;
+// const trainers = [
+// 	{
+// 		name: 'Tai',
+// 		digimons: [
+// 			{
+// 				name: 'Agumon',
+// 				level: 5,
+// 				type: 'Vaccine',
+// 				evolutions: [
+// 					{ name: 'Greymon', level: 10 },
+// 					{ name: 'MetalGreymon', level: 20 },
+// 				],
+// 			},
+// 			{
+// 				name: 'Koromon',
+// 				level: 2,
+// 				type: 'Data',
+// 				evolutions: [],
+// 			},
+// 		],
+// 	},
+// 	{
+// 		name: 'Matt',
+// 		digimons: [
+// 			{
+// 				name: 'Gabumon',
+// 				level: 6,
+// 				type: 'Data',
+// 				evolutions: [{ name: 'Garurumon', level: 12 }],
+// 			},
+// 			{
+// 				name: 'Tsukaimon',
+// 				level: '4', // ❌ INVALID: level string, bukan number
+// 				type: 'Virus',
+// 				evolutions: [],
+// 			},
+// 		],
+// 	},
+// ];
+// function extractAllDigimons(trainers) {
+// 	let result = [];
+// 	for (let i = 0; i < trainers.length; i++) {
+// 		const trainer = trainers[i];
+// 		let digi = trainer.digimons;
 
-		for (let j = 0; j < digi.length; j++) {
-			const digimon = digi[j];
-			result.push({
-				name: digimon.name,
-				level: digimon.level,
-				type: digimon.type,
-				evolutions: digimon.evolutions,
-				owner: trainer.name,
-			});
-		}
-	}
-	// console.log(result);
-	return result;
-}
-
-function filterValidDigimons(digimons) {
-	let result = [];
-
-	for (let i = 0; i < digimons.length; i++) {
-		const digimon = digimons[i];
-		// console.log(digimon);
-
-		let name = digimon.name;
-		let level = digimon.level;
-		let type = digimon.type;
-		let evolutions = digimon.evolutions;
-		let owner = digimon.owner;
-
-		// name
-		if (typeof name !== 'string' || name.length === 0) continue;
-
-		// level
-		if (typeof level !== 'number' || level < 3) continue;
-
-		//  type
-		if (
-			typeof type !== 'string' ||
-			(type !== 'Vaccine' && type !== 'Data' && type !== 'Virus')
-		) {
-			continue;
-		}
-
-		// evolutions
-		if (!Array.isArray(evolutions)) continue;
-
-		// owner
-		if (typeof owner !== 'string') continue;
-
-		// console.log(digimon);
-		result.push(digimon);
-	}
-	// console.log(result);
-	return result;
-}
-/*
-[
-  {
-    name: 'Agumon',
-    level: 5,
-    type: 'Vaccine',
-    evolutions: [
-      { name: 'Greymon', level: 10 },
-      { name: 'MetalGreymon', level: 20 }
-    ],
-    owner: 'Tai'
-  },
-  {
-    name: 'Gabumon',
-    level: 6,
-    type: 'Data',
-    evolutions: [
-      { name: 'Garurumon', level: 12 }
-    ],
-    owner: 'Matt'
-  }
-]
-*/
-
-function countDigimonByType(validDigimons) {
-	let result = {
-		Vaccine: 0,
-		Data: 0,
-		Virus: 0,
-	};
-
-	for (let i = 0; i < validDigimons.length; i++) {
-		let type = validDigimons[i].type;
-
-		if (type === 'Vaccine') result.Vaccine++;
-		else if (type === 'Data') result.Data++;
-		else if (type === 'Virus') result.Virus++;
-	}
-
-	// console.log(result);
-	return result;
-}
-// {
-//   Vaccine: Number,
-//   Data: Number,
-//   Virus: Number
+// 		for (let j = 0; j < digi.length; j++) {
+// 			const digimon = digi[j];
+// 			result.push({
+// 				name: digimon.name,
+// 				level: digimon.level,
+// 				type: digimon.type,
+// 				evolutions: digimon.evolutions,
+// 				owner: trainer.name,
+// 			});
+// 		}
+// 	}
+// 	// console.log(result);
+// 	return result;
 // }
 
-function findStrongestDigimon(validDigimons) {
-	if (validDigimons.length === 0) return null;
+// function filterValidDigimons(digimons) {
+// 	let result = [];
 
-	let result = {};
-	let max = -Infinity;
-	for (let i = 0; i < validDigimons.length; i++) {
-		const digimon = validDigimons[i];
-		let name = digimon.name;
-		let level = digimon.level;
-		let owner = digimon.owner;
+// 	for (let i = 0; i < digimons.length; i++) {
+// 		const digimon = digimons[i];
+// 		// console.log(digimon);
 
-		if (max < level) {
-			max = level;
-			result = { name: name, level: level, owner: owner };
-		}
-		// console.log(digimon);
-	}
+// 		let name = digimon.name;
+// 		let level = digimon.level;
+// 		let type = digimon.type;
+// 		let evolutions = digimon.evolutions;
+// 		let owner = digimon.owner;
 
-	// console.log(result);
-	return result;
-}
-// {
-//   name: String,
-//   level: Number,
-//   owner: String
+// 		// name
+// 		if (typeof name !== 'string' || name.length === 0) continue;
+
+// 		// level
+// 		if (typeof level !== 'number' || level < 3) continue;
+
+// 		//  type
+// 		if (
+// 			typeof type !== 'string' ||
+// 			(type !== 'Vaccine' && type !== 'Data' && type !== 'Virus')
+// 		) {
+// 			continue;
+// 		}
+
+// 		// evolutions
+// 		if (!Array.isArray(evolutions)) continue;
+
+// 		// owner
+// 		if (typeof owner !== 'string') continue;
+
+// 		// console.log(digimon);
+// 		result.push(digimon);
+// 	}
+// 	// console.log(result);
+// 	return result;
+// }
+// /*
+// [
+//   {
+//     name: 'Agumon',
+//     level: 5,
+//     type: 'Vaccine',
+//     evolutions: [
+//       { name: 'Greymon', level: 10 },
+//       { name: 'MetalGreymon', level: 20 }
+//     ],
+//     owner: 'Tai'
+//   },
+//   {
+//     name: 'Gabumon',
+//     level: 6,
+//     type: 'Data',
+//     evolutions: [
+//       { name: 'Garurumon', level: 12 }
+//     ],
+//     owner: 'Matt'
+//   }
+// ]
+// */
+
+// function countDigimonByType(validDigimons) {
+// 	let result = {
+// 		Vaccine: 0,
+// 		Data: 0,
+// 		Virus: 0,
+// 	};
+
+// 	for (let i = 0; i < validDigimons.length; i++) {
+// 		let type = validDigimons[i].type;
+
+// 		if (type === 'Vaccine') result.Vaccine++;
+// 		else if (type === 'Data') result.Data++;
+// 		else if (type === 'Virus') result.Virus++;
+// 	}
+
+// 	// console.log(result);
+// 	return result;
+// }
+// // {
+// //   Vaccine: Number,
+// //   Data: Number,
+// //   Virus: Number
+// // }
+
+// function findStrongestDigimon(validDigimons) {
+// 	if (validDigimons.length === 0) return null;
+
+// 	let result = {};
+// 	let max = -Infinity;
+// 	for (let i = 0; i < validDigimons.length; i++) {
+// 		const digimon = validDigimons[i];
+// 		let name = digimon.name;
+// 		let level = digimon.level;
+// 		let owner = digimon.owner;
+
+// 		if (max < level) {
+// 			max = level;
+// 			result = { name: name, level: level, owner: owner };
+// 		}
+// 		// console.log(digimon);
+// 	}
+
+// 	// console.log(result);
+// 	return result;
+// }
+// // {
+// //   name: String,
+// //   level: Number,
+// //   owner: String
+// // }
+
+// function buildTrainingReport(trainers) {
+// 	let result = {};
+
+// 	let allDigimons = extractAllDigimons(trainers);
+// 	let validDigimons = filterValidDigimons(allDigimons);
+// 	let counType = countDigimonByType(validDigimons);
+// 	let strongest = findStrongestDigimon(validDigimons);
+
+// 	result = {
+// 		totalTrainer: trainers.length,
+// 		totalValidDigimon: validDigimons.length,
+// 		digimonByType: counType,
+// 		strongestDigimon: strongest,
+// 	};
+// 	return result;
 // }
 
-function buildTrainingReport(trainers) {
-	let result = {};
-
-	let allDigimons = extractAllDigimons(trainers);
-	let validDigimons = filterValidDigimons(allDigimons);
-	let counType = countDigimonByType(validDigimons);
-	let strongest = findStrongestDigimon(validDigimons);
-
-	result = {
-		totalTrainer: trainers.length,
-		totalValidDigimon: validDigimons.length,
-		digimonByType: counType,
-		strongestDigimon: strongest,
-	};
-	return result;
-}
-
-console.log(buildTrainingReport(trainers));
-// {
-//   totalTrainer: 2,
-//   totalValidDigimon: 2,
-//   digimonByType: { Vaccine: 1, Data: 1, Virus: 0 },
-//   strongestDigimon: { name: 'Gabumon', level: 6, owner: 'Matt' }
-// }
-
-// ==============================================
-// --------------- L I N E 17 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 18 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 19 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 21 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 22 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 23 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 24 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 25 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 26 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 27 -------------------
-// ==============================================
-
-// ==============================================
-// --------------- L I N E 28 -------------------
-// ==============================================
+// console.log(buildTrainingReport(trainers));
+// // {
+// //   totalTrainer: 2,
+// //   totalValidDigimon: 2,
+// //   digimonByType: { Vaccine: 1, Data: 1, Virus: 0 },
+// //   strongestDigimon: { name: 'Gabumon', level: 6, owner: 'Matt' }
+// // }
