@@ -44,7 +44,28 @@
 // ==============================================
 // --------------- L I N E 19 -------------------
 // ==============================================
+// const digimonReady = new Promise(function (resolve) {
+// 	resolve('Digimon siap bertarung');
+// });
+// digimonReady.then(function (show) {
+// 	console.log(show);
+// });
 
+// const digimonEnergy = new Promise(function (full, low) {
+// 	let energy = 3;
+// 	if (energy > 5) {
+// 		full('Energi cukup');
+// 	} else {
+// 		low('Energi habis');
+// 	}
+// });
+// digimonEnergy
+// .then(function (show) {
+// 	console.log(show);
+// })
+// .catch(function (show) {
+// 	console.log(show);
+// });
 // ==============================================
 // --------------- L I N E 21 -------------------
 // ==============================================
