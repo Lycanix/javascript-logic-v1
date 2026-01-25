@@ -72,6 +72,8 @@
 console.log("rest, day 4");
 console.log("take a break 4 days");
 console.log("b");
+console.log("test");
+
 
 
 
