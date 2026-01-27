@@ -74,6 +74,8 @@ console.log("take a break 6 days");
 console.log("b");
 console.log("test II");
 console.log("baca");
+console.log("abc");
+
 
 
 
