@@ -70,7 +70,7 @@
 // --------------- L I N E 21 -------------------
 // ==============================================
 console.log("rest, day 6");
-console.log("take a break 5 days");
+console.log("take a break 6 days");
 console.log("a");
 console.log("test I");
 
